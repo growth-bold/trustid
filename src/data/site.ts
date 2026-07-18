@@ -2,7 +2,7 @@
 
 export const org = {
   name: "TrustID",
-  tagline: "Bảo chứng bởi Hiệp hội bảo chứng nhân dạng số",
+  tagline: "Hiệp hội bảo chứng nhân dạng số",
   license: "0123/GP-HHBCND",
   hotline: "1900 0000",
   email: "lienhe@trustid.vn",

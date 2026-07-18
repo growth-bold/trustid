@@ -1,7 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { IconSearch, IconAlertCircle, IconShieldCheck } from "@tabler/icons-react";
+import {
+  IconSearch,
+  IconAlertCircle,
+  IconShieldCheck,
+} from "@tabler/icons-react";
 import { Seal } from "@/com/brand/Seal";
 import { registryDb, registrySamples, statusColor } from "@/data/registry";
 
@@ -25,7 +29,9 @@ export const Lookup = () => {
     }
   };
 
-  const status = result ? statusColor[result.statusKind] || statusColor.active : null;
+  const status = result
+    ? statusColor[result.statusKind] || statusColor.active
+    : null;
 
   return (
     <div className="w-full font-sans">
@@ -50,7 +56,7 @@ export const Lookup = () => {
         </div>
         <button
           type="submit"
-          className="inline-flex h-[52px] items-center gap-2.5 rounded-xl bg-blue px-[26px] text-[15px] font-semibold text-white shadow-[0_6px_16px_rgba(12,140,233,.28)] transition hover:bg-blue-2 active:scale-[.98]"
+          className="w-full flex items-center justify-center md:inline-flex md:w-fit h-[52px] items-center gap-2.5 rounded-xl bg-blue px-[26px] text-[15px] font-semibold text-white shadow-[0_6px_16px_rgba(12,140,233,.28)] transition hover:bg-blue-2 active:scale-[.98]"
         >
           <IconSearch size={17} stroke={1.6} />
           Tra cứu
@@ -72,14 +78,20 @@ export const Lookup = () => {
 
       {notFound && (
         <div className="mt-[18px] flex items-start gap-3 rounded-xl border border-[#ffd0d2] bg-[#fff2f2] px-[18px] py-4">
-          <IconAlertCircle size={20} stroke={1.6} className="mt-px shrink-0 text-[#e7000b]" />
+          <IconAlertCircle
+            size={20}
+            stroke={1.6}
+            className="mt-px shrink-0 text-[#e7000b]"
+          />
           <div>
             <div className="text-[15px] font-semibold text-[#9f0712]">
               Không tìm thấy uỷ quyền hợp lệ
             </div>
             <div className="mt-0.5 text-[13.5px] leading-[1.55] text-[#7a2226]">
-              Không có bản ghi nào khớp với mã <b className="font-mono">{query}</b> trong sổ đăng bạ
-              công khai. Vui lòng kiểm tra lại mã, hoặc gửi yêu cầu xác minh tới bộ phận đối soát.
+              Không có bản ghi nào khớp với mã{" "}
+              <b className="font-mono">{query}</b> trong sổ đăng bạ công khai.
+              Vui lòng kiểm tra lại mã, hoặc gửi yêu cầu xác minh tới bộ phận
+              đối soát.
             </div>
           </div>
         </div>
@@ -109,7 +121,9 @@ export const Lookup = () => {
                 <span className="h-2 w-2 rounded-full bg-current" />
                 {result.status}
               </span>
-              <span className="text-[12.5px] text-mute">Cập nhật {result.updated}</span>
+              <span className="text-[12.5px] text-mute">
+                Cập nhật {result.updated}
+              </span>
             </div>
             {result.fields.map((f) => (
               <div key={f.label}>
@@ -124,8 +138,8 @@ export const Lookup = () => {
           </div>
           <div className="flex items-center gap-2.5 border-t border-dashed border-[#d8cfb4] bg-[rgba(25,40,61,.04)] px-6 py-3.5 text-[12.5px] text-mute">
             <IconShieldCheck size={15} stroke={1.5} className="text-gold" />
-            Xác thực bởi Hiệp hội bảo chứng nhân dạng số · Bản ghi công khai, đối chiếu trực tiếp với
-            sổ đăng bạ.
+            Xác thực bởi Hiệp hội bảo chứng nhân dạng số · Bản ghi công khai,
+            đối chiếu trực tiếp với sổ đăng bạ.
           </div>
         </div>
       )}

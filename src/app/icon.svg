@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TrustID">
+  <!-- Nền dấu: đĩa navy + viền vàng, đọc rõ trên cả tab sáng lẫn tối -->
+  <circle cx="32" cy="32" r="31" fill="#19283d"/>
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#c79a2b" stroke-width="2"/>
+  <circle cx="32" cy="32" r="25.5" fill="none" stroke="#c79a2b" stroke-width="1" opacity=".45"/>
+  <!-- Biểu tượng khiên bảo hộ nhân dạng (rút gọn từ con dấu) -->
+  <g transform="translate(32 33) scale(.86)">
+    <path d="M 0 -29 L 22 -20.5 L 22 4 C 22 20 11.5 29 0 33.5 C -11.5 29 -22 20 -22 4 L -22 -20.5 Z"
+          fill="#f3ead4" stroke="#c79a2b" stroke-width="2.4"/>
+    <path d="M 0 -15 C 8.6 -15 13.5 -8.6 13.5 0 M 0 -8.6 C 5 -8.6 8.6 -4.3 8.6 1.7 M 0 -1.7 C 2.6 -1.7 3.4 .9 3.4 5.2 M 0 -15 C -8.6 -15 -13.5 -8.6 -13.5 0 M 0 -8.6 C -5 -8.6 -8.6 -4.3 -8.6 1.7 M 0 -1.7 C -2.6 -1.7 -3.4 .9 -3.4 5.2"
+          fill="none" stroke="#19283d" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 0 6.8 C 4.3 10.3 7.7 13.7 0 20.6 C -7.7 13.7 -4.3 10.3 0 6.8 Z" fill="#b0121f"/>
+    <path d="M 0 -25.8 l 1.9 4 l 4.3 .4 l -3.2 2.9 l .9 4.2 l -3.9 -2.1 l -3.9 2.1 l .9 -4.2 l -3.2 -2.9 l 4.3 -.4 Z" fill="#c79a2b"/>
+  </g>
+</svg>
