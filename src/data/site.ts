@@ -9,6 +9,28 @@ export const org = {
   taxCode: "0123456789",
 };
 
+/** Thông tin phục vụ SEO & chia sẻ mạng xã hội (OpenGraph / Twitter). */
+export const siteMeta = {
+  /** Đặt NEXT_PUBLIC_SITE_URL khi deploy để sinh URL tuyệt đối cho ảnh OG. */
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://trustid.vn").replace(/\/$/, ""),
+  name: "TrustID",
+  locale: "vi_VN",
+  titleDefault: "TrustID — Bảo hộ & khai thác hợp pháp nhân dạng số",
+  titleTemplate: "%s · TrustID",
+  description:
+    "Định chế đăng ký bảo hộ, cấp phép và thu hộ nhân dạng số — vận hành dưới sự bảo chứng của Hiệp hội bảo chứng nhân dạng số. Minh bạch, có bằng chứng bất biến, tra cứu công khai.",
+  keywords: [
+    "TrustID",
+    "bảo hộ nhân dạng số",
+    "cấp phép nhân dạng",
+    "thu hộ bản quyền",
+    "deepfake",
+    "bản quyền hình ảnh giọng nói",
+    "định danh điện tử",
+    "Hiệp hội bảo chứng nhân dạng số",
+  ],
+};
+
 /** Điều hướng chính trên header (trỏ về các mục của trang chủ). */
 export const mainNav = [
   { label: "Cơ chế", href: "/#cochevanhanh" },

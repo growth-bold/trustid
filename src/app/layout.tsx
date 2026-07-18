@@ -1,5 +1,7 @@
 import "./globals.css";
 import { Be_Vietnam_Pro, Noto_Serif } from "next/font/google";
+import { siteMeta } from "@/data/site";
+import { OG_IMAGE } from "@/lib/seo";
 
 const beVietnam = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
@@ -16,9 +18,44 @@ const notoSerif = Noto_Serif({
 });
 
 export const metadata = {
-  title: "TrustID — Bảo hộ và khai thác hợp pháp nhân dạng số",
-  description:
-    "Định chế đăng ký bảo hộ, cấp phép và thu hộ nhân dạng số, dưới sự bảo chứng của Hiệp hội bảo chứng nhân dạng số.",
+  metadataBase: new URL(siteMeta.url),
+  title: {
+    default: siteMeta.titleDefault,
+    template: siteMeta.titleTemplate,
+  },
+  description: siteMeta.description,
+  applicationName: siteMeta.name,
+  keywords: siteMeta.keywords,
+  authors: [{ name: siteMeta.name, url: siteMeta.url }],
+  creator: siteMeta.name,
+  publisher: siteMeta.name,
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
+  openGraph: {
+    type: "website",
+    siteName: siteMeta.name,
+    locale: siteMeta.locale,
+    url: siteMeta.url,
+    title: siteMeta.titleDefault,
+    description: siteMeta.description,
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteMeta.titleDefault,
+    description: siteMeta.description,
+    images: [OG_IMAGE.url],
+  },
+};
+
+export const viewport = {
+  themeColor: "#19283d",
+  width: "device-width",
+  initialScale: 1,
 };
 
 const RootLayout = ({ children }) => {

@@ -13,6 +13,14 @@ import { Proof } from "@/com/home/Proof";
 import { FaqSection } from "@/com/home/FaqSection";
 import { Accountability } from "@/com/home/Accountability";
 import { FinalCta } from "@/com/home/FinalCta";
+import { pageMetadata } from "@/lib/seo";
+import { siteMeta } from "@/data/site";
+
+export const metadata = pageMetadata({
+  title: { absolute: siteMeta.titleDefault },
+  description: siteMeta.description,
+  path: "/",
+});
 
 const HomePage = () => {
   return (

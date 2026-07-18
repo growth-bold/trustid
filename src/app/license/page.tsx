@@ -2,6 +2,14 @@ import Link from "next/link";
 import { IconSearch } from "@tabler/icons-react";
 import { AppHeader } from "@/com/layout/AppHeader";
 import { LicenseApp } from "@/com/license/LicenseApp";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Sàn cấp phép & khai thác nhân dạng",
+  description:
+    "Tìm chủ thể, cấu hình phạm vi, ký và nhận giấy phép khai thác nhân dạng minh bạch — mọi giấy phép đều có bằng chứng bất biến, tra cứu công khai.",
+  path: "/license",
+});
 
 const LicensePage = () => {
   return (

@@ -3,6 +3,14 @@ import { IconLock } from "@tabler/icons-react";
 import { AppHeader } from "@/com/layout/AppHeader";
 import { AppFooter } from "@/com/layout/AppFooter";
 import { RegisterWizard } from "@/com/register/RegisterWizard";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Đăng ký bảo hộ nhân dạng",
+  description:
+    "Đăng ký bảo hộ nhân dạng số trong vài phút: định danh, xây hồ sơ nhân dạng và thiết lập quyền khai thác — dưới một định chế được bảo chứng.",
+  path: "/register",
+});
 
 const RegisterPage = () => {
   return (
