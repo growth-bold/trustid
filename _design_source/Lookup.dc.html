@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/fig-tokens.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/aliases.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/base.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/styles.css">
+  <script src="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/_ds_bundle.js"></script>
+  <style>
+    :root{--tid-navy:#19283d;--tid-navy-2:#0f172b;--tid-blue:#0c8ce9;--tid-gold:#c79a2b;}
+  </style>
+</helmet>
+<div style="width:100%; font-family:'Be Vietnam Pro','Inter',sans-serif;">
+  <form onSubmit="{{ onSearch }}" style="display:flex; gap:10px; flex-wrap:wrap; align-items:flex-end;">
+    <div style="flex:1; min-width:240px; display:flex; flex-direction:column; gap:7px;">
+      <label style="font-size:13px; font-weight:600; color:var(--tid-navy); letter-spacing:.01em;">Mã uỷ quyền</label>
+      <input value="{{ query }}" onInput="{{ onInput }}" placeholder="Ví dụ: TID-2025-0042" spellcheck="false" style="height:52px; padding:0 16px; border-radius:12px; border:1px solid #d7dee8; background:#fff; font-size:16px; font-family:'JetBrains Mono','Be Vietnam Pro',monospace; letter-spacing:.06em; color:var(--tid-navy); outline:none; box-shadow:0 2px 4px rgba(15,23,43,.04), 0 1px 2px rgba(15,23,43,.05); width:100%; box-sizing:border-box;" style-focus="border-color:var(--tid-blue); box-shadow:0 0 0 4px rgba(12,140,233,.18);"></input>
+    </div>
+    <button type="submit" style="height:52px; padding:0 26px; border:none; border-radius:12px; background:var(--tid-blue); color:#fff; font-size:15px; font-weight:600; font-family:'Be Vietnam Pro',sans-serif; cursor:pointer; display:inline-flex; align-items:center; gap:9px; box-shadow:0 6px 16px rgba(12,140,233,.28); transition:background .15s, transform .08s;" style-hover="background:#1a7aca;" style-active="transform:scale(.98);">
+      <svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="5"></circle><path d="M11 11l3 3" stroke-linecap="round"></path></svg>
+      Tra cứu
+    </button>
+  </form>
+
+  <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:12px; font-size:12.5px; color:#5b6b82;">
+    <span>Thử nhanh:</span>
+    <button onClick="{{ trySample }}" data-code="TID-2025-0042" style="border:1px solid #d7dee8; background:#f6f8fb; color:var(--tid-navy); padding:4px 10px; border-radius:999px; font-family:monospace; font-size:12px; cursor:pointer; letter-spacing:.04em;" style-hover="border-color:var(--tid-blue); color:var(--tid-blue);">TID-2025-0042</button>
+    <button onClick="{{ trySample }}" data-code="TID-2025-0117" style="border:1px solid #d7dee8; background:#f6f8fb; color:var(--tid-navy); padding:4px 10px; border-radius:999px; font-family:monospace; font-size:12px; cursor:pointer; letter-spacing:.04em;" style-hover="border-color:var(--tid-blue); color:var(--tid-blue);">TID-2025-0117</button>
+    <button onClick="{{ trySample }}" data-code="TID-2024-9003" style="border:1px solid #d7dee8; background:#f6f8fb; color:var(--tid-navy); padding:4px 10px; border-radius:999px; font-family:monospace; font-size:12px; cursor:pointer; letter-spacing:.04em;" style-hover="border-color:var(--tid-blue); color:var(--tid-blue);">TID-2024-9003 (đã thu hồi)</button>
+  </div>
+
+  <sc-if value="{{ notFound }}" hint-placeholder-val="{{ false }}">
+    <div style="margin-top:18px; display:flex; gap:12px; align-items:flex-start; padding:16px 18px; border-radius:12px; background:#fff2f2; border:1px solid #ffd0d2;">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#e7000b" stroke-width="1.6" style="flex-shrink:0; margin-top:1px;"><circle cx="10" cy="10" r="8"></circle><path d="M10 6v5M10 14h.01" stroke-linecap="round"></path></svg>
+      <div>
+        <div style="font-weight:600; color:#9f0712; font-size:15px;">Không tìm thấy uỷ quyền hợp lệ</div>
+        <div style="color:#7a2226; font-size:13.5px; margin-top:3px; line-height:1.55;">Không có bản ghi nào khớp với mã <b style="font-family:monospace;">{{ query }}</b> trong sổ đăng bạ công khai. Vui lòng kiểm tra lại mã, hoặc gửi yêu cầu xác minh tới bộ phận đối soát.</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ result }}" hint-placeholder-val="{{ false }}">
+    <div style="margin-top:20px; border-radius:12px; overflow:hidden; border:1px solid #e3ddca; box-shadow:0 18px 44px rgba(15,23,43,.14); background:linear-gradient(180deg,#fdfbf5,#f7f2e6);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:20px 24px; border-bottom:1px dashed #d8cfb4;">
+        <div>
+          <div style="font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Chứng thư uỷ quyền khai thác</div>
+          <div style="font-family:'Noto Serif',Georgia,serif; font-size:22px; font-weight:700; color:var(--tid-navy); margin-top:4px; letter-spacing:.04em;">{{ result.code }}</div>
+        </div>
+        <div style="flex-shrink:0;">
+          <dc-import name="Seal" size="72" hint-size="72px,72px"></dc-import>
+        </div>
+      </div>
+      <div style="padding:20px 24px; display:grid; grid-template-columns:1fr 1fr; gap:18px 28px;">
+        <div style="grid-column:1 / -1; display:flex; align-items:center; gap:10px;">
+          <span data-status="{{ result.statusKind }}" style="display:inline-flex; align-items:center; gap:7px; padding:6px 13px; border-radius:999px; font-size:13px; font-weight:600;">
+            <span style="width:8px; height:8px; border-radius:999px; background:currentColor;"></span>{{ result.status }}
+          </span>
+          <span style="font-size:12.5px; color:#5b6b82;">Cập nhật {{ result.updated }}</span>
+        </div>
+        <sc-for list="{{ result.fields }}" as="f" hint-placeholder-count="6">
+          <div>
+            <div style="font-size:11.5px; letter-spacing:.04em; text-transform:uppercase; color:#8a93a3; font-weight:600;">{{ f.label }}</div>
+            <div style="font-size:15px; color:var(--tid-navy); margin-top:3px; font-weight:500; line-height:1.5;">{{ f.value }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="padding:14px 24px; background:rgba(25,40,61,.04); border-top:1px dashed #d8cfb4; display:flex; align-items:center; gap:9px; font-size:12.5px; color:#5b6b82;">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="var(--tid-gold)" stroke-width="1.5"><path d="M8 1.5l5 2v3.5c0 3-2 5.2-5 6.5-3-1.3-5-3.5-5-6.5V3.5z"></path><path d="M5.8 8l1.5 1.6L10.4 6.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        Xác thực bởi Hiệp hội bảo chứng nhân dạng số · Bản ghi công khai, đối chiếu trực tiếp với sổ đăng bạ.
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:720,&quot;height&quot;:420}}">
+class Component extends DCLogic {
+  state = { query: "", result: null, notFound: false };
+
+  DB = {
+    "TID-2025-0042": {
+      code: "TID-2025-0042", status: "Còn hiệu lực", statusKind: "active", updated: "02/07/2026",
+      fields: [
+        { label: "Chủ thể được bảo hộ", value: "Nguyễn M. A. (Nghệ sĩ · KOL)" },
+        { label: "Bên được cấp phép", value: "Công ty CP Truyền thông Bình Minh" },
+        { label: "Phạm vi khai thác", value: "Giọng nói · Quảng cáo TVC nội địa" },
+        { label: "Hiệu lực từ", value: "12/03/2026" },
+        { label: "Hết hiệu lực", value: "12/03/2027" },
+        { label: "Cơ chế thu hộ", value: "Tài khoản tách bạch · đối soát theo quý" },
+      ],
+    },
+    "TID-2025-0117": {
+      code: "TID-2025-0117", status: "Còn hiệu lực", statusKind: "active", updated: "28/06/2026",
+      fields: [
+        { label: "Chủ thể được bảo hộ", value: "Trần B. (Diễn viên lồng tiếng)" },
+        { label: "Bên được cấp phép", value: "Nền tảng học trực tuyến EduVoice" },
+        { label: "Phạm vi khai thác", value: "Khuôn mặt + Giọng nói · Nội dung giáo dục" },
+        { label: "Hiệu lực từ", value: "05/05/2026" },
+        { label: "Hết hiệu lực", value: "05/05/2028" },
+        { label: "Cơ chế thu hộ", value: "Tài khoản tách bạch · đối soát theo tháng" },
+      ],
+    },
+    "TID-2024-9003": {
+      code: "TID-2024-9003", status: "Đã thu hồi (chủ thể rút uỷ quyền)", statusKind: "revoked", updated: "19/01/2026",
+      fields: [
+        { label: "Chủ thể được bảo hộ", value: "Lê C. (Ca sĩ)" },
+        { label: "Bên được cấp phép", value: "Công ty TNHH Giải trí Sao Việt" },
+        { label: "Phạm vi khai thác", value: "Giọng nói · Đã chấm dứt hiệu lực" },
+        { label: "Ngày cấp", value: "10/08/2024" },
+        { label: "Ngày thu hồi", value: "19/01/2026" },
+        { label: "Ghi chú", value: "Chủ thể thực hiện quyền rút uỷ quyền minh thị." },
+      ],
+    },
+  };
+
+  norm(s){ return (s || "").trim().toUpperCase(); }
+
+  run(code) {
+    const key = this.norm(code);
+    const hit = this.DB[key];
+    if (hit) this.setState({ query: key, result: hit, notFound: false });
+    else this.setState({ query: key, result: null, notFound: key.length > 0 });
+  }
+
+  renderVals() {
+    return {
+      query: this.state.query,
+      result: this.state.result,
+      notFound: this.state.notFound,
+      onInput: (e) => this.setState({ query: e.target.value }),
+      onSearch: (e) => { e.preventDefault(); this.run(this.state.query); },
+      trySample: (e) => this.run(e.currentTarget.getAttribute("data-code")),
+    };
+  }
+
+  componentDidMount(){ this.paintStatus(); }
+  componentDidUpdate(){ this.paintStatus(); }
+  paintStatus(){
+    const el = this.el && this.el.querySelector ? this.el.querySelector("[data-status]") : document.querySelector("[data-status]");
+    const node = document.querySelector("[data-status]");
+    if (!node) return;
+    const k = node.getAttribute("data-status");
+    const map = { active: { c:"#007a55", bg:"#d0fae5" }, revoked: { c:"#9f0712", bg:"#ffe2e2" }, pending:{ c:"#bb4d00", bg:"#fef3c6" } };
+    const m = map[k] || map.active;
+    node.style.color = m.c; node.style.background = m.bg;
+  }
+}
+</script>
+</body>
+</html>

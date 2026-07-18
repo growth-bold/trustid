@@ -1,0 +1,9 @@
+/* ============================================================
+   HeroUI Design System — global stylesheet entry point.
+   Consumers link THIS file. It is an import manifest only.
+   ============================================================ */
+@import "./tokens/fonts.css";
+@import "./tokens/fig-tokens.css";   /* Figma Variables: full color/theme/dimension token set + dark mode */
+@import "./tokens/typography.css";   /* Inter scale + semantic text roles */
+@import "./tokens/aliases.css";      /* friendly semantic color/radius/spacing/shadow names */
+@import "./tokens/base.css";         /* light resets so primitives render predictably */

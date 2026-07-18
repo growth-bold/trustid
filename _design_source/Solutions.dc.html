@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/fig-tokens.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/aliases.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/base.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/styles.css">
+  <script src="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/_ds_bundle.js"></script>
+  <style>:root{--tid-navy:#19283d;--tid-blue:#0c8ce9;--tid-gold:#c79a2b;--tid-mute:#5b6b82;}</style>
+</helmet>
+<div style="width:100%; font-family:'Be Vietnam Pro','Inter',sans-serif;">
+  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:28px;">
+    <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+      <button onClick="{{ t.select }}" data-active="{{ t.active }}" style="display:flex; flex-direction:column; gap:3px; text-align:left; padding:14px 20px; border-radius:12px; border:1px solid; cursor:pointer; background:#fff; transition:all .16s; flex:1; min-width:200px;">
+        <span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:700;">{{ t.kicker }}</span>
+        <span style="font-family:'Noto Serif',Georgia,serif; font-size:18px; font-weight:700;">{{ t.title }}</span>
+      </button>
+    </sc-for>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1.05fr .95fr; gap:36px; align-items:start;">
+    <div>
+      <div style="display:inline-flex; align-items:center; gap:9px; padding:9px 15px; border-radius:12px; background:#fff2f2; border:1px solid #ffd9da; margin-bottom:18px;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#e7000b" stroke-width="1.5"><path d="M8 1.6l5.4 2.1V8c0 3.3-2.2 5.6-5.4 6.8C4.8 13.6 2.6 11.3 2.6 8V3.7z"></path></svg>
+        <span style="font-size:13.5px; color:#9f0712; font-weight:600;">Nỗi lo chúng tôi trả lời: <span style="font-weight:500;">{{ active.fear }}</span></span>
+      </div>
+      <h3 style="font-family:'Noto Serif',Georgia,serif; font-size:26px; color:var(--tid-navy); font-weight:700; line-height:1.25; margin:0 0 12px;">{{ active.heading }}</h3>
+      <p style="color:var(--tid-mute); font-size:16px; line-height:1.7; margin:0 0 24px; max-width:520px;">{{ active.blurb }}</p>
+      <div style="display:inline-flex;">
+        <x-import component-from-global-scope="HeroUIDesignSystem_d608d4.Button" as="a" href="{{ active.ctaHref }}" variant="primary" size="lg" hint-size="auto,48px"><span style="font-weight:700;">{{ active.cta }}</span></x-import>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <sc-for list="{{ active.points }}" as="p" hint-placeholder-count="4">
+        <div style="display:flex; gap:14px; align-items:flex-start; padding:16px 18px; border-radius:12px; background:#f7f9fc; border:1.5px solid #dfe4ec; box-shadow:0 6px 18px rgba(15,23,43,.06), 0 1.5px 4px rgba(15,23,43,.05);">
+          <span style="flex-shrink:0; width:34px; height:34px; border-radius:12px; background:rgba(12,140,233,.1); display:inline-flex; align-items:center; justify-content:center;">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="var(--tid-blue)" stroke-width="1.7"><path d="M3.5 9.5l3.2 3.2L14.5 5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </span>
+          <div>
+            <div style="font-weight:600; color:var(--tid-navy); font-size:15px;">{{ p.t }}</div>
+            <div style="color:var(--tid-mute); font-size:14px; line-height:1.55; margin-top:2px;">{{ p.d }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:980,&quot;height&quot;:460}}">
+class Component extends DCLogic {
+  state = { active: "subject" };
+  DATA = {
+    subject: {
+      kicker: "Chủ thể", title: "Nghệ sĩ · KOL · Cá nhân",
+      fear: "“Tiền và quyền của tôi giao cho các anh có an toàn không?”",
+      heading: "Quyền kiểm soát nằm trong tay chủ thể — và thu nhập được trả về minh bạch.",
+      blurb: "Chủ thể giữ toàn quyền định đoạt nhân dạng số của mình. Chúng tôi thu hộ qua tài khoản tách bạch, đối soát định kỳ và báo cáo đầy đủ cho từng chủ thể.",
+      cta: "Đăng ký bảo hộ", ctaHref: "#dangky",
+      points: [
+        { t: "Rút uỷ quyền bất cứ lúc nào", d: "Quyền rút lại đồng ý (minh thị) được bảo đảm như một nghĩa vụ, không phải ưu đãi." },
+        { t: "Thu hộ qua tài khoản tách bạch", d: "Tiền của chủ thể không nằm chung tài khoản vận hành; đối soát và thanh toán theo kỳ công bố." },
+        { t: "Nhật ký sử dụng nhân dạng", d: "Biết chính xác ai đang khai thác, phạm vi nào, còn hiệu lực đến khi nào." },
+        { t: "Mã uỷ quyền tra cứu công khai", d: "Mỗi uỷ quyền có một mã để bất kỳ ai — kể cả chính chủ thể — tự kiểm chứng." },
+      ],
+    },
+    business: {
+      kicker: "Bên khai thác", title: "Doanh nghiệp sử dụng nhân dạng",
+      fear: "“Giấy phép các anh cấp có thật sự hợp pháp không?”",
+      heading: "Mỗi giấy phép là một chứng thư có thể tra cứu, viện dẫn căn cứ pháp lý cụ thể.",
+      blurb: "Bên khai thác nhận được sự chắc chắn pháp lý: uỷ quyền có hiệu lực, dẫn chiếu điều luật, và có thể chứng minh trước bất kỳ tranh chấp nào.",
+      cta: "Xin cấp phép sử dụng", ctaHref: "#capphep",
+      points: [
+        { t: "An toàn pháp lý khi khai thác", d: "Ủy quyền dẫn chiếu Luật 91/2025/QH15 và các nghị định liên quan — không khai thác trong vùng xám." },
+        { t: "Chứng thư chống tranh chấp", d: "Chứng thư uỷ quyền công khai, tra cứu tức thời, đứng vững khi có khiếu nại." },
+        { t: "Quy trình cấp phép chuẩn hoá", d: "Một luồng xin cấp phép rõ ràng theo phạm vi, thời hạn và mức phí công bố." },
+        { t: "Được hiệp hội giám sát", d: "Việc cấp phép do một định chế độc lập bảo chứng, không phải tự nền tảng cấp cho mình." },
+      ],
+    },
+    partner: {
+      kicker: "Nền tảng đối tác", title: "Nền tảng · Tổ chức tích hợp",
+      fear: "“Chúng tôi cần hạ tầng cấp phép sẵn có, tuân thủ.”",
+      heading: "Hạ tầng cấp phép và thu hộ được bảo chứng, sẵn sàng để tích hợp.",
+      blurb: "Đối tác kế thừa toàn bộ chuẩn tuân thủ, sổ đăng bạ và cơ chế thu hộ đã được bảo chứng — thay vì tự xây một quy trình pháp lý từ đầu.",
+      cta: "Trở thành đối tác", ctaHref: "#lienhe",
+      points: [
+        { t: "Hạ tầng cấp phép & thu hộ", d: "Kế thừa quy trình uỷ quyền, đối soát và phân phối đã chuẩn hoá." },
+        { t: "Tích hợp sổ đăng bạ công khai", d: "Đồng bộ mã uỷ quyền để người dùng cuối tự kiểm chứng ngay trên nền tảng của bạn." },
+        { t: "Chung chuẩn tuân thủ", d: "Áp dụng cùng bộ nguyên tắc đồng ý minh thị và ranh giới đạo đức bắt buộc." },
+        { t: "Đồng vận hành dưới bảo chứng", d: "Hoạt động dưới sự giám sát của hiệp hội bảo chứng, minh bạch với chủ thể." },
+      ],
+    },
+  };
+  renderVals() {
+    const order = ["subject", "business", "partner"];
+    const active = this.DATA[this.state.active];
+    return {
+      active,
+      tabs: order.map((k) => ({
+        kicker: this.DATA[k].kicker, title: this.DATA[k].title, active: k === this.state.active,
+        select: () => this.setState({ active: k }),
+      })),
+    };
+  }
+  componentDidMount(){ this.paint(); }
+  componentDidUpdate(){ this.paint(); }
+  paint(){
+    document.querySelectorAll("[data-active]").forEach((b) => {
+      const on = b.getAttribute("data-active") === "true";
+      b.style.borderColor = on ? "var(--tid-blue)" : "#e6e9ef";
+      b.style.background = on ? "rgba(12,140,233,.06)" : "#fff";
+      b.style.boxShadow = on ? "0 6px 18px rgba(12,140,233,.12)" : "none";
+      const s = b.querySelector("span:first-child"); if (s) s.style.color = on ? "var(--tid-blue)" : "#8a93a3";
+      const t = b.querySelector("span:last-child"); if (t) t.style.color = on ? "var(--tid-navy)" : "#5b6b82";
+    });
+  }
+}
+</script>
+</body>
+</html>

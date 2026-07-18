@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/fig-tokens.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/aliases.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/base.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,500&display=swap">
+  <script src="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/_ds_bundle.js"></script>
+  <script src="image-slot.js"></script>
+  <style>
+    :root{
+      --accent-accent:#0c8ce9; --accent-accent-hover:#1a7aca; --accent-accent-foreground:#ffffff;
+      --color-accent:#0c8ce9; --color-link:#1a7aca;
+      --tid-navy:#19283d; --tid-navy-2:#0f1a2e; --tid-navy-3:#0b1424;
+      --tid-blue:#0c8ce9; --tid-blue-2:#1a7aca; --tid-gold:#c79a2b; --tid-gold-2:#e0b64a;
+      --tid-ink:#142033; --tid-mute:#5b6b82; --tid-line:#e6e9ef; --tid-ivory:#f6f8fb;
+      --font-serif:'Noto Serif', Georgia, serif; --font-sans:'Be Vietnam Pro','Inter',sans-serif;
+    }
+    html{ scroll-behavior:smooth; }
+    body{ margin:0; font-family:var(--font-sans); color:var(--tid-ink); background:#ffffff; -webkit-font-smoothing:antialiased; }
+    a{ color:var(--tid-blue-2); text-decoration:none; }
+    a:hover{ color:var(--tid-blue); }
+    ::selection{ background:rgba(12,140,233,.18); }
+    @media (max-width:1080px){
+      [data-mainnav]{ display:none !important; }
+    }
+    @media (max-width:940px){
+      [data-2col]{ grid-template-columns:1fr !important; }
+      [data-3col]{ grid-template-columns:1fr !important; }
+      [data-4col]{ grid-template-columns:repeat(2,1fr) !important; }
+      [data-flow]{ grid-template-columns:1fr !important; gap:14px !important; }
+      [data-flow] svg{ transform:rotate(90deg); justify-self:center; }
+      [data-h1]{ font-size:38px !important; }
+      [data-sep]{ display:none !important; }
+      [data-trustbar]{ grid-template-columns:1fr !important; }
+    }
+    @media (max-width:560px){
+      [data-4col]{ grid-template-columns:1fr !important; }
+    }
+    .hui-btn{ border-radius:0.75rem !important; }
+    @keyframes tidReveal{ from{ opacity:0; transform:translateY(18px); } to{ opacity:1; transform:none; } }
+    @media (prefers-reduced-motion:no-preference){
+      [data-reveal]{ animation:tidReveal .7s cubic-bezier(.22,.61,.36,1); }
+    }
+  </style>
+</helmet>
+<div style="width:100%; font-family:var(--font-sans); background:#ffffff; overflow-x:hidden;">
+
+  <!-- ============ 1. HEADER ============ -->
+  <header style="position:sticky; top:0; z-index:60;">
+    <div style="background:var(--tid-navy-2); color:#c3cede; font-size:12.5px;">
+      <div style="max-width:1200px; margin:0 auto; padding:8px 32px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
+        <span style="display:inline-flex; align-items:center; gap:8px;">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="var(--tid-gold-2)" stroke-width="1.5"><path d="M8 1.5l5 2v3.5c0 3-2 5.2-5 6.5-3-1.3-5-3.5-5-6.5V3.5z"></path></svg>
+          Giấy phép hoạt động số <b style="color:#e8eef7; font-weight:600; letter-spacing:.02em;">0123/GP-HHBCND</b>
+        </span>
+        <span style="display:inline-flex; align-items:center; gap:20px; flex-wrap:wrap;">
+          <span style="display:inline-flex; align-items:center; gap:6px;"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"></circle><path d="M8 4.5v3.5l2.2 1.3" stroke-linecap="round"></path></svg>Đường dây chính thức <b style="color:#e8eef7; font-weight:600;">1900 0000</b></span>
+          <span style="display:inline-flex; align-items:center; gap:6px;"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="var(--tid-gold-2)" stroke-width="1.5"><rect x="2.5" y="6" width="11" height="7.5" rx="1.4"></rect><path d="M5 6V4.2A3 3 0 0111 4.2V6" stroke-linecap="round"></path></svg>Dữ liệu lưu trú tại Việt Nam</span>
+          <span style="color:#8ea0ba;">VN</span>
+        </span>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,.92); backdrop-filter:saturate(1.4) blur(10px); border-bottom:1px solid var(--tid-line);">
+      <div style="max-width:1200px; margin:0 auto; padding:12px 32px; display:flex; align-items:center; gap:24px;">
+        <a href="#top" style="display:flex; align-items:center; gap:13px; flex-shrink:0;">
+          <dc-import name="Seal" size="46" hint-size="46px,46px"></dc-import>
+          <span style="display:flex; flex-direction:column; line-height:1.15;">
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--tid-navy); letter-spacing:.01em;">TrustID</span>
+            <span style="font-size:11px; color:var(--tid-mute); letter-spacing:.02em;">Bảo chứng bởi Hiệp hội bảo chứng nhân dạng số</span>
+          </span>
+        </a>
+        <nav data-mainnav style="display:flex; align-items:center; gap:26px; margin-left:auto; font-size:14.5px; font-weight:500;">
+          <a href="#cochevanhanh" style="color:var(--tid-ink);" style-hover="color:var(--tid-blue);">Cơ chế</a>
+          <a href="#vaitro" style="color:var(--tid-ink);" style-hover="color:var(--tid-blue);">Vai trò thể chế</a>
+          <a href="#phaply" style="color:var(--tid-ink);" style-hover="color:var(--tid-blue);">Pháp lý</a>
+          <a href="#minhbach" style="color:var(--tid-ink);" style-hover="color:var(--tid-blue);">Minh bạch tài chính</a>
+          <a href="#faq" style="color:var(--tid-ink);" style-hover="color:var(--tid-blue);">Hỏi đáp</a>
+        </nav>
+        <div style="display:flex; align-items:center; gap:10px; flex-shrink:0;">
+          <x-import component-from-global-scope="HeroUIDesignSystem_d608d4.Button" as="a" href="#tracuu" variant="primary" size="md" hint-size="auto,40px">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" style="margin-right:2px;"><circle cx="7" cy="7" r="5"></circle><path d="M11 11l3 3" stroke-linecap="round"></path></svg>
+            Tra cứu
+          </x-import>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="top"></div>
+
+  <!-- ============ 2. HERO ============ -->
+  <section data-screen-label="Hero" style="position:relative; background:radial-gradient(1200px 600px at 78% -10%, #23385a 0%, var(--tid-navy) 46%, var(--tid-navy-2) 100%); color:#eaf0f8; overflow:hidden;">
+    <div aria-hidden="true" style="position:absolute; right:-60px; top:40px; opacity:.06; pointer-events:none;">
+      <svg width="520" height="520" viewBox="0 0 200 200"><circle cx="100" cy="100" r="95" fill="none" stroke="#fff" stroke-width="1"></circle><circle cx="100" cy="100" r="78" fill="none" stroke="#fff" stroke-width="1"></circle><circle cx="100" cy="100" r="60" fill="none" stroke="#fff" stroke-width="1"></circle></svg>
+    </div>
+    <div data-2col style="max-width:1200px; margin:0 auto; padding:74px 32px 78px; display:grid; grid-template-columns:1.08fr .92fr; gap:56px; align-items:center; position:relative;">
+      <div data-reveal>
+        <span style="display:inline-flex; align-items:center; gap:9px; padding:8px 15px; border-radius:999px; background:rgba(199,154,43,.14); border:1px solid rgba(224,182,74,.35); color:var(--tid-gold-2); font-size:13px; font-weight:600; letter-spacing:.01em;">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1.5l5 2v3.5c0 3-2 5.2-5 6.5-3-1.3-5-3.5-5-6.5V3.5z"></path><path d="M6 8l1.4 1.4L10.4 6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          Được bảo chứng bởi Hiệp hội bảo chứng nhân dạng số
+        </span>
+        <h1 data-h1 style="font-family:var(--font-serif); font-size:52px; line-height:1.14; font-weight:700; color:#fff; margin:22px 0 0; letter-spacing:.005em; text-wrap:balance;">Quyền được bảo hộ và khai thác hợp pháp nhân dạng số của bạn.</h1>
+        <p style="font-size:18.5px; line-height:1.68; color:#c3cede; margin:22px 0 0; max-width:560px;">Trust ID là định chế đăng ký bảo hộ, cấp phép và <b style="color:#eaf0f8; font-weight:600;">thu hộ</b> nhân dạng số — vận hành dưới sự bảo chứng của một hiệp hội ngành được nhà nước công nhận. Chúng tôi bảo chứng, thu hộ và phân phối minh bạch.</p>
+        <div style="display:flex; gap:13px; flex-wrap:wrap; margin-top:32px;">
+          <x-import component-from-global-scope="HeroUIDesignSystem_d608d4.Button" as="a" href="#dangky" variant="primary" size="lg" hint-size="auto,48px">Đăng ký bảo hộ nhân dạng</x-import>
+          <x-import component-from-global-scope="HeroUIDesignSystem_d608d4.Button" as="a" href="#capphep" variant="secondary" size="lg" hint-size="auto,48px">Xin cấp phép sử dụng</x-import>
+        </div>
+        <div style="display:flex; gap:26px; flex-wrap:wrap; margin-top:34px; padding-top:26px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; color:#9fb0c8;">
+          <span style="display:inline-flex; align-items:center; gap:8px;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="justice-scale-1" size="18" color="#c79a2b" secondary-color="#ecd9a3" hint-size="18px,18px"></x-import>Căn cứ pháp lý viện dẫn cụ thể</span>
+          <span style="display:inline-flex; align-items:center; gap:8px;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="safe-vault" size="18" color="#c79a2b" secondary-color="#ecd9a3" hint-size="18px,18px"></x-import>Tài khoản thu hộ tách bạch</span>
+          <span style="display:inline-flex; align-items:center; gap:8px;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="checkup-medical-report-clipboard" size="18" color="#c79a2b" secondary-color="#ecd9a3" hint-size="18px,18px"></x-import>Kiểm toán độc lập định kỳ</span>
+        </div>
+      </div>
+
+      <div data-reveal style="position:relative;">
+        <div style="border-radius:12px; padding:26px 26px 22px; background:linear-gradient(180deg,#fdfbf5,#f4eeddff); box-shadow:0 30px 70px rgba(0,0,0,.4); border:1px solid #e6dcbf; transform:rotate(-1.4deg);">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:14px; border-bottom:1px dashed #d8cfb4; padding-bottom:16px;">
+            <div>
+              <div style="font-size:10.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Chứng nhận bảo hộ nhân dạng số</div>
+              <div style="font-family:var(--font-serif); font-size:21px; font-weight:700; color:var(--tid-navy); margin-top:5px;">Digital Identity Protection</div>
+            </div>
+            <dc-import name="Seal" size="66" hint-size="66px,66px"></dc-import>
+          </div>
+          <div style="padding-top:16px; display:flex; flex-direction:column; gap:13px;">
+            <div><div style="font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:#8a93a3; font-weight:600;">Chủ thể được bảo hộ</div><div style="font-family:var(--font-serif); font-size:17px; color:var(--tid-navy); font-weight:600; margin-top:2px;">Nguyễn M. A.</div></div>
+            <div style="display:flex; gap:26px;">
+              <div><div style="font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:#8a93a3; font-weight:600;">Mã uỷ quyền</div><div style="font-family:monospace; font-size:15px; color:var(--tid-navy); margin-top:3px; letter-spacing:.04em;">TID-2025-0042</div></div>
+              <div><div style="font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:#8a93a3; font-weight:600;">Hiệu lực</div><div style="margin-top:3px;"><span style="display:inline-flex; align-items:center; gap:6px; background:#d0fae5; color:#007a55; font-size:12.5px; font-weight:600; padding:3px 10px; border-radius:999px;"><span style="width:7px; height:7px; border-radius:999px; background:currentColor;"></span>Còn hiệu lực</span></div></div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; border-top:1px dashed #d8cfb4; padding-top:14px; margin-top:2px;">
+              <div style="font-size:11.5px; color:#8a7a4e; font-style:italic;">Đối chiếu công khai với sổ đăng bạ</div>
+              <svg width="86" height="30" viewBox="0 0 86 30" fill="none" stroke="var(--tid-navy)" stroke-width="1.3"><path d="M2 22c6-14 9 6 14-2s7-12 12-4 8 10 13-2 8 4 13-3 8 6 13 0" stroke-linecap="round"></path></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. INSTITUTIONAL TRUST BAR ============ -->
+  <section data-screen-label="Trust bar" style="background:#fff; border-bottom:1px solid var(--tid-line);">
+    <div style="max-width:1200px; margin:0 auto; padding:34px 32px;">
+      <div data-trustbar style="display:grid; grid-template-columns:auto 1px 1fr; gap:34px; align-items:center;">
+        <div style="display:flex; align-items:center; gap:16px;">
+          <dc-import name="Seal" size="62" hint-size="62px,62px"></dc-import>
+          <div style="max-width:190px;">
+            <div style="font-weight:600; color:var(--tid-navy); font-size:14.5px; line-height:1.3;">Hiệp hội bảo chứng nhân dạng số</div>
+            <div style="font-size:12.5px; color:var(--tid-mute); margin-top:3px;">Tổ chức nghề nghiệp được nhà nước công nhận · giám sát &amp; bảo chứng</div>
+          </div>
+        </div>
+        <div data-sep style="background:var(--tid-line); width:1px; height:64px;"></div>
+        <div>
+          <div style="font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--tid-mute); font-weight:600; margin-bottom:12px;">Căn cứ pháp lý viện dẫn</div>
+          <div data-3col style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
+            <div style="display:flex; gap:11px; align-items:flex-start; padding:12px 14px; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); background:var(--tid-ivory);">
+              <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--tid-blue)" stroke-width="1.5" style="flex-shrink:0; margin-top:1px;"><rect x="4" y="2.5" width="12" height="15" rx="1.5"></rect><path d="M7 6.5h6M7 10h6M7 13.5h4" stroke-linecap="round"></path></svg>
+              <div><div style="font-size:13px; color:var(--tid-navy); font-weight:600; line-height:1.35;">Luật Bảo vệ dữ liệu cá nhân</div><div style="font-family:monospace; font-size:12.5px; color:var(--tid-blue-2); margin-top:2px;">Số 91/2025/QH15</div></div>
+            </div>
+            <div style="display:flex; gap:11px; align-items:flex-start; padding:12px 14px; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); background:var(--tid-ivory);">
+              <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--tid-blue)" stroke-width="1.5" style="flex-shrink:0; margin-top:1px;"><rect x="4" y="2.5" width="12" height="15" rx="1.5"></rect><path d="M7 6.5h6M7 10h6M7 13.5h4" stroke-linecap="round"></path></svg>
+              <div><div style="font-size:13px; color:var(--tid-navy); font-weight:600; line-height:1.35;">Nghị định</div><div style="font-family:monospace; font-size:12.5px; color:var(--tid-blue-2); margin-top:2px;">Số 356/2025/NĐ-CP</div></div>
+            </div>
+            <div style="display:flex; gap:11px; align-items:flex-start; padding:12px 14px; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); background:var(--tid-ivory);">
+              <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--tid-blue)" stroke-width="1.5" style="flex-shrink:0; margin-top:1px;"><rect x="4" y="2.5" width="12" height="15" rx="1.5"></rect><path d="M7 6.5h6M7 10h6M7 13.5h4" stroke-linecap="round"></path></svg>
+              <div><div style="font-size:13px; color:var(--tid-navy); font-weight:600; line-height:1.35;">Nghị định</div><div style="font-family:monospace; font-size:12.5px; color:var(--tid-blue-2); margin-top:2px;">Số 69/2024/NĐ-CP</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4b. LOOKUP (front-line registry) ============ -->
+  <section id="tracuu" data-screen-label="Tra cứu" style="background:linear-gradient(180deg,#f3efe4,#f6f8fb); scroll-margin-top:96px;">
+    <div style="max-width:1000px; margin:0 auto; padding:66px 32px 70px; text-align:center;">
+      <div data-reveal>
+        <div style="font-size:12.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Sổ đăng bạ công khai</div>
+        <h2 style="font-family:var(--font-serif); font-size:34px; color:var(--tid-navy); font-weight:700; margin:12px 0 0; line-height:1.2;">Tra cứu và tự kiểm chứng một uỷ quyền</h2>
+        <p style="color:var(--tid-mute); font-size:16.5px; line-height:1.7; margin:14px auto 0; max-width:640px;">Nhập mã uỷ quyền để xác minh nó có thật, còn hiệu lực, do ai cấp và cho phạm vi nào. Chúng tôi dám để công chúng tự kiểm chứng — đó là tuyên ngôn minh bạch của một định chế chính danh.</p>
+      </div>
+      <div data-reveal style="margin-top:30px; text-align:left; background:#fff; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); padding:28px 30px; box-shadow:0 12px 34px rgba(15,23,43,.08);">
+        <dc-import name="Lookup" hint-size="100%,220px"></dc-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. PROBLEM & MISSION ============ -->
+  <section id="vande" data-screen-label="Vấn đề" style="background:#fff; scroll-margin-top:96px;">
+    <div style="max-width:1200px; margin:0 auto; padding:92px 32px;">
+      <div data-2col style="display:grid; grid-template-columns:.9fr 1.1fr; gap:56px; align-items:center;">
+        <div data-reveal>
+          <div style="font-size:12.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Vấn đề &amp; sứ mệnh</div>
+          <h2 style="font-family:var(--font-serif); font-size:36px; color:var(--tid-navy); font-weight:700; margin:12px 0 0; line-height:1.2; text-wrap:balance;">Nhân dạng bị khai thác. Không ai đứng ra thu và trả tiền cho chủ thể.</h2>
+          <p style="color:var(--tid-mute); font-size:16.5px; line-height:1.72; margin:18px 0 0;">Khuôn mặt, giọng nói và chân dung số bị dùng trái phép trong quảng cáo, deepfake và nội dung AI — không có kênh cấp phép minh bạch, không có ai đứng ra thu và phân phối tiền cho chủ thể.</p>
+          <p style="color:var(--tid-mute); font-size:16.5px; line-height:1.72; margin:14px 0 0;">Trust ID được lập ra để lấp đúng khoảng trống đó: một <b style="color:var(--tid-navy); font-weight:600;">cơ quan cấp phép và thu hộ được bảo chứng</b>, đứng giữa chủ thể và bên khai thác.</p>
+        </div>
+        <div data-reveal data-2col style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+          <div style="grid-column:1 / -1; display:flex; gap:14px; padding:20px 22px; border-radius:12px; background:var(--tid-ivory); border:1.5px solid #dfe4ec; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05);">
+            <x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="warning-diamond" size="26" color="#e7000b" secondary-color="#ffc9cb" hint-size="26px,26px"></x-import>
+            <div><div style="font-weight:600; color:var(--tid-navy); font-size:15.5px;">Khai thác trái phép, không kiểm soát</div><div style="color:var(--tid-mute); font-size:14px; line-height:1.55; margin-top:3px;">Deepfake và nội dung AI dùng nhân dạng người thật mà không xin phép, không truy vết được.</div></div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:9px; padding:18px 20px; border-radius:12px; background:#fff; border:1.5px solid #dfe4ec; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05);">
+            <x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="wallet" size="24" color="#0c8ce9" secondary-color="#bcdffb" hint-size="24px,24px"></x-import>
+            <div style="font-weight:600; color:var(--tid-navy); font-size:15px;">Dòng tiền mờ ám</div>
+            <div style="color:var(--tid-mute); font-size:13.5px; line-height:1.55;">Không rõ tiền thu hộ được giữ ở đâu, có tách bạch không.</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:9px; padding:18px 20px; border-radius:12px; background:#fff; border:1.5px solid #dfe4ec; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05);">
+            <x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="shield-1" size="24" color="#0c8ce9" secondary-color="#bcdffb" hint-size="24px,24px"></x-import>
+            <div style="font-weight:600; color:var(--tid-navy); font-size:15px;">Không có bảo chứng</div>
+            <div style="color:var(--tid-mute); font-size:13.5px; line-height:1.55;">Giấy phép tự phát không ai đứng sau, dễ đổ vỡ khi tranh chấp.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. HOW IT WORKS ============ -->
+  <section id="cochevanhanh" data-screen-label="Cơ chế vận hành" style="background:var(--tid-ivory); scroll-margin-top:96px;">
+    <div style="max-width:1200px; margin:0 auto; padding:92px 32px;">
+      <div data-reveal style="text-align:center; max-width:720px; margin:0 auto;">
+        <div style="font-size:12.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Cơ chế vận hành</div>
+        <h2 style="font-family:var(--font-serif); font-size:36px; color:var(--tid-navy); font-weight:700; margin:12px 0 0; line-height:1.2;">Đăng ký → Uỷ quyền → Cấp phép &amp; Thu hộ → Phân phối</h2>
+        <p style="color:var(--tid-mute); font-size:16.5px; line-height:1.7; margin:14px 0 0;">Bốn bước rõ ràng. Phần thu hộ và phân phối tiền được vẽ tường minh: tiền đi vào đâu, ai giữ, khi nào trả.</p>
+      </div>
+
+      <div data-reveal data-4col style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:44px;">
+        <div style="background:#fff; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); padding:24px 22px; position:relative;">
+          <div style="display:flex; align-items:center; justify-content:space-between;"><span style="width:44px; height:44px; border-radius:12px; background:rgba(12,140,233,.1); display:inline-flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="fingerprint-1" size="24" color="#0c8ce9" secondary-color="#bcdffb" hint-size="24px,24px"></x-import></span><span style="font-family:var(--font-serif); font-size:15px; font-weight:700; color:#c7ceda;">01</span></div>
+          <h3 style="font-family:var(--font-serif); font-size:18px; color:var(--tid-navy); font-weight:700; margin:16px 0 6px;">Đăng ký &amp; xác thực</h3>
+          <p style="color:var(--tid-mute); font-size:14px; line-height:1.6; margin:0;">Chủ thể đăng ký, được hiệp hội xác thực tư cách; nhân dạng được ghi nhận bảo hộ.</p>
+        </div>
+        <div style="background:#fff; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); padding:24px 22px;">
+          <div style="display:flex; align-items:center; justify-content:space-between;"><span style="width:44px; height:44px; border-radius:12px; background:rgba(12,140,233,.1); display:inline-flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="check-square" size="24" color="#0c8ce9" secondary-color="#bcdffb" hint-size="24px,24px"></x-import></span><span style="font-family:var(--font-serif); font-size:15px; font-weight:700; color:#c7ceda;">02</span></div>
+          <h3 style="font-family:var(--font-serif); font-size:18px; color:var(--tid-navy); font-weight:700; margin:16px 0 6px;">Uỷ quyền minh thị</h3>
+          <p style="color:var(--tid-mute); font-size:14px; line-height:1.6; margin:0;">Chủ thể ký uỷ quyền theo phạm vi &amp; thời hạn rõ ràng — và có quyền rút lại bất cứ lúc nào.</p>
+        </div>
+        <div style="background:linear-gradient(180deg,var(--tid-navy),var(--tid-navy-2)); border:1px solid var(--tid-navy); border-radius:12px; padding:24px 22px; box-shadow:0 18px 40px rgba(15,23,43,.28); position:relative;">
+          <span style="position:absolute; top:-11px; left:22px; background:var(--tid-gold); color:#241c05; font-size:10.5px; font-weight:700; letter-spacing:.08em; padding:4px 10px; border-radius:999px; text-transform:uppercase;">Trọng tâm thu hộ</span>
+          <div style="display:flex; align-items:center; justify-content:space-between;"><span style="width:44px; height:44px; border-radius:12px; background:rgba(224,182,74,.2); display:inline-flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="coin-share" size="24" color="#c79a2b" secondary-color="#ecd9a3" hint-size="24px,24px"></x-import></span><span style="font-family:var(--font-serif); font-size:15px; font-weight:700; color:rgba(255,255,255,.35);">03</span></div>
+          <h3 style="font-family:var(--font-serif); font-size:18px; color:#fff; font-weight:700; margin:16px 0 6px;">Cấp phép &amp; Thu hộ</h3>
+          <p style="color:#bcc9dc; font-size:14px; line-height:1.6; margin:0 0 12px;">Bên khai thác xin cấp phép; phí chảy thẳng vào tài khoản thu hộ tách bạch.</p>
+          <div style="display:flex; align-items:center; gap:7px; font-size:11.5px; color:#eaf0f8; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); border-radius:12px; padding:9px 11px;">
+            <span style="color:#9fb0c8;">Khai thác</span>
+            <svg width="14" height="10" viewBox="0 0 16 12" fill="none" stroke="var(--tid-gold-2)" stroke-width="1.4"><path d="M1 6h13M10 2l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="color:var(--tid-gold-2); font-weight:600;">Tài khoản tách bạch</span>
+          </div>
+        </div>
+        <div style="background:#fff; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); padding:24px 22px;">
+          <div style="display:flex; align-items:center; justify-content:space-between;"><span style="width:44px; height:44px; border-radius:12px; background:rgba(0,153,102,.12); display:inline-flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="subscription-cashflow" size="24" color="#009966" secondary-color="#a7e8cf" hint-size="24px,24px"></x-import></span><span style="font-family:var(--font-serif); font-size:15px; font-weight:700; color:#c7ceda;">04</span></div>
+          <h3 style="font-family:var(--font-serif); font-size:18px; color:var(--tid-navy); font-weight:700; margin:16px 0 6px;">Đối soát &amp; Phân phối</h3>
+          <p style="color:var(--tid-mute); font-size:14px; line-height:1.6; margin:0;">Đối soát định kỳ, phân phối tiền về chủ thể kèm báo cáo dòng tiền chi tiết.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. INSTITUTIONAL ROLES ============ -->
+  <section id="vaitro" data-screen-label="Vai trò thể chế" style="background:linear-gradient(180deg,var(--tid-navy),var(--tid-navy-2)); color:#eaf0f8; scroll-margin-top:96px;">
+    <div style="max-width:1200px; margin:0 auto; padding:92px 32px;">
+      <div data-reveal data-2col style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:end; margin-bottom:44px;">
+        <div>
+          <div style="font-size:12.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--tid-gold-2); font-weight:700;">Vai trò &amp; quan hệ thể chế</div>
+          <h2 style="font-family:var(--font-serif); font-size:36px; color:#fff; font-weight:700; margin:12px 0 0; line-height:1.2;">Ba lớp, tách bạch quyền lực</h2>
+        </div>
+        <p style="color:#bcc9dc; font-size:16px; line-height:1.7; margin:0;">Đơn vị thu tiền <b style="color:#fff; font-weight:600;">không phải</b> là đơn vị tự cấp phép cho chính mình. Việc tách bạch này là điều kiện để người uỷ thác yên tâm.</p>
+      </div>
+
+      <div data-reveal style="display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:center; gap:22px; background:rgba(224,182,74,.1); border:1px solid rgba(224,182,74,.3); border-radius:12px; padding:22px 26px;">
+          <dc-import name="Seal" size="58" hint-size="58px,58px"></dc-import>
+          <div style="flex:1;"><div style="display:flex; align-items:center; gap:12px;"><span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:#fff;">Hiệp hội bảo chứng</span><span style="font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--tid-gold-2); font-weight:700; border:1px solid rgba(224,182,74,.4); padding:3px 9px; border-radius:999px;">Cơ quan bảo chứng</span></div><div style="color:#c3cede; font-size:14.5px; margin-top:5px; line-height:1.55;">Xác thực tư cách chủ thể · Cấp phép · Giám sát hoạt động</div></div>
+        </div>
+        <div style="display:flex; justify-content:center; color:rgba(255,255,255,.28);"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M5 12l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+        <div style="display:flex; align-items:center; gap:22px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.14); border-radius:12px; padding:22px 26px;">
+          <span style="flex-shrink:0; width:58px; height:58px; border-radius:12px; background:rgba(12,140,233,.16); display:inline-flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="padlock-square-1" size="28" color="#0c8ce9" secondary-color="#9cc9f5" hint-size="28px,28px"></x-import></span>
+          <div style="flex:1;"><div style="display:flex; align-items:center; gap:12px;"><span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:#fff;">Nền tảng vận hành Trust ID</span><span style="font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#7fc0f5; font-weight:700; border:1px solid rgba(12,140,233,.4); padding:3px 9px; border-radius:999px;">Đơn vị vận hành</span></div><div style="color:#c3cede; font-size:14.5px; margin-top:5px; line-height:1.55;">Đăng ký · Thu hộ · Đối soát · Phân phối — chịu giám sát của hiệp hội</div></div>
+        </div>
+        <div style="display:flex; justify-content:center; color:rgba(255,255,255,.28);"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3v14M5 12l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+        <div data-2col style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div style="display:flex; align-items:center; gap:18px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.14); border-radius:12px; padding:20px 22px;">
+            <span style="flex-shrink:0; width:50px; height:50px; border-radius:12px; background:rgba(255,255,255,.08); display:inline-flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="user-circle-single" size="26" color="#cdd8e8" secondary-color="#8ea0ba" hint-size="26px,26px"></x-import></span>
+            <div><div style="font-family:var(--font-serif); font-size:17px; font-weight:700; color:#fff;">Chủ thể</div><div style="color:#c3cede; font-size:13.5px; margin-top:3px; line-height:1.5;">Uỷ thác nhân dạng &amp; quyền thu hộ</div></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:18px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.14); border-radius:12px; padding:20px 22px;">
+            <span style="flex-shrink:0; width:50px; height:50px; border-radius:12px; background:rgba(255,255,255,.08); display:inline-flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="office-building-1" size="26" color="#cdd8e8" secondary-color="#8ea0ba" hint-size="26px,26px"></x-import></span>
+            <div><div style="font-family:var(--font-serif); font-size:17px; font-weight:700; color:#fff;">Bên khai thác</div><div style="color:#c3cede; font-size:13.5px; margin-top:3px; line-height:1.5;">Khai thác hợp pháp dưới giấy phép</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. LEGAL & COMPLIANCE ============ -->
+  <section id="phaply" data-screen-label="Pháp lý" style="background:#fff; scroll-margin-top:96px;">
+    <div style="max-width:1200px; margin:0 auto; padding:92px 32px;">
+      <div data-reveal style="max-width:720px;">
+        <div style="font-size:12.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Bảo chứng pháp lý &amp; tuân thủ</div>
+        <h2 style="font-family:var(--font-serif); font-size:36px; color:var(--tid-navy); font-weight:700; margin:12px 0 0; line-height:1.2;">Cam kết được diễn đạt như nghĩa vụ, không phải lời hứa</h2>
+      </div>
+      <div data-reveal data-3col style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:40px;">
+        <div style="border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); padding:24px; background:var(--tid-ivory);">
+          <span style="width:42px; height:42px; border-radius:12px; background:rgba(12,140,233,.1); display:inline-flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="voice-activation-check-validate" size="22" color="#0c8ce9" secondary-color="#bcdffb" hint-size="22px,22px"></x-import></span>
+          <h3 style="font-size:16px; font-weight:600; color:var(--tid-navy); margin:14px 0 6px;">Đồng ý minh thị — rút lại bất cứ lúc nào</h3>
+          <p style="color:var(--tid-mute); font-size:14px; line-height:1.6; margin:0;">Chủ thể chủ động đồng ý và có quyền rút uỷ quyền tức thời; quyền này là nghĩa vụ ràng buộc của nền tảng.</p>
+        </div>
+        <div style="border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); padding:24px; background:var(--tid-ivory);">
+          <span style="width:42px; height:42px; border-radius:12px; background:rgba(12,140,233,.1); display:inline-flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="padlock-square-1" size="22" color="#0c8ce9" secondary-color="#bcdffb" hint-size="22px,22px"></x-import></span>
+          <h3 style="font-size:16px; font-weight:600; color:var(--tid-navy); margin:14px 0 6px;">Tài khoản thu hộ tách bạch</h3>
+          <p style="color:var(--tid-mute); font-size:14px; line-height:1.6; margin:0;">Tiền của chủ thể được giữ tách khỏi tài khoản vận hành của doanh nghiệp, không dùng cho mục đích khác.</p>
+        </div>
+        <div style="border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); padding:24px; background:var(--tid-ivory);">
+          <span style="width:42px; height:42px; border-radius:12px; background:rgba(12,140,233,.1); display:inline-flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="security-umbrella" size="22" color="#0c8ce9" secondary-color="#bcdffb" hint-size="22px,22px"></x-import></span>
+          <h3 style="font-size:16px; font-weight:600; color:var(--tid-navy); margin:14px 0 6px;">Dữ liệu lưu trú tại Việt Nam</h3>
+          <p style="color:var(--tid-mute); font-size:14px; line-height:1.6; margin:0;">Thu thập tối thiểu, lưu trú trong nước theo quy định, chịu kiểm toán độc lập định kỳ về bảo mật.</p>
+        </div>
+        <div style="grid-column:1 / -1; display:flex; gap:16px; align-items:flex-start; border:1px solid #ffd9da; border-radius:12px; padding:22px 26px; background:#fff5f5;">
+          <x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="block-2" size="26" color="#e7000b" secondary-color="#ffc9cb" hint-size="26px,26px"></x-import>
+          <div>
+            <h3 style="font-size:16px; font-weight:600; color:#9f0712; margin:0 0 5px;">Ranh giới đạo đức bắt buộc</h3>
+            <p style="color:#7a2226; font-size:14.5px; line-height:1.6; margin:0;">Không tiếp nhận chủ thể dưới 18 tuổi. Không cấp phép cho mục đích khiêu dâm hoá hoặc bôi nhọ nhân dạng. Đây là điều kiện tiên quyết, không thể thương lượng.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. SOLUTIONS BY AUDIENCE ============ -->
+  <section id="giaiphap" data-screen-label="Giải pháp" style="background:var(--tid-ivory); scroll-margin-top:96px;">
+    <div style="max-width:1200px; margin:0 auto; padding:92px 32px;">
+      <div data-reveal style="text-align:center; max-width:680px; margin:0 auto 8px;">
+        <div style="font-size:12.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Giải pháp theo từng đối tượng</div>
+        <h2 style="font-family:var(--font-serif); font-size:36px; color:var(--tid-navy); font-weight:700; margin:12px 0 34px; line-height:1.2;">Mỗi nhóm có một nỗi lo — chúng tôi trả lời đúng nỗi lo đó</h2>
+      </div>
+      <div data-reveal>
+        <dc-import name="Solutions" hint-size="100%,480px"></dc-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 9. FINANCIAL TRANSPARENCY ============ -->
+  <section id="minhbach" data-screen-label="Minh bạch tài chính" style="background:#fff; scroll-margin-top:96px;">
+    <div style="max-width:1200px; margin:0 auto; padding:92px 32px;">
+      <div data-reveal style="max-width:720px;">
+        <div style="font-size:12.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Minh bạch tài chính thu hộ</div>
+        <h2 style="font-family:var(--font-serif); font-size:36px; color:var(--tid-navy); font-weight:700; margin:12px 0 0; line-height:1.2;">Dòng tiền đi đâu, ai giữ, khi nào trả</h2>
+        <p style="color:var(--tid-mute); font-size:16.5px; line-height:1.7; margin:16px 0 0;">Im lặng về dòng tiền bị đọc thành rủi ro chiếm dụng. Vì vậy chúng tôi công khai toàn bộ.</p>
+      </div>
+
+      <div data-reveal style="margin-top:40px; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); overflow:hidden;">
+        <div data-flow style="display:grid; grid-template-columns:1fr auto 1fr auto 1fr; align-items:center; gap:0; padding:32px 26px; background:var(--tid-ivory);">
+          <div style="text-align:center;">
+            <span style="display:inline-flex; width:54px; height:54px; border-radius:12px; background:#fff; border:1.5px solid #dfe4ec; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); align-items:center; justify-content:center; margin-bottom:12px;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="office-building-1" size="26" color="#19283d" secondary-color="#aab6c7" hint-size="26px,26px"></x-import></span>
+            <div style="font-weight:600; color:var(--tid-navy); font-size:15px;">Bên khai thác trả phí</div>
+            <div style="color:var(--tid-mute); font-size:12.5px; margin-top:3px;">Theo giấy phép đã cấp</div>
+          </div>
+          <svg width="34" height="16" viewBox="0 0 34 16" fill="none" stroke="var(--tid-blue)" stroke-width="1.6"><path d="M2 8h28M25 3l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <div style="text-align:center;">
+            <span style="display:inline-flex; width:54px; height:54px; border-radius:12px; background:var(--tid-navy); align-items:center; justify-content:center; margin-bottom:12px;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="safe-vault" size="26" color="#c79a2b" secondary-color="#ecd9a3" hint-size="26px,26px"></x-import></span>
+            <div style="font-weight:600; color:var(--tid-navy); font-size:15px;">Tài khoản thu hộ tách bạch</div>
+            <div style="color:var(--tid-mute); font-size:12.5px; margin-top:3px;">Độc lập với tài khoản vận hành</div>
+          </div>
+          <svg width="34" height="16" viewBox="0 0 34 16" fill="none" stroke="var(--tid-blue)" stroke-width="1.6"><path d="M2 8h28M25 3l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <div style="text-align:center;">
+            <span style="display:inline-flex; width:54px; height:54px; border-radius:12px; background:rgba(0,153,102,.12); align-items:center; justify-content:center; margin-bottom:12px;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="user-feedback-heart" size="26" color="#009966" secondary-color="#a7e8cf" hint-size="26px,26px"></x-import></span>
+            <div style="font-weight:600; color:var(--tid-navy); font-size:15px;">Phân phối cho chủ thể</div>
+            <div style="color:var(--tid-mute); font-size:12.5px; margin-top:3px;">Kèm báo cáo dòng tiền</div>
+          </div>
+        </div>
+        <div data-4col style="display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--tid-line);">
+          <div style="padding:22px 24px; border-right:1px solid var(--tid-line);"><div style="font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:#8a93a3; font-weight:600;">Phí dịch vụ</div><div style="font-family:var(--font-serif); font-size:26px; font-weight:700; color:var(--tid-navy); margin-top:4px;">12%<span style="font-size:13px; font-weight:500; color:var(--tid-mute);"> / giao dịch</span></div></div>
+          <div style="padding:22px 24px; border-right:1px solid var(--tid-line);"><div style="font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:#8a93a3; font-weight:600;">Kỳ đối soát</div><div style="font-family:var(--font-serif); font-size:26px; font-weight:700; color:var(--tid-navy); margin-top:4px;">Hàng tháng</div></div>
+          <div style="padding:22px 24px; border-right:1px solid var(--tid-line);"><div style="font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:#8a93a3; font-weight:600;">Kỳ thanh toán</div><div style="font-family:var(--font-serif); font-size:26px; font-weight:700; color:var(--tid-navy); margin-top:4px;">≤ 15 ngày</div></div>
+          <div style="padding:22px 24px;"><div style="font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:#8a93a3; font-weight:600;">Báo cáo chủ thể</div><div style="font-family:var(--font-serif); font-size:26px; font-weight:700; color:var(--tid-navy); margin-top:4px;">Bảng kê</div></div>
+        </div>
+      </div>
+      <p style="color:#8a93a3; font-size:12.5px; margin:14px 0 0;">* Mức phí và kỳ hạn trên là số liệu minh hoạ cho mục đích trình bày, không phải biểu phí chính thức.</p>
+    </div>
+  </section>
+
+  <!-- ============ 10. PROOF & CREDIBILITY ============ -->
+  <section id="uytin" data-screen-label="Uy tín" style="background:var(--tid-ivory); scroll-margin-top:96px;">
+    <div style="max-width:1200px; margin:0 auto; padding:92px 32px;">
+      <div data-reveal data-3col style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
+        <div style="background:#fff; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); padding:26px 24px;">
+          <div style="font-family:var(--font-serif); font-size:40px; font-weight:700; color:var(--tid-navy);">1.240</div>
+          <div style="color:var(--tid-mute); font-size:14.5px; margin-top:4px;">Chủ thể đang được bảo hộ</div>
+        </div>
+        <div style="background:linear-gradient(180deg,var(--tid-navy),var(--tid-navy-2)); border-radius:12px; padding:26px 24px; box-shadow:0 16px 38px rgba(15,23,43,.24);">
+          <div style="display:inline-flex; align-items:center; gap:7px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--tid-gold-2); font-weight:700; margin-bottom:8px;"><span style="width:6px; height:6px; border-radius:999px; background:var(--tid-gold-2);"></span>Con số quan trọng nhất</div>
+          <div style="font-family:var(--font-serif); font-size:40px; font-weight:700; color:#fff;">38,6 tỷ ₫</div>
+          <div style="color:#bcc9dc; font-size:14.5px; margin-top:4px;">Đã phân phối về cho chủ thể</div>
+        </div>
+        <div style="background:#fff; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); padding:26px 24px;">
+          <div style="font-family:var(--font-serif); font-size:40px; font-weight:700; color:var(--tid-navy);">100%</div>
+          <div style="color:var(--tid-mute); font-size:14.5px; margin-top:4px;">Giao dịch qua tài khoản tách bạch</div>
+        </div>
+      </div>
+      <p style="color:#8a93a3; font-size:12.5px; margin:12px 0 0;">* Số liệu minh hoạ cho mục đích trình bày. Chúng tôi ưu tiên công bố con số <b>đã phân phối</b> hơn con số đã thu.</p>
+
+      <div data-reveal style="margin-top:48px;">
+        <h3 style="font-family:var(--font-serif); font-size:24px; color:var(--tid-navy); font-weight:700; margin:0 0 6px;">Ban lãnh đạo &amp; hội đồng bảo chứng</h3>
+        <p style="color:var(--tid-mute); font-size:15px; margin:0 0 24px;">Con người thật, chức danh thật đứng sau mỗi cam kết.</p>
+        <div data-4col style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px;">
+          <div style="background:#fff; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); overflow:hidden;">
+            <div style="aspect-ratio:1/1; background:#eef2f7;"><image-slot id="tid-leader-1" shape="rect" fit="cover" placeholder="Ảnh chân dung"></image-slot></div>
+            <div style="padding:16px 18px;"><div style="font-weight:600; color:var(--tid-navy); font-size:15px;">[Họ và tên]</div><div style="color:var(--tid-blue-2); font-size:13px; margin-top:2px;">Chủ tịch Hội đồng bảo chứng</div></div>
+          </div>
+          <div style="background:#fff; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); overflow:hidden;">
+            <div style="aspect-ratio:1/1; background:#eef2f7;"><image-slot id="tid-leader-2" shape="rect" fit="cover" placeholder="Ảnh chân dung"></image-slot></div>
+            <div style="padding:16px 18px;"><div style="font-weight:600; color:var(--tid-navy); font-size:15px;">[Họ và tên]</div><div style="color:var(--tid-blue-2); font-size:13px; margin-top:2px;">Tổng Giám đốc vận hành</div></div>
+          </div>
+          <div style="background:#fff; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); overflow:hidden;">
+            <div style="aspect-ratio:1/1; background:#eef2f7;"><image-slot id="tid-leader-3" shape="rect" fit="cover" placeholder="Ảnh chân dung"></image-slot></div>
+            <div style="padding:16px 18px;"><div style="font-weight:600; color:var(--tid-navy); font-size:15px;">[Họ và tên]</div><div style="color:var(--tid-blue-2); font-size:13px; margin-top:2px;">Cố vấn trưởng pháp lý</div></div>
+          </div>
+          <div style="background:#fff; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); overflow:hidden;">
+            <div style="aspect-ratio:1/1; background:#eef2f7;"><image-slot id="tid-leader-4" shape="rect" fit="cover" placeholder="Ảnh chân dung"></image-slot></div>
+            <div style="padding:16px 18px;"><div style="font-weight:600; color:var(--tid-navy); font-size:15px;">[Họ và tên]</div><div style="color:var(--tid-blue-2); font-size:13px; margin-top:2px;">Trưởng ban đối soát &amp; minh bạch</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal style="margin-top:40px; padding-top:30px; border-top:1px solid var(--tid-line);">
+        <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--tid-mute); font-weight:600; margin-bottom:16px;">Đối tác &amp; cố vấn</div>
+        <div data-4col style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
+          <div style="height:64px; border:1px dashed #cfd6e0; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#a2adbd; font-size:13px;">Logo đối tác</div>
+          <div style="height:64px; border:1px dashed #cfd6e0; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#a2adbd; font-size:13px;">Logo đối tác</div>
+          <div style="height:64px; border:1px dashed #cfd6e0; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#a2adbd; font-size:13px;">Logo đối tác</div>
+          <div style="height:64px; border:1px dashed #cfd6e0; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#a2adbd; font-size:13px;">Logo đối tác</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11. FAQ ============ -->
+  <section id="faq" data-screen-label="FAQ" style="background:#fff; scroll-margin-top:96px;">
+    <div style="max-width:920px; margin:0 auto; padding:92px 32px;">
+      <div data-reveal style="text-align:center; margin-bottom:40px;">
+        <div style="font-size:12.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Câu hỏi thường gặp</div>
+        <h2 style="font-family:var(--font-serif); font-size:36px; color:var(--tid-navy); font-weight:700; margin:12px 0 0; line-height:1.2;">Trả lời thẳng những câu hỏi pháp lý</h2>
+      </div>
+      <div data-reveal>
+        <dc-import name="Faq" hint-size="100%,540px"></dc-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 12. TRANSPARENCY & ACCOUNTABILITY ============ -->
+  <section data-screen-label="Trách nhiệm giải trình" style="background:var(--tid-ivory); scroll-margin-top:96px;">
+    <div style="max-width:1200px; margin:0 auto; padding:80px 32px;">
+      <div data-reveal data-2col style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; margin-bottom:36px;">
+        <div>
+          <div style="font-size:12.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Minh bạch &amp; trách nhiệm giải trình</div>
+          <h2 style="font-family:var(--font-serif); font-size:32px; color:var(--tid-navy); font-weight:700; margin:12px 0 0; line-height:1.22;">Một định chế dám công bố cách khiếu nại mình</h2>
+        </div>
+        <p style="color:var(--tid-mute); font-size:16px; line-height:1.7; margin:0;">Điều lệ, biểu phí, báo cáo thường niên và kênh giải quyết tranh chấp đều công khai — để trách nhiệm giải trình không dừng ở lời nói.</p>
+      </div>
+      <div data-reveal data-4col style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
+        <a href="#" style="display:flex; flex-direction:column; gap:12px; background:#fff; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); padding:22px; transition:box-shadow .16s, transform .16s;" style-hover="box-shadow:0 12px 30px rgba(15,23,43,.1); transform:translateY(-2px);">
+          <x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="text-file" size="24" color="#0c8ce9" secondary-color="#bcdffb" hint-size="24px,24px"></x-import>
+          <div style="font-weight:600; color:var(--tid-navy); font-size:15px;">Điều lệ hoạt động</div>
+          <span style="color:var(--tid-blue-2); font-size:13px; display:inline-flex; align-items:center; gap:5px;">Xem tài liệu <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12L12 4M6 4h6v6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        </a>
+        <a href="#" style="display:flex; flex-direction:column; gap:12px; background:#fff; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); padding:22px; transition:box-shadow .16s, transform .16s;" style-hover="box-shadow:0 12px 30px rgba(15,23,43,.1); transform:translateY(-2px);">
+          <x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="coin-share" size="24" color="#0c8ce9" secondary-color="#bcdffb" hint-size="24px,24px"></x-import>
+          <div style="font-weight:600; color:var(--tid-navy); font-size:15px;">Biểu phí công khai</div>
+          <span style="color:var(--tid-blue-2); font-size:13px; display:inline-flex; align-items:center; gap:5px;">Xem biểu phí <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12L12 4M6 4h6v6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        </a>
+        <a href="#" style="display:flex; flex-direction:column; gap:12px; background:#fff; border:1.5px solid #dfe4ec; border-radius:12px; box-shadow:0 8px 24px rgba(15,23,43,.07), 0 2px 6px rgba(15,23,43,.05); padding:22px; transition:box-shadow .16s, transform .16s;" style-hover="box-shadow:0 12px 30px rgba(15,23,43,.1); transform:translateY(-2px);">
+          <x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="graph-bar-increase-square" size="24" color="#0c8ce9" secondary-color="#bcdffb" hint-size="24px,24px"></x-import>
+          <div style="font-weight:600; color:var(--tid-navy); font-size:15px;">Báo cáo thường niên</div>
+          <span style="color:var(--tid-blue-2); font-size:13px; display:inline-flex; align-items:center; gap:5px;">Tải báo cáo <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12L12 4M6 4h6v6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        </a>
+        <a href="#" style="display:flex; flex-direction:column; gap:12px; background:var(--tid-navy); border:1px solid var(--tid-navy); border-radius:12px; padding:22px; transition:box-shadow .16s, transform .16s;" style-hover="box-shadow:0 12px 30px rgba(15,23,43,.24); transform:translateY(-2px);">
+          <x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="chat-bubble-text-square" size="24" color="#c79a2b" secondary-color="#ecd9a3" hint-size="24px,24px"></x-import>
+          <div style="font-weight:600; color:#fff; font-size:15px;">Kênh khiếu nại &amp; tranh chấp</div>
+          <span style="color:var(--tid-gold-2); font-size:13px; display:inline-flex; align-items:center; gap:5px;">Gửi khiếu nại <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12L12 4M6 4h6v6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 13. FINAL CTA + CONTACT ============ -->
+  <section id="lienhe" data-screen-label="Liên hệ" style="background:linear-gradient(180deg,var(--tid-navy),var(--tid-navy-2)); color:#eaf0f8; scroll-margin-top:96px;">
+    <div style="max-width:1200px; margin:0 auto; padding:82px 32px;">
+      <div data-reveal data-2col style="display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center;">
+        <div>
+          <h2 style="font-family:var(--font-serif); font-size:38px; color:#fff; font-weight:700; margin:0; line-height:1.18; text-wrap:balance;">Bắt đầu bằng đúng lối vào dành cho bạn</h2>
+          <p style="color:#bcc9dc; font-size:16.5px; line-height:1.7; margin:18px 0 0; max-width:500px;">Dù bạn là chủ thể muốn được bảo hộ hay doanh nghiệp cần cấp phép hợp pháp — mọi con đường đều đi qua một định chế được bảo chứng.</p>
+          <div style="display:flex; gap:13px; flex-wrap:wrap; margin-top:30px;">
+            <span id="dangky" style="scroll-margin-top:96px;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.Button" as="a" href="#dangky" variant="primary" size="lg" hint-size="auto,48px">Đăng ký bảo hộ nhân dạng</x-import></span>
+            <span id="capphep" style="scroll-margin-top:96px;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.Button" as="a" href="#capphep" variant="secondary" size="lg" hint-size="auto,48px">Xin cấp phép sử dụng</x-import></span>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.14); border-radius:12px; padding:28px 30px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+            <dc-import name="Seal" size="48" hint-size="48px,48px"></dc-import>
+            <div style="font-weight:600; color:#fff; font-size:15px;">Định danh pháp nhân</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:15px;">
+            <div style="display:flex; gap:12px; align-items:flex-start;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="var(--tid-gold-2)" stroke-width="1.5" style="flex-shrink:0; margin-top:1px;"><path d="M10 2C6.7 2 4 4.7 4 8c0 4 6 10 6 10s6-6 6-10c0-3.3-2.7-6-6-6z"></path><circle cx="10" cy="8" r="2"></circle></svg><div><div style="font-size:12px; color:#8ea0ba;">Trụ sở</div><div style="color:#eaf0f8; font-size:14.5px; margin-top:1px;">Tầng __, Toà nhà __, Quận __, TP. Hà Nội</div></div></div>
+            <div style="display:flex; gap:12px; align-items:flex-start;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="var(--tid-gold-2)" stroke-width="1.5" style="flex-shrink:0; margin-top:1px;"><rect x="3" y="4" width="14" height="12" rx="1.5"></rect><path d="M3 8h14" stroke-linecap="round"></path></svg><div><div style="font-size:12px; color:#8ea0ba;">Mã số doanh nghiệp / Giấy phép</div><div style="color:#eaf0f8; font-size:14.5px; margin-top:1px; font-family:monospace;">0123456789 · 0123/GP-HHBCND</div></div></div>
+            <div style="display:flex; gap:12px; align-items:flex-start;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="var(--tid-gold-2)" stroke-width="1.5" style="flex-shrink:0; margin-top:1px;"><circle cx="10" cy="7" r="3"></circle><path d="M4 17c0-3 2.7-5 6-5s6 2 6 5" stroke-linecap="round"></path></svg><div><div style="font-size:12px; color:#8ea0ba;">Đại diện pháp lý</div><div style="color:#eaf0f8; font-size:14.5px; margin-top:1px;">[Họ và tên] — Người đại diện theo pháp luật</div></div></div>
+            <div style="display:flex; gap:12px; align-items:flex-start;"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="var(--tid-gold-2)" stroke-width="1.5" style="flex-shrink:0; margin-top:1px;"><path d="M4 4h4l1.5 4-2 1.5a11 11 0 005 5l1.5-2 4 1.5v4c0 .6-.5 1-1 1C8.5 24 -4 11.5 3 4c0-.5.4-1 1-1z" transform="scale(.8) translate(2 1)"></path></svg><div><div style="font-size:12px; color:#8ea0ba;">Đường dây chính thức</div><div style="color:#eaf0f8; font-size:14.5px; margin-top:1px;">1900 0000 · lienhe@trustid.vn</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 14. FOOTER ============ -->
+  <footer style="background:var(--tid-navy-3); color:#9fb0c8; font-size:14px;">
+    <div style="max-width:1200px; margin:0 auto; padding:56px 32px 24px;">
+      <div data-4col style="display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:36px;">
+        <div>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <dc-import name="Seal" size="52" hint-size="52px,52px"></dc-import>
+            <div><div style="font-family:var(--font-serif); font-size:19px; font-weight:700; color:#fff;">TrustID</div><div style="font-size:11.5px; color:#7d8ea8;">VietID Trust</div></div>
+          </div>
+          <p style="line-height:1.65; margin:18px 0 0; max-width:280px; color:#8ea0ba; font-size:13.5px;">Định chế đăng ký bảo hộ, cấp phép và thu hộ nhân dạng số, dưới sự bảo chứng của Hiệp hội bảo chứng nhân dạng số.</p>
+          <div style="display:flex; gap:10px; margin-top:18px; flex-wrap:wrap;">
+            <span style="display:inline-flex; align-items:center; gap:6px; font-size:11.5px; color:#c3cede; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); padding:5px 10px; border-radius:999px;"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="var(--tid-gold-2)" stroke-width="1.5"><rect x="2.5" y="6" width="11" height="7.5" rx="1.4"></rect><path d="M5 6V4.2A3 3 0 0111 4.2V6"></path></svg>Dữ liệu lưu trú tại VN</span>
+            <span style="display:inline-flex; align-items:center; gap:6px; font-size:11.5px; color:#c3cede; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); padding:5px 10px; border-radius:999px;"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="var(--tid-gold-2)" stroke-width="1.5"><path d="M8 1.5l5 2v3.5c0 3-2 5.2-5 6.5-3-1.3-5-3.5-5-6.5V3.5z"></path></svg>Kiểm toán độc lập</span>
+          </div>
+        </div>
+        <div>
+          <div style="color:#fff; font-weight:600; font-size:13px; letter-spacing:.04em; margin-bottom:14px;">Về Trust ID</div>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <a href="#cochevanhanh" style="color:#9fb0c8;" style-hover="color:#fff;">Cơ chế vận hành</a>
+            <a href="#vaitro" style="color:#9fb0c8;" style-hover="color:#fff;">Vai trò thể chế</a>
+            <a href="#phaply" style="color:#9fb0c8;" style-hover="color:#fff;">Bảo chứng pháp lý</a>
+            <a href="#uytin" style="color:#9fb0c8;" style-hover="color:#fff;">Ban lãnh đạo</a>
+          </div>
+        </div>
+        <div>
+          <div style="color:#fff; font-weight:600; font-size:13px; letter-spacing:.04em; margin-bottom:14px;">Dành cho bạn</div>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <a href="#dangky" style="color:#9fb0c8;" style-hover="color:#fff;">Đăng ký bảo hộ</a>
+            <a href="#capphep" style="color:#9fb0c8;" style-hover="color:#fff;">Xin cấp phép</a>
+            <a href="#tracuu" style="color:#9fb0c8;" style-hover="color:#fff;">Tra cứu mã uỷ quyền</a>
+            <a href="#faq" style="color:#9fb0c8;" style-hover="color:#fff;">Câu hỏi thường gặp</a>
+          </div>
+        </div>
+        <div>
+          <div style="color:#fff; font-weight:600; font-size:13px; letter-spacing:.04em; margin-bottom:14px;">Minh bạch &amp; pháp lý</div>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <a href="#" style="color:#9fb0c8;" style-hover="color:#fff;">Chính sách dữ liệu cá nhân</a>
+            <a href="#" style="color:#9fb0c8;" style-hover="color:#fff;">Điều khoản sử dụng</a>
+            <a href="#" style="color:#9fb0c8;" style-hover="color:#fff;">Biểu phí công khai</a>
+            <a href="#" style="color:#9fb0c8;" style-hover="color:#fff;">Kênh khiếu nại</a>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,.1); margin-top:40px; padding-top:22px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; font-size:12.5px; color:#7d8ea8;">
+        <span>© 2026 Trust ID · Giấy phép hoạt động số 0123/GP-HHBCND · MSDN 0123456789</span>
+        <span style="display:inline-flex; align-items:center; gap:14px; flex-wrap:wrap;">
+          <span>Căn cứ: Luật 91/2025/QH15 · NĐ 356/2025/NĐ-CP · NĐ 69/2024/NĐ-CP</span>
+          <span style="color:#5f7089;">Cập nhật: 07/2026</span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

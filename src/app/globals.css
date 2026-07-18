@@ -1,0 +1,88 @@
+@import "@heroui/styles";
+
+/* Quét class trong toàn bộ mã nguồn ứng dụng */
+@source "../";
+
+@theme {
+  /* Bảng màu thương hiệu — sinh từ #0c8ce9 (colors.ts) */
+  --color-primary-50: #f7f9fe;
+  --color-primary-100: #eef3fd;
+  --color-primary-200: #d4e1fa;
+  --color-primary-300: #b9cff7;
+  --color-primary-400: #7dadf0;
+  --color-primary-500: #0c8ce9;
+  --color-primary-600: #1a7aca;
+  --color-primary-700: #2066a7;
+  --color-primary-800: #214f80;
+  --color-primary-900: #1e3d60;
+  --color-primary-950: #19283d;
+
+  /* Màu định chế TrustID */
+  --color-navy: #19283d;
+  --color-navy-2: #0f1a2e;
+  --color-navy-3: #0b1424;
+  --color-blue: #0c8ce9;
+  --color-blue-2: #1a7aca;
+  --color-gold: #c79a2b;
+  --color-gold-2: #e0b64a;
+  --color-ink: #142033;
+  --color-mute: #5b6b82;
+  --color-line: #e6e9ef;
+  --color-ivory: #f6f8fb;
+
+  --font-sans: var(--font-be-vietnam), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-noto-serif), Georgia, "Times New Roman", serif;
+}
+
+:root {
+  /* Biến CSS cho các nội dung dùng trực tiếp trong style nội tuyến/SVG */
+  --tid-navy: #19283d;
+  --tid-navy-2: #0f1a2e;
+  --tid-navy-3: #0b1424;
+  --tid-blue: #0c8ce9;
+  --tid-blue-2: #1a7aca;
+  --tid-gold: #c79a2b;
+  --tid-gold-2: #e0b64a;
+  --tid-ink: #142033;
+  --tid-mute: #5b6b82;
+  --tid-line: #e6e9ef;
+  --tid-ivory: #f6f8fb;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--tid-ink);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(12, 140, 233, 0.18);
+}
+
+/* Hiệu ứng xuất hiện của khối nội dung */
+@keyframes tidReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    animation: tidReveal 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+}
+
+/* Bo góc nút HeroUI theo thiết kế TrustID */
+.hui-btn {
+  border-radius: 0.75rem !important;
+}

@@ -1,0 +1,133 @@
+/* ============================================================
+   HeroUI · Semantic aliases
+   Friendly names mapped onto the Figma-derived theme variables in
+   fig-tokens.css. These resolve lazily, so they automatically pick up
+   the dark-mode values under :root[data-theme="dark"] / .dark.
+   Radii/spacing are re-published here WITH px units (the raw
+   --dimensions-* / --radius-* tokens are unitless Figma floats).
+   ============================================================ */
+:root {
+  /* ---- Surfaces & layout ---- */
+  --color-background: var(--background-background);
+  --color-background-2: var(--background-background-secondary);
+  --color-background-3: var(--background-background-tertiary);
+  --color-background-inverse: var(--background-background-inverse);
+  --color-surface: var(--surface-surface);
+  --color-surface-2: var(--surface-surface-secondary);
+  --color-surface-3: var(--surface-surface-tertiary);
+  --color-on-surface: var(--surface-on-surface);
+  --color-on-surface-hover: var(--surface-on-surface-hover);
+  --color-overlay: var(--overlay);
+  --color-backdrop: var(--backdrop);
+
+  /* ---- Text ---- */
+  --color-foreground: var(--foreground-foreground);
+  --color-foreground-inverse: var(--foreground-inverse);
+  --color-muted: var(--foreground-muted);
+  --color-muted-2: var(--foreground-foreground-quaternary);
+  --color-link: var(--foreground-link);
+
+  /* ---- Lines ---- */
+  --color-border: var(--border);
+  --color-separator: var(--separator-separator);
+  --color-separator-2: var(--separator-separator-secondary);
+
+  /* ---- Accent (brand blue) ---- */
+  --color-accent: var(--accent-accent);
+  --color-accent-fg: var(--accent-accent-foreground);
+  --color-accent-hover: var(--accent-accent-hover);
+  --color-accent-soft: var(--accent-accent-soft);
+  --color-accent-soft-fg: var(--accent-accent-soft-foreground);
+  --color-accent-soft-hover: var(--accent-accent-soft-hover);
+
+  /* ---- Default (neutral) ---- */
+  --color-default: var(--default-default);
+  --color-default-fg: var(--default-default-foreground);
+  --color-default-hover: var(--default-default-hover);
+  --color-default-soft: var(--default-default-soft);
+
+  /* ---- Danger ---- */
+  --color-danger: var(--danger-danger);
+  --color-danger-fg: var(--danger-danger-foreground);
+  --color-danger-hover: var(--danger-danger-hover);
+  --color-danger-soft: var(--danger-danger-soft);
+  --color-danger-soft-fg: var(--danger-danger-soft-foreground);
+
+  /* ---- Success ---- */
+  --color-success: var(--success-success);
+  --color-success-fg: var(--success-success-foreground);
+  --color-success-hover: var(--success-success-hover);
+  --color-success-soft: var(--success-success-soft);
+  --color-success-soft-fg: var(--success-success-soft-foreground);
+
+  /* ---- Warning ---- */
+  --color-warning: var(--warning-warning);
+  --color-warning-fg: var(--warning-warning-foreground);
+  --color-warning-hover: var(--warning-warning-hover);
+  --color-warning-soft: var(--warning-warning-soft);
+  --color-warning-soft-fg: var(--warning-warning-soft-foreground);
+
+  /* ---- Fields / inputs ---- */
+  --color-field: var(--field-background);
+  --color-field-hover: var(--field-background-hover);
+  --color-field-focus: var(--field-background-focus);
+  --color-field-border: var(--border);
+  --color-field-placeholder: var(--field-placeholder);
+  --color-focus-ring: var(--focus-ring);
+
+  /* ---- Radii (px) ---- */
+  --rad-xs: 2px;
+  --rad-sm: 6px;
+  --rad-md: 8px;
+  --rad-lg: 12px;
+  --rad-xl: 16px;
+  --rad-2xl: 20px;
+  --rad-3xl: 24px;
+  --rad-full: 9999px;
+  /* component-semantic radii */
+  --radius-control-sm: 8px;   /* sm control */
+  --radius-control: 10px;     /* md control */
+  --radius-control-lg: 12px;  /* lg control / field */
+  --radius-card: 16px;
+  --radius-panel: 24px;
+
+  /* ---- Spacing (px) ---- */
+  --space-0_5: 2px;
+  --space-1: 4px;
+  --space-1_5: 6px;
+  --space-2: 8px;
+  --space-2_5: 10px;
+  --space-3: 12px;
+  --space-3_5: 14px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ---- Focus ring metrics ---- */
+  --focus-ring-width: 4px;
+  --focus-ring-offset: 2px;
+  --disabled-opacity: 0.5; /* @kind other */
+
+  /* ---- Elevation (subtle, neutral — HeroUI keeps shadows light) ---- */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-md: 0 2px 4px rgba(0,0,0,0.04), 0 4px 10px rgba(0,0,0,0.05);
+  --shadow-lg: 0 4px 12px rgba(0,0,0,0.06), 0 10px 28px rgba(0,0,0,0.08);
+  --shadow-xl: 0 8px 24px rgba(0,0,0,0.10), 0 18px 48px rgba(0,0,0,0.12);
+  /* field treatment: faint layered drop (no hard border) — from Figma */
+  --shadow-field: 0 2px 4px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06), 0 0 1px rgba(0,0,0,0.06);
+}
+
+/* Dark mode: lift shadows to soft black, deepen field hairline */
+:root[data-theme="dark"], .dark {
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.5);
+  --shadow-lg: 0 8px 28px rgba(0,0,0,0.6);
+  --shadow-xl: 0 16px 48px rgba(0,0,0,0.7);
+  --shadow-field: 0 1px 2px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.06);
+}

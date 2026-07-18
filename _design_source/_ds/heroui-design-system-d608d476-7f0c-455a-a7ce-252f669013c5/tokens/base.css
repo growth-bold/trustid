@@ -1,0 +1,20 @@
+/* ============================================================
+   HeroUI · light base layer
+   Minimal, opt-in resets. Sets the default type + body colors so
+   specimen cards and kits render on-brand without extra wiring.
+   ============================================================ */
+.hui-root,
+body.hui {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-base);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Box sizing for anything that opts into the namespace */
+.hui-root *,
+.hui-root *::before,
+.hui-root *::after { box-sizing: border-box; }

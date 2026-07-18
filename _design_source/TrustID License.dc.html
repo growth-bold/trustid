@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/fig-tokens.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/aliases.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/base.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap">
+  <script src="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/_ds_bundle.js"></script>
+  <style>
+    :root{
+      --accent-accent:#0c8ce9; --accent-accent-hover:#1a7aca; --accent-accent-foreground:#ffffff;
+      --color-accent:#0c8ce9; --color-link:#1a7aca;
+      --tid-navy:#19283d; --tid-navy-2:#0f1a2e; --tid-navy-3:#0b1424;
+      --tid-blue:#0c8ce9; --tid-blue-2:#1a7aca; --tid-gold:#c79a2b; --tid-gold-2:#e0b64a;
+      --tid-ink:#142033; --tid-mute:#5b6b82; --tid-line:#e2e6ec; --tid-ivory:#f6f7f9;
+      --ok:#00bc7d; --warn:#fe9a00; --danger:#fb2c36;
+      --font-serif:'Noto Serif', Georgia, serif; --font-sans:'Be Vietnam Pro','Inter',sans-serif;
+    }
+    html{ scroll-behavior:smooth; }
+    body{ margin:0; font-family:var(--font-sans); color:var(--tid-ink); background:var(--tid-ivory); -webkit-font-smoothing:antialiased; }
+    a{ color:var(--tid-blue-2); text-decoration:none; }
+    a:hover{ color:var(--tid-blue); }
+    ::selection{ background:rgba(12,140,233,.18); }
+    input[type=range]{ accent-color:var(--tid-blue); }
+    input[type=checkbox]{ accent-color:var(--tid-blue); }
+    select{ font-family:var(--font-sans); }
+    @keyframes tidReveal{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:none; } }
+    @keyframes tidPulse{ 0%,100%{ opacity:.55; } 50%{ opacity:1; } }
+    @media (prefers-reduced-motion:no-preference){ [data-reveal]{ animation:tidReveal .5s cubic-bezier(.22,.61,.36,1); } [data-skel]{ animation:tidPulse 1.3s ease-in-out infinite; } }
+    @media (max-width:1080px){ [data-2col]{ grid-template-columns:1fr !important; } [data-grid3]{ grid-template-columns:repeat(2,1fr) !important; } [data-filters]{ grid-template-columns:repeat(2,1fr) !important; } [data-mininav]{ display:none !important; } }
+    @media (max-width:720px){ [data-grid3]{ grid-template-columns:1fr !important; } [data-filters]{ grid-template-columns:1fr !important; } [data-stepbar] [data-slabel]{ display:none !important; } [data-detailhead]{ grid-template-columns:1fr !important; } }
+  </style>
+</helmet>
+<div style="min-height:100vh; font-family:var(--font-sans); background:var(--tid-ivory);">
+
+  <!-- ============ HEADER ============ -->
+  <header style="position:sticky; top:0; z-index:60;">
+    <div style="background:var(--tid-navy-2); color:#c3cede; font-size:12.5px;">
+      <div style="max-width:1200px; margin:0 auto; padding:8px 32px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
+        <span style="display:inline-flex; align-items:center; gap:8px;">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="var(--tid-gold-2)" stroke-width="1.5"><path d="M8 1.5l5 2v3.5c0 3-2 5.2-5 6.5-3-1.3-5-3.5-5-6.5V3.5z"></path></svg>
+          Giấy phép hoạt động số <b style="color:#e8eef7; font-weight:600; letter-spacing:.02em;">0123/GP-HHBCND</b>
+        </span>
+        <span style="display:inline-flex; align-items:center; gap:8px;"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="var(--tid-gold-2)" stroke-width="1.5"><rect x="2.5" y="6" width="11" height="7.5" rx="1.4"></rect><path d="M5 6V4.2A3 3 0 0111 4.2V6" stroke-linecap="round"></path></svg>Mọi giấy phép có bằng chứng bất biến</span>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,.92); backdrop-filter:saturate(1.4) blur(10px); border-bottom:1px solid var(--tid-line);">
+      <div style="max-width:1200px; margin:0 auto; padding:12px 32px; display:flex; align-items:center; gap:24px;">
+        <a href="TrustID Homepage.dc.html" style="display:flex; align-items:center; gap:13px; flex-shrink:0;">
+          <dc-import name="Seal" size="46" hint-size="46px,46px"></dc-import>
+          <span style="display:flex; flex-direction:column; line-height:1.15;">
+            <span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--tid-navy); letter-spacing:.01em;">TrustID</span>
+            <span style="font-size:11px; color:var(--tid-mute); letter-spacing:.02em;">Sàn cấp phép &amp; khai thác nhân dạng</span>
+          </span>
+        </a>
+        <nav data-mininav="" style="display:flex; align-items:center; gap:10px; margin-left:auto; font-size:13px; color:var(--tid-mute);">
+          <a href="Lookup.dc.html" style="display:inline-flex; align-items:center; gap:7px; color:var(--tid-mute);"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="5"></circle><path d="M11 11l3 3" stroke-linecap="round"></path></svg>Tra cứu giấy phép công khai</a>
+        </nav>
+        <div style="display:flex; align-items:center; gap:12px; flex-shrink:0; margin-left:auto;">
+          <span style="font-size:13.5px; color:var(--tid-mute);">Bên khai thác</span>
+          <a href="TrustID Dashboard.dc.html" style="display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#fff; background:var(--tid-navy); padding:8px 16px; border-radius:10px;">Bảng điều khiển</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ VIEW: MARKETPLACE (Sections A + B) ============ -->
+  <sc-if value="{{ isMarket }}" hint-placeholder-val="{{ true }}">
+  <div data-reveal="">
+
+    <!-- ===== SECTION A — MARKETPLACE HEADER ===== -->
+    <section data-screen-label="Sàn cấp phép" style="position:relative; overflow:hidden; background:radial-gradient(1100px 560px at 82% -20%, #23385a 0%, var(--tid-navy) 50%, var(--tid-navy-2) 100%); color:#eaf0f8;">
+      <div aria-hidden="true" style="position:absolute; right:-70px; top:10px; opacity:.06; pointer-events:none;">
+        <svg width="440" height="440" viewBox="0 0 200 200"><circle cx="100" cy="100" r="95" fill="none" stroke="#fff" stroke-width="1"></circle><circle cx="100" cy="100" r="76" fill="none" stroke="#fff" stroke-width="1"></circle><circle cx="100" cy="100" r="57" fill="none" stroke="#fff" stroke-width="1"></circle></svg>
+      </div>
+      <div style="max-width:1200px; margin:0 auto; padding:46px 32px 30px; position:relative;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+          <div style="max-width:640px;">
+            <span style="display:inline-flex; align-items:center; gap:9px; padding:8px 15px; border-radius:999px; background:rgba(199,154,43,.14); border:1px solid rgba(224,182,74,.35); color:var(--tid-gold-2); font-size:13px; font-weight:600;">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1.5l5 2v3.5c0 3-2 5.2-5 6.5-3-1.3-5-3.5-5-6.5V3.5z"></path><path d="M6 8l1.4 1.4L10.4 6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              Sàn cấp phép được hiệp hội bảo chứng
+            </span>
+            <h1 style="font-family:var(--font-serif); font-size:38px; line-height:1.16; font-weight:700; color:#fff; margin:18px 0 0; text-wrap:balance;">Tìm chủ thể, cấu hình phạm vi, ký &amp; nhận giấy phép minh bạch.</h1>
+            <p style="font-size:16px; line-height:1.65; color:#c3cede; margin:14px 0 0;">Dành cho doanh nghiệp, agency và nền tảng cần khai thác hình ảnh, giọng nói hay thương hiệu cá nhân một cách hợp pháp — mọi giấy phép đều có bằng chứng bất biến.</p>
+          </div>
+          <div style="flex-shrink:0;"><dc-import name="Seal" size="88" hint-size="88px,88px"></dc-import></div>
+        </div>
+
+        <!-- Entry tabs -->
+        <div style="display:inline-flex; gap:4px; margin-top:26px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); padding:4px; border-radius:13px;">
+          <button onClick="{{ tabMarket }}" style="{{ tab.market }}"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 5.5h12l-1 8H3z"></path><path d="M5.5 5.5V4a2.5 2.5 0 015 0v1.5" stroke-linecap="round"></path></svg>Sàn cấp phép</button>
+          <button onClick="{{ tabDirect }}" style="{{ tab.direct }}"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2.5 4.5h11v7h-11z"></path><path d="M2.5 5l5.5 4 5.5-4" stroke-linecap="round"></path></svg>Yêu cầu trực tiếp</button>
+        </div>
+
+        <!-- Search bar -->
+        <sc-if value="{{ tabIsMarket }}" hint-placeholder-val="{{ true }}">
+        <div data-reveal="" style="margin-top:14px; background:#fff; border-radius:16px; box-shadow:0 24px 54px rgba(0,0,0,.32); padding:14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+          <div style="flex:1; min-width:260px; display:flex; align-items:center; gap:11px; padding:0 14px;">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="var(--tid-mute)" stroke-width="1.6" style="flex-shrink:0;"><circle cx="7" cy="7" r="5"></circle><path d="M11 11l3 3" stroke-linecap="round"></path></svg>
+            <input value="{{ q }}" onInput="{{ onSearch }}" placeholder="Tìm theo tên chủ thể, loại hình, ngành hàng…" style="flex:1; min-width:0; border:none; outline:none; font-family:var(--font-sans); font-size:15.5px; color:var(--tid-ink); background:transparent; padding:14px 0;">
+          </div>
+          <button onClick="{{ doSearch }}" style="flex-shrink:0; background:var(--tid-blue); color:#fff; border:none; border-radius:12px; padding:14px 28px; font-family:var(--font-sans); font-size:15px; font-weight:700; cursor:pointer; box-shadow:0 6px 16px rgba(12,140,233,.3);">Tìm chủ thể</button>
+        </div>
+
+        <!-- Filters -->
+        <div data-filters="" style="display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-top:12px;">
+          <label style="{{ filtWrap }}"><span style="{{ filtLbl }}">Loại chủ thể</span>
+            <select value="{{ f.subject }}" onChange="{{ setFSubject }}" style="{{ filtSel }}">
+              <option value="all">Tất cả</option><option value="kol">Nghệ sĩ · KOL</option><option value="actor">Diễn viên</option><option value="voice">Lồng tiếng</option><option value="model">Người mẫu</option><option value="athlete">VĐV thể thao</option>
+            </select>
+          </label>
+          <label style="{{ filtWrap }}"><span style="{{ filtLbl }}">Loại hình khai thác</span>
+            <select value="{{ f.usage }}" onChange="{{ setFUsage }}" style="{{ filtSel }}">
+              <option value="all">Tất cả</option><option value="ads">Quảng cáo thương mại</option><option value="ai">Nội dung AI tạo</option><option value="dub">Lồng tiếng / voice clone</option><option value="campaign">Chiến dịch dài hạn</option>
+            </select>
+          </label>
+          <label style="{{ filtWrap }}"><span style="{{ filtLbl }}">Lãnh thổ</span>
+            <select value="{{ f.territory }}" onChange="{{ setFTerritory }}" style="{{ filtSel }}">
+              <option value="all">Mọi lãnh thổ</option><option value="vn">Việt Nam</option><option value="sea">Đông Nam Á</option><option value="global">Toàn cầu</option>
+            </select>
+          </label>
+          <label style="{{ filtWrap }}"><span style="{{ filtLbl }}">Ngân sách</span>
+            <select value="{{ f.budget }}" onChange="{{ setFBudget }}" style="{{ filtSel }}">
+              <option value="all">Mọi mức</option><option value="lt10">Dưới 10 tr</option><option value="10_20">10 – 20 tr</option><option value="gt20">Trên 20 tr</option><option value="share">% chia sẻ</option>
+            </select>
+          </label>
+          <label style="{{ filtWrap }}"><span style="{{ filtLbl }}">Yếu tố nhân dạng</span>
+            <select value="{{ f.element }}" onChange="{{ setFElement }}" style="{{ filtSel }}">
+              <option value="all">Tất cả</option><option value="portrait">Chân dung</option><option value="voice">Giọng nói</option><option value="style">Phong cách</option><option value="name">Tên &amp; thương hiệu</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- Commitment strip -->
+        <div style="display:flex; align-items:center; gap:10px; margin-top:14px; font-size:12.5px; color:#9fb0c8; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); padding:10px 15px; border-radius:11px;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--tid-gold-2)" stroke-width="1.5" style="flex-shrink:0;"><path d="M8 1.5l5 2v3.5c0 3-2 5.2-5 6.5-3-1.3-5-3.5-5-6.5V3.5z"></path><path d="M6 8l1.4 1.4L10.4 6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          Mọi giấy phép được Hiệp hội bảo chứng, có <b style="color:#c3cede; font-weight:600;">bằng chứng bất biến</b> (tem thời gian + mã băm) và tra cứu công khai bất cứ lúc nào.
+        </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <!-- ===== DIRECT REQUEST PANEL ===== -->
+    <sc-if value="{{ tabIsDirect }}" hint-placeholder-val="{{ false }}">
+      <main data-reveal="" style="max-width:760px; margin:0 auto; padding:36px 32px 60px;">
+        <div style="background:#fff; border:1px solid var(--tid-line); border-radius:16px; box-shadow:0 6px 18px rgba(15,23,43,.05); overflow:hidden;">
+          <div style="padding:24px 28px 6px;">
+            <div style="font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Yêu cầu trực tiếp</div>
+            <h2 style="font-family:var(--font-serif); font-size:24px; color:var(--tid-navy); font-weight:700; margin:6px 0 0;">Gửi yêu cầu tới một chủ thể cụ thể</h2>
+            <p style="color:var(--tid-mute); font-size:14px; line-height:1.6; margin:8px 0 0;">Đã biết chủ thể cần khai thác? Nhập mã bảo hộ hoặc tên để gửi yêu cầu cấp phép trực tiếp. Chủ thể sẽ nhận, duyệt và phản hồi qua kênh bảo chứng.</p>
+          </div>
+          <div style="padding:18px 28px 26px; display:flex; flex-direction:column; gap:16px;">
+            <div><label style="display:block; font-size:13px; font-weight:600; color:var(--tid-ink); margin-bottom:6px;">Mã bảo hộ hoặc tên chủ thể</label>
+              <input placeholder="Ví dụ: TID-2026-0087 · Nguyễn M. A." style="width:100%; box-sizing:border-box; border:1px solid var(--tid-line); border-radius:11px; padding:12px 14px; font-family:var(--font-sans); font-size:14.5px; color:var(--tid-ink); box-shadow:0 1px 2px rgba(15,23,43,.05);"></div>
+            <div><label style="display:block; font-size:13px; font-weight:600; color:var(--tid-ink); margin-bottom:6px;">Mô tả nhu cầu khai thác</label>
+              <textarea placeholder="Loại hình, phạm vi, thời hạn, ngân sách dự kiến…" rows="4" style="width:100%; box-sizing:border-box; border:1px solid var(--tid-line); border-radius:11px; padding:12px 14px; font-family:var(--font-sans); font-size:14.5px; color:var(--tid-ink); resize:vertical; box-shadow:0 1px 2px rgba(15,23,43,.05);"></textarea></div>
+            <div style="display:flex; gap:12px; align-items:flex-start; background:#eef7ff; border:1px solid #cfe6fb; border-radius:11px; padding:13px 15px; font-size:13px; color:#2a6699; line-height:1.55;">
+              <svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="var(--tid-blue)" stroke-width="1.6" style="flex-shrink:0; margin-top:1px;"><circle cx="8" cy="8" r="6.5"></circle><path d="M8 5v3.2l2 1.2" stroke-linecap="round"></path></svg>
+              Gửi yêu cầu <b>không</b> tạo nghĩa vụ tài chính. Chi phí chỉ hình thành khi hai bên ký hợp đồng điện tử.
+            </div>
+            <button onClick="{{ tabMarket }}" style="align-self:flex-start; background:var(--tid-blue); color:#fff; border:none; border-radius:11px; padding:13px 26px; font-family:var(--font-sans); font-size:14.5px; font-weight:700; cursor:pointer; box-shadow:0 6px 16px rgba(12,140,233,.28);">Gửi yêu cầu cấp phép</button>
+          </div>
+        </div>
+      </main>
+    </sc-if>
+
+    <!-- ===== SECTION B — SUBJECT CARDS GRID ===== -->
+    <sc-if value="{{ tabIsMarket }}" hint-placeholder-val="{{ true }}">
+    <main style="max-width:1200px; margin:0 auto; padding:32px 32px 64px;">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:18px;">
+        <h2 style="font-family:var(--font-serif); font-size:22px; color:var(--tid-navy); font-weight:700; margin:0;">Chủ thể đang nhận cấp phép</h2>
+        <span style="font-size:13.5px; color:var(--tid-mute);">{{ resultCountLabel }}</span>
+      </div>
+
+      <!-- LOADING -->
+      <sc-if value="{{ scLoading }}" hint-placeholder-val="{{ false }}">
+        <div data-grid3="" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
+          <sc-for list="{{ skeletons }}" as="s" hint-placeholder-count="6">
+            <div style="background:#fff; border:1px solid var(--tid-line); border-radius:16px; padding:20px;">
+              <div style="display:flex; gap:13px; align-items:center;"><div data-skel="" style="width:52px; height:52px; border-radius:999px; background:#eef1f5;"></div><div style="flex:1;"><div data-skel="" style="height:14px; width:60%; border-radius:6px; background:#eef1f5;"></div><div data-skel="" style="height:11px; width:40%; border-radius:6px; background:#eef1f5; margin-top:8px;"></div></div></div>
+              <div data-skel="" style="height:11px; width:90%; border-radius:6px; background:#eef1f5; margin-top:18px;"></div>
+              <div data-skel="" style="height:11px; width:70%; border-radius:6px; background:#eef1f5; margin-top:9px;"></div>
+              <div data-skel="" style="height:38px; width:100%; border-radius:11px; background:#eef1f5; margin-top:18px;"></div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <!-- ERROR -->
+      <sc-if value="{{ scError }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#fff2f2; border:1px solid #ffd0d2; border-radius:16px; padding:34px; text-align:center;">
+          <div style="width:52px; height:52px; border-radius:999px; background:#ffe2e2; display:inline-flex; align-items:center; justify-content:center;"><svg width="26" height="26" viewBox="0 0 20 20" fill="none" stroke="#e7000b" stroke-width="1.7"><circle cx="10" cy="10" r="8"></circle><path d="M10 6v5M10 14h.01" stroke-linecap="round"></path></svg></div>
+          <div style="font-weight:700; color:#9f0712; font-size:17px; margin-top:14px;">Không tải được danh sách chủ thể</div>
+          <div style="color:#7a2226; font-size:14px; margin-top:6px; max-width:420px; margin-left:auto; margin-right:auto; line-height:1.55;">Có lỗi khi kết nối tới sổ đăng bạ. Vui lòng thử lại sau giây lát.</div>
+          <button onClick="{{ retry }}" style="margin-top:18px; background:#fff; color:#9f0712; border:1.5px solid #ffccce; border-radius:11px; padding:11px 24px; font-family:var(--font-sans); font-size:14px; font-weight:600; cursor:pointer;">Thử lại</button>
+        </div>
+      </sc-if>
+
+      <!-- EMPTY -->
+      <sc-if value="{{ scEmpty }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#fff; border:1px dashed #cfd6e0; border-radius:16px; padding:44px; text-align:center;">
+          <div style="width:56px; height:56px; border-radius:14px; background:var(--tid-ivory); display:inline-flex; align-items:center; justify-content:center;"><svg width="28" height="28" viewBox="0 0 16 16" fill="none" stroke="var(--tid-mute)" stroke-width="1.5"><circle cx="7" cy="7" r="5"></circle><path d="M11 11l3 3" stroke-linecap="round"></path></svg></div>
+          <div style="font-weight:700; color:var(--tid-navy); font-size:17px; margin-top:14px;">Không có chủ thể nào khớp bộ lọc</div>
+          <div style="color:var(--tid-mute); font-size:14px; margin-top:6px; max-width:440px; margin-left:auto; margin-right:auto; line-height:1.55;">Thử nới lỏng loại chủ thể, ngân sách hoặc yếu tố nhân dạng — hoặc gửi yêu cầu trực tiếp tới chủ thể bạn đã biết.</div>
+          <div style="display:flex; gap:10px; justify-content:center; margin-top:18px;">
+            <button onClick="{{ clearFilters }}" style="background:var(--tid-blue); color:#fff; border:none; border-radius:11px; padding:11px 22px; font-family:var(--font-sans); font-size:14px; font-weight:600; cursor:pointer;">Xoá bộ lọc</button>
+            <button onClick="{{ tabDirect }}" style="background:#fff; color:var(--tid-navy); border:1.5px solid var(--tid-line); border-radius:11px; padding:11px 22px; font-family:var(--font-sans); font-size:14px; font-weight:600; cursor:pointer;">Yêu cầu trực tiếp</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- NORMAL GRID -->
+      <sc-if value="{{ scNormal }}" hint-placeholder-val="{{ true }}">
+        <div data-grid3="" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
+          <sc-for list="{{ subjects }}" as="s" hint-placeholder-count="6">
+            <div style="background:#fff; border:1px solid var(--tid-line); border-radius:16px; box-shadow:0 6px 18px rgba(15,23,43,.05); padding:20px; display:flex; flex-direction:column; transition:.16s;" style-hover="box-shadow:0 14px 34px rgba(15,23,43,.12); transform:translateY(-3px); border-color:#cfe0f2;">
+              <div style="display:flex; gap:13px; align-items:center;">
+                <span style="{{ s.avatar }}">{{ s.initials }}</span>
+                <div style="flex:1; min-width:0;">
+                  <div style="font-weight:700; color:var(--tid-navy); font-size:16px; line-height:1.25;">{{ s.name }}</div>
+                  <div style="font-size:12.5px; color:var(--tid-mute); margin-top:2px;">{{ s.typeLabel }}</div>
+                </div>
+                <span style="{{ s.statusBadge }}">{{ s.statusText }}</span>
+              </div>
+              <div style="font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:#8a93a3; font-weight:600; margin-top:16px;">Yếu tố cấp phép</div>
+              <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:8px;">
+                <sc-for list="{{ s.elementsList }}" as="e" hint-placeholder-count="2">
+                  <span style="display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:500; color:var(--tid-navy); background:var(--tid-ivory); border:1px solid var(--tid-line); padding:5px 10px; border-radius:999px;">{{ e }}</span>
+                </sc-for>
+              </div>
+              <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:10px; margin-top:16px; padding-top:14px; border-top:1px solid var(--tid-line);">
+                <div><div style="font-size:11px; color:#8a93a3;">{{ s.priceCaption }}</div><div style="font-family:var(--font-serif); font-size:18px; font-weight:700; color:var(--tid-navy); margin-top:1px;">{{ s.priceText }}</div></div>
+                <div style="display:inline-flex; align-items:center; gap:5px; font-size:12.5px; color:var(--tid-mute);"><svg width="13" height="13" viewBox="0 0 16 16" fill="var(--tid-gold-2)" stroke="none"><path d="M8 1.5l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 11.3 4.2 13.3l.7-4.3-3.1-3 4.3-.6z"></path></svg><b style="color:var(--tid-navy); font-weight:600;">{{ s.rating }}</b></div>
+              </div>
+              <button onClick="{{ s.onOpen }}" style="margin-top:16px; width:100%; box-sizing:border-box; background:#fff; color:var(--tid-blue-2); border:1.5px solid #bcdffb; border-radius:11px; padding:12px; font-family:var(--font-sans); font-size:14px; font-weight:600; cursor:pointer; transition:.15s;" style-hover="background:#eef7ff; border-color:var(--tid-blue);">Xem gói &amp; xin phép</button>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+    </main>
+    </sc-if>
+  </div>
+  </sc-if>
+
+  <!-- ============ VIEW: SUBJECT DETAIL (Section C) ============ -->
+  <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+  <main data-screen-label="Chi tiết chủ thể" data-reveal="" style="max-width:1080px; margin:0 auto; padding:26px 32px 64px;">
+    <button onClick="{{ backToMarket }}" style="display:inline-flex; align-items:center; gap:8px; background:transparent; border:none; color:var(--tid-mute); font-family:var(--font-sans); font-size:14px; font-weight:600; cursor:pointer; padding:8px 0;"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8H3M7 4L3 8l4 4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Quay lại Sàn</button>
+
+    <!-- Profile header -->
+    <div data-detailhead="" style="display:grid; grid-template-columns:auto 1fr auto; gap:22px; align-items:center; background:#fff; border:1px solid var(--tid-line); border-radius:18px; box-shadow:0 6px 18px rgba(15,23,43,.05); padding:26px 28px; margin-top:12px;">
+      <span style="{{ d.avatarLg }}">{{ d.initials }}</span>
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <h1 style="font-family:var(--font-serif); font-size:28px; color:var(--tid-navy); font-weight:700; margin:0;">{{ d.name }}</h1>
+          <span style="display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600; color:#007a55; background:#d6f7ea; padding:4px 11px; border-radius:999px;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 8.5l3 3L12.5 5" stroke-linecap="round" stroke-linejoin="round"></path></svg>Nhân dạng đã bảo hộ</span>
+        </div>
+        <div style="font-size:14.5px; color:var(--tid-mute); margin-top:4px;">{{ d.typeLabel }} · Mã bảo hộ <b style="font-family:monospace; color:var(--tid-navy);">{{ d.code }}</b></div>
+        <div style="display:inline-flex; align-items:center; gap:8px; margin-top:10px; font-size:13.5px; color:var(--tid-navy);"><svg width="15" height="15" viewBox="0 0 16 16" fill="var(--tid-gold-2)" stroke="none"><path d="M8 1.5l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 11.3 4.2 13.3l.7-4.3-3.1-3 4.3-.6z"></path></svg><b style="font-weight:700;">{{ d.rating }}</b><span style="color:var(--tid-mute); font-weight:500;">· {{ d.reviewsCount }} đánh giá uy tín</span></div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:11px; color:#8a93a3; letter-spacing:.04em; text-transform:uppercase;">Chính sách giá</div>
+        <div style="font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--tid-navy); margin-top:2px;">{{ d.priceText }}</div>
+        <div style="font-size:12px; color:var(--tid-mute); margin-top:2px;">{{ d.priceNote }}</div>
+      </div>
+    </div>
+
+    <div data-2col="" style="display:grid; grid-template-columns:1fr 340px; gap:24px; align-items:start; margin-top:24px;">
+      <!-- Left: public profile -->
+      <div style="display:flex; flex-direction:column; gap:18px;">
+        <div style="background:#fff; border:1px solid var(--tid-line); border-radius:16px; box-shadow:0 6px 18px rgba(15,23,43,.05); padding:22px 24px;">
+          <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Hồ sơ công khai</div>
+          <p style="font-size:14.5px; color:var(--tid-ink); line-height:1.65; margin:10px 0 0;">{{ d.bio }}</p>
+
+          <div style="font-size:13px; font-weight:600; color:var(--tid-ink); margin-top:20px;">Yếu tố cho phép cấp phép</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:9px;">
+            <sc-for list="{{ d.elementsList }}" as="e" hint-placeholder-count="2">
+              <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:600; color:#0b5c9c; background:#eef7ff; border:1px solid #cfe6fb; padding:7px 13px; border-radius:999px;"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 8.5l3 3L12.5 5" stroke-linecap="round" stroke-linejoin="round"></path></svg>{{ e }}</span>
+            </sc-for>
+          </div>
+
+          <div style="font-size:13px; font-weight:600; color:var(--tid-ink); margin-top:20px;">Điều cấm — không bao giờ cấp phép cho</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:9px;">
+            <sc-for list="{{ d.prohibitedList }}" as="p" hint-placeholder-count="3">
+              <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:600; color:#9f0712; background:#fff2f2; border:1px solid #ffccce; padding:7px 13px; border-radius:999px;"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="7" width="10" height="7" rx="1.4"></rect><path d="M5 7V5a3 3 0 016 0v2"></path></svg>{{ p }}</span>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- Terms grid -->
+        <div style="background:#fff; border:1px solid var(--tid-line); border-radius:16px; box-shadow:0 6px 18px rgba(15,23,43,.05); padding:22px 24px;">
+          <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Điều kiện khai thác</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px 24px; margin-top:14px;">
+            <div><div style="font-size:11px; color:#8a93a3; text-transform:uppercase; letter-spacing:.04em; font-weight:600;">Loại hình cho phép</div><div style="font-size:14.5px; color:var(--tid-navy); margin-top:3px; font-weight:500;">{{ d.usageText }}</div></div>
+            <div><div style="font-size:11px; color:#8a93a3; text-transform:uppercase; letter-spacing:.04em; font-weight:600;">Lãnh thổ</div><div style="font-size:14.5px; color:var(--tid-navy); margin-top:3px; font-weight:500;">{{ d.territory }}</div></div>
+            <div><div style="font-size:11px; color:#8a93a3; text-transform:uppercase; letter-spacing:.04em; font-weight:600;">Thời hạn tối đa</div><div style="font-size:14.5px; color:var(--tid-navy); margin-top:3px; font-weight:500;">{{ d.maxTerm }}</div></div>
+            <div><div style="font-size:11px; color:#8a93a3; text-transform:uppercase; letter-spacing:.04em; font-weight:600;">Chính sách giá</div><div style="font-size:14.5px; color:var(--tid-navy); margin-top:3px; font-weight:500;">{{ d.priceText }}</div></div>
+          </div>
+        </div>
+
+        <!-- Reputation -->
+        <div style="background:#fff; border:1px solid var(--tid-line); border-radius:16px; box-shadow:0 6px 18px rgba(15,23,43,.05); padding:22px 24px;">
+          <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Đánh giá uy tín</div>
+          <div style="display:flex; flex-direction:column; gap:14px; margin-top:14px;">
+            <sc-for list="{{ d.reviews }}" as="r" hint-placeholder-count="2">
+              <div style="border:1px solid var(--tid-line); border-radius:12px; padding:14px 16px; background:var(--tid-ivory);">
+                <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;"><div style="font-weight:600; color:var(--tid-navy); font-size:13.5px;">{{ r.author }}</div><div style="display:inline-flex; align-items:center; gap:4px; font-size:12.5px; color:var(--tid-gold);"><svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" stroke="none"><path d="M8 1.5l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 11.3 4.2 13.3l.7-4.3-3.1-3 4.3-.6z"></path></svg><b>{{ r.rating }}</b></div></div>
+                <div style="font-size:11.5px; color:var(--tid-mute); margin-top:1px;">{{ r.role }}</div>
+                <p style="font-size:13.5px; color:var(--tid-ink); line-height:1.55; margin:8px 0 0;">{{ r.text }}</p>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: sticky CTA -->
+      <aside style="position:sticky; top:96px; display:flex; flex-direction:column; gap:16px;">
+        <div style="background:linear-gradient(160deg,var(--tid-navy),var(--tid-navy-2)); border-radius:18px; padding:22px; color:#eaf0f8; box-shadow:0 16px 38px rgba(15,23,43,.22);">
+          <div style="display:flex; align-items:center; gap:11px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,.12);">
+            <dc-import name="Seal" size="42" hint-size="42px,42px"></dc-import>
+            <div><div style="font-weight:700; color:#fff; font-size:15px;">Cấp phép được bảo chứng</div><div style="font-size:12px; color:#8ea0ba; margin-top:1px;">Hợp đồng điện tử · bằng chứng bất biến</div></div>
+          </div>
+          <div style="font-size:13.5px; color:#c3cede; line-height:1.6; margin-top:14px;">Cấu hình phạm vi khai thác theo đúng ranh giới chủ thể cho phép. Chi phí hiển thị realtime trước khi bạn ký.</div>
+          <button onClick="{{ openConfig }}" style="width:100%; box-sizing:border-box; margin-top:16px; background:var(--tid-blue); color:#fff; border:none; border-radius:12px; padding:15px; font-family:var(--font-sans); font-size:15.5px; font-weight:700; cursor:pointer; box-shadow:0 10px 24px rgba(12,140,233,.4); display:inline-flex; align-items:center; justify-content:center; gap:9px;">Cấu hình giấy phép <svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8h11M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        </div>
+        <div style="background:#fff; border:1px solid var(--tid-line); border-radius:16px; box-shadow:0 6px 18px rgba(15,23,43,.05); padding:18px 20px;">
+          <div style="display:flex; gap:10px; align-items:flex-start;"><svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="var(--ok)" stroke-width="1.8" style="flex-shrink:0; margin-top:1px;"><path d="M3 8.5l3 3L13 4.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="font-size:13px; color:var(--tid-ink); line-height:1.5;">Chủ thể có thể <b style="font-weight:600;">rút uỷ quyền tức thì</b>; hệ thống hỗ trợ gỡ nhanh khi tranh chấp.</span></div>
+          <div style="display:flex; gap:10px; align-items:flex-start; margin-top:11px;"><svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="var(--ok)" stroke-width="1.8" style="flex-shrink:0; margin-top:1px;"><path d="M3 8.5l3 3L13 4.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="font-size:13px; color:var(--tid-ink); line-height:1.5;">Mọi nội dung khai thác được gắn nhãn <b style="font-weight:600;">provenance</b>.</span></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- ============ VIEW: CONFIGURE (Section D) ============ -->
+  <sc-if value="{{ isConfig }}" hint-placeholder-val="{{ false }}">
+  <main data-screen-label="Cấu hình cấp phép" data-reveal="" style="max-width:1200px; margin:0 auto; padding:26px 32px 64px;">
+    <button onClick="{{ backToDetail }}" style="display:inline-flex; align-items:center; gap:8px; background:transparent; border:none; color:var(--tid-mute); font-family:var(--font-sans); font-size:14px; font-weight:600; cursor:pointer; padding:8px 0;"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8H3M7 4L3 8l4 4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Quay lại hồ sơ chủ thể</button>
+
+    <div data-2col="" style="display:grid; grid-template-columns:1fr 372px; gap:28px; align-items:start; margin-top:10px;">
+      <!-- LEFT: stepper -->
+      <div>
+        <div data-stepbar="" style="background:#fff; border:1px solid var(--tid-line); border-radius:16px; box-shadow:0 6px 18px rgba(15,23,43,.05); padding:20px 22px; margin-bottom:20px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:7px;"><span style="{{ st.s1.circle }}">1</span><span data-slabel="" style="{{ st.s1.label }}">Bên khai thác</span></div>
+            <span style="{{ st.c1 }}"></span>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:7px;"><span style="{{ st.s2.circle }}">2</span><span data-slabel="" style="{{ st.s2.label }}">Phạm vi</span></div>
+            <span style="{{ st.c2 }}"></span>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:7px;"><span style="{{ st.s3.circle }}">3</span><span data-slabel="" style="{{ st.s3.label }}">Báo giá</span></div>
+            <span style="{{ st.c3 }}"></span>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:7px;"><span style="{{ st.s4.circle }}">4</span><span data-slabel="" style="{{ st.s4.label }}">Tuân thủ</span></div>
+            <span style="{{ st.c4 }}"></span>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:7px;"><span style="{{ st.s5.circle }}">5</span><span data-slabel="" style="{{ st.s5.label }}">Ký &amp; thanh toán</span></div>
+          </div>
+        </div>
+
+        <div style="background:#fff; border:1px solid var(--tid-line); border-radius:16px; box-shadow:0 6px 18px rgba(15,23,43,.05); overflow:hidden;">
+          <div style="padding:24px 28px 8px;">
+            <div style="font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Bước {{ cstepNum }} / 5 · cấu hình cho {{ d.name }}</div>
+            <h2 style="font-family:var(--font-serif); font-size:24px; color:var(--tid-navy); font-weight:700; margin:6px 0 0; line-height:1.2;">{{ cstepTitle }}</h2>
+            <p style="color:var(--tid-mute); font-size:14.5px; line-height:1.6; margin:8px 0 0;">{{ cstepDesc }}</p>
+          </div>
+
+          <div style="padding:18px 28px 4px;">
+            <!-- B1 — OPERATOR -->
+            <sc-if value="{{ isB1 }}" hint-placeholder-val="{{ true }}">
+              <div data-reveal="" style="display:flex; flex-direction:column; gap:16px;">
+                <div><div style="font-size:13px; font-weight:600; color:var(--tid-ink); margin-bottom:10px;">Loại bên khai thác</div>
+                  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px;">
+                    <button onClick="{{ setOpDn }}" style="{{ op.dn }}"><span style="display:block; font-weight:600; color:var(--tid-navy); font-size:14px;">Doanh nghiệp</span><span style="display:block; color:var(--tid-mute); font-size:12px; margin-top:3px;">Nhãn hàng, DN sản xuất</span></button>
+                    <button onClick="{{ setOpAgency }}" style="{{ op.agency }}"><span style="display:block; font-weight:600; color:var(--tid-navy); font-size:14px;">Agency</span><span style="display:block; color:var(--tid-mute); font-size:12px; margin-top:3px;">Đại diện cho nhãn hàng</span></button>
+                    <button onClick="{{ setOpPlatform }}" style="{{ op.platform }}"><span style="display:block; font-weight:600; color:var(--tid-navy); font-size:14px;">Nền tảng</span><span style="display:block; color:var(--tid-mute); font-size:12px; margin-top:3px;">Sàn / nền tảng số</span></button>
+                  </div>
+                </div>
+                <div><label style="display:block; font-size:13px; font-weight:600; color:var(--tid-ink); margin-bottom:6px;">Tên pháp nhân</label>
+                  <input placeholder="Ví dụ: Công ty TNHH AEON Việt Nam" style="{{ inputStyle }}"></div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                  <div><label style="display:block; font-size:13px; font-weight:600; color:var(--tid-ink); margin-bottom:6px;">Mã số thuế (MST)</label><input placeholder="0100000000" style="{{ inputStyle }}"></div>
+                  <div><label style="display:block; font-size:13px; font-weight:600; color:var(--tid-ink); margin-bottom:6px;">Người đại diện</label><input placeholder="Họ tên người ký" style="{{ inputStyle }}"></div>
+                </div>
+                <div><label style="display:block; font-size:13px; font-weight:600; color:var(--tid-ink); margin-bottom:6px;">Mục đích khai thác</label>
+                  <textarea rows="3" placeholder="Mô tả ngắn gọn chiến dịch / sản phẩm sẽ sử dụng nhân dạng…" style="{{ inputStyle }} resize:vertical;"></textarea></div>
+                <div style="display:flex; gap:13px; align-items:flex-start; background:#eef7ff; border:1px solid #cfe6fb; border-left:4px solid var(--tid-blue); border-radius:12px; padding:15px 17px;">
+                  <x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="justice-scale-1" size="22" color="#0c8ce9" secondary-color="#bcdffb" hint-size="22px,22px"></x-import>
+                  <div><div style="font-weight:600; color:#0b5c9c; font-size:13.5px;">Nghĩa vụ của bên khai thác</div><div style="color:#2a6699; font-size:13px; line-height:1.55; margin-top:2px;">Theo Nghị định <b>356/2025/NĐ-CP</b>, mọi khai thác hình ảnh, giọng nói, danh tính người khác phải có sự đồng ý minh thị và giấy phép hợp lệ. Thông tin pháp nhân sẽ được đối chiếu trước khi cấp phép.</div></div>
+                </div>
+              </div>
+            </sc-if>
+
+            <!-- B2 — SCOPE -->
+            <sc-if value="{{ isB2 }}" hint-placeholder-val="{{ false }}">
+              <div data-reveal="" style="display:flex; flex-direction:column; gap:18px;">
+                <div><div style="font-size:13px; font-weight:600; color:var(--tid-ink); margin-bottom:10px;">Loại hình khai thác <span style="font-weight:500; color:var(--tid-mute);">· chọn nhiều — khớp Phụ lục C</span></div>
+                  <div style="display:flex; flex-direction:column; gap:10px;">
+                    <button onClick="{{ togUAds }}" style="{{ uc.ads }}"><span style="flex:1; text-align:left;"><span style="display:block; font-weight:600; color:var(--tid-navy); font-size:14.5px;">Quảng cáo thương mại</span><span style="display:block; font-size:12px; color:var(--tid-mute); margin-top:2px;">TVC, banner, KV nhãn hàng</span></span><span style="{{ usw.ads.track }}"><span style="{{ usw.ads.thumb }}"></span></span></button>
+                    <button onClick="{{ togUAi }}" style="{{ uc.ai }}"><span style="flex:1; text-align:left;"><span style="display:block; font-weight:600; color:var(--tid-navy); font-size:14.5px;">Nội dung do AI tạo</span><span style="display:block; font-size:12px; color:var(--tid-mute); margin-top:2px;">Sinh hình ảnh/video bằng AI</span></span><span style="{{ usw.ai.track }}"><span style="{{ usw.ai.thumb }}"></span></span></button>
+                    <button onClick="{{ togUDub }}" style="{{ uc.dub }}"><span style="flex:1; text-align:left;"><span style="display:block; font-weight:600; color:var(--tid-navy); font-size:14.5px;">Lồng tiếng / bản sao giọng</span><span style="display:block; font-size:12px; color:var(--tid-mute); margin-top:2px;">Voice clone, đọc lời bình</span></span><span style="{{ usw.dub.track }}"><span style="{{ usw.dub.thumb }}"></span></span></button>
+                    <button onClick="{{ togUCampaign }}" style="{{ uc.campaign }}"><span style="flex:1; text-align:left;"><span style="display:block; font-weight:600; color:var(--tid-navy); font-size:14.5px;">Chiến dịch thương hiệu dài hạn</span><span style="display:block; font-size:12px; color:var(--tid-mute); margin-top:2px;">Đại sứ, hợp tác nhiều giai đoạn</span></span><span style="{{ usw.campaign.track }}"><span style="{{ usw.campaign.thumb }}"></span></span></button>
+                  </div>
+                </div>
+
+                <div><div style="font-size:13px; font-weight:600; color:var(--tid-ink); margin-bottom:4px;">Yếu tố nhân dạng <span style="font-weight:500; color:var(--tid-mute);">· chỉ hiện yếu tố chủ thể cho phép</span></div>
+                  <div style="display:flex; gap:9px; flex-wrap:wrap; margin-top:8px;">
+                    <sc-for list="{{ elementChips }}" as="e" hint-placeholder-count="2">
+                      <button onClick="{{ e.onToggle }}" style="{{ e.style }}"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.9" style="{{ e.checkStyle }}"><path d="M4 8.5l3 3L12.5 5" stroke-linecap="round" stroke-linejoin="round"></path></svg>{{ e.label }}</button>
+                    </sc-for>
+                  </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                  <div><label style="display:block; font-size:13px; font-weight:600; color:var(--tid-ink); margin-bottom:6px;">Kênh phát hành</label>
+                    <select value="{{ cfg.channel }}" onChange="{{ setChannel }}" style="{{ inputStyle }}"><option value="social">Mạng xã hội</option><option value="tv">Truyền hình / OOH</option><option value="digital">Nền tảng số</option><option value="all">Đa kênh</option></select></div>
+                  <div><label style="display:block; font-size:13px; font-weight:600; color:var(--tid-ink); margin-bottom:6px;">Lãnh thổ</label>
+                    <select value="{{ cfg.territory }}" onChange="{{ setTerritory }}" style="{{ inputStyle }}"><option value="vn">Việt Nam</option><option value="sea">Đông Nam Á</option><option value="global">Toàn cầu</option></select></div>
+                </div>
+                <div><label style="display:flex; justify-content:space-between; font-size:13px; font-weight:600; color:var(--tid-ink); margin-bottom:6px;">Thời hạn khai thác <b style="color:var(--tid-blue-2);">{{ termLabel }}</b></label>
+                  <input type="range" min="3" max="36" step="3" value="{{ cfg.term }}" onInput="{{ setTerm }}" style="width:100%; height:6px;">
+                  <div style="display:flex; justify-content:space-between; font-size:11.5px; color:var(--tid-mute); margin-top:4px;"><span>3 tháng</span><span>Tối đa {{ d.maxTerm }}</span><span>36 tháng</span></div></div>
+
+                <div>
+                  <div style="font-size:13px; font-weight:600; color:var(--tid-ink); margin-bottom:8px;">Điều cấm bắt buộc của chủ thể <span style="font-weight:500; color:var(--tid-mute);">· khoá, không thể bỏ</span></div>
+                  <div style="border:1px solid #ffd0d2; border-radius:12px; overflow:hidden;">
+                    <sc-for list="{{ d.prohibitedList }}" as="p" hint-placeholder-count="3">
+                      <div style="display:flex; align-items:center; gap:11px; padding:12px 15px; border-top:1px solid #ffe0e1; background:#fff8f8;"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#9f0712" stroke-width="1.7" style="flex-shrink:0;"><rect x="3" y="7" width="10" height="7" rx="1.4"></rect><path d="M5 7V5a3 3 0 016 0v2"></path></svg><span style="flex:1; font-size:13.5px; color:#7a2226; font-weight:500;">{{ p }}</span><span style="font-size:11px; font-weight:700; color:#9f0712; background:#ffe2e2; padding:3px 9px; border-radius:999px;">Khoá</span></div>
+                    </sc-for>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+
+            <!-- B3 — QUOTE -->
+            <sc-if value="{{ isB3 }}" hint-placeholder-val="{{ false }}">
+              <div data-reveal="" style="display:flex; flex-direction:column; gap:16px;">
+                <div><div style="font-size:13px; font-weight:600; color:var(--tid-ink); margin-bottom:10px;">Cơ chế tài chính</div>
+                  <div style="display:flex; flex-direction:column; gap:10px;">
+                    <button onClick="{{ setPmFixed }}" style="{{ pm.fixed }}"><span style="flex:1; text-align:left;"><span style="display:block; font-weight:600; color:var(--tid-navy); font-size:14.5px;">Giá cố định</span><span style="display:block; font-size:12.5px; color:var(--tid-mute); margin-top:2px;">Trả trọn gói theo phạm vi &amp; thời hạn.</span></span><span style="{{ radioDot.fixed }}"></span></button>
+                    <button onClick="{{ setPmShare }}" style="{{ pm.share }}"><span style="flex:1; text-align:left;"><span style="display:block; font-weight:600; color:var(--tid-navy); font-size:14.5px;">Chia sẻ doanh thu (%)</span><span style="display:block; font-size:12.5px; color:var(--tid-mute); margin-top:2px;">Chi trả theo tỷ lệ doanh thu khai thác, đối soát định kỳ.</span></span><span style="{{ radioDot.share }}"></span></button>
+                    <button onClick="{{ setPmPropose }}" style="{{ pm.propose }}"><span style="flex:1; text-align:left;"><span style="display:block; font-weight:600; color:var(--tid-navy); font-size:14.5px;">Đề xuất giá của bạn</span><span style="display:block; font-size:12.5px; color:var(--tid-mute); margin-top:2px;">Gửi mức giá thương lượng để chủ thể duyệt.</span></span><span style="{{ radioDot.propose }}"></span></button>
+                  </div>
+                </div>
+
+                <sc-if value="{{ isPropose }}" hint-placeholder-val="{{ false }}">
+                  <div data-reveal=""><label style="display:flex; justify-content:space-between; font-size:13px; font-weight:600; color:var(--tid-ink); margin-bottom:6px;">Mức đề xuất <b style="color:var(--tid-blue-2);">{{ proposeLabel }}</b></label>
+                    <input type="range" min="3" max="80" value="{{ cfg.propose }}" onInput="{{ setPropose }}" style="width:100%; height:6px;"></div>
+                </sc-if>
+
+                <!-- Cost Summary Card -->
+                <div style="border:1px solid var(--tid-line); border-radius:14px; overflow:hidden;">
+                  <div style="background:var(--tid-ivory); padding:12px 18px; font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--tid-mute); display:flex; align-items:center; justify-content:space-between;">Báo giá tạm tính<span style="display:inline-flex; align-items:center; gap:6px; color:var(--tid-blue); font-size:11px; text-transform:none; letter-spacing:0;"><span style="width:7px; height:7px; border-radius:999px; background:var(--tid-blue); display:inline-block;"></span>Cập nhật realtime</span></div>
+                  <div style="padding:16px 18px; display:flex; flex-direction:column; gap:10px;">
+                    <sc-for list="{{ costLines }}" as="c" hint-placeholder-count="3">
+                      <div style="display:flex; justify-content:space-between; gap:12px; font-size:13.5px;"><span style="color:var(--tid-mute);">{{ c.label }}</span><b style="color:var(--tid-navy);">{{ c.value }}</b></div>
+                    </sc-for>
+                    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding-top:12px; border-top:1px dashed var(--tid-line);"><span style="font-weight:700; color:var(--tid-navy); font-size:14px;">{{ totalLabel }}</span><span style="font-family:var(--font-serif); font-size:26px; font-weight:700; color:var(--tid-navy);">{{ totalValue }}</span></div>
+                  </div>
+                </div>
+                <div style="display:flex; align-items:center; gap:9px; font-size:12px; color:var(--tid-mute); background:var(--tid-ivory); border:1px solid var(--tid-line); border-radius:10px; padding:11px 14px;"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="var(--tid-blue)" stroke-width="1.6" style="flex-shrink:0;"><circle cx="8" cy="8" r="6.5"></circle><path d="M8 5v3.2l2 1.2" stroke-linecap="round"></path></svg>Bao gồm phí bảo chứng &amp; thu hộ của Hiệp hội. Thanh toán chỉ thực hiện sau khi hai bên ký.</div>
+              </div>
+            </sc-if>
+
+            <!-- B4 — COMPLIANCE -->
+            <sc-if value="{{ isB4 }}" hint-placeholder-val="{{ false }}">
+              <div data-reveal="" style="display:flex; flex-direction:column; gap:13px;">
+                <label style="{{ compBox.provenance }}"><input type="checkbox" checked="{{ comp.provenance }}" onChange="{{ setCompProvenance }}" style="margin-top:2px; width:18px; height:18px; flex-shrink:0;"><span style="font-size:13.5px; color:var(--tid-ink); line-height:1.55;">Tôi cam kết <b>gắn nhãn provenance</b> lên mọi nội dung tạo ra từ nhân dạng được cấp phép (nguồn gốc + mã giấy phép có thể kiểm chứng).</span></label>
+                <label style="{{ compBox.scope }}"><input type="checkbox" checked="{{ comp.scope }}" onChange="{{ setCompScope }}" style="margin-top:2px; width:18px; height:18px; flex-shrink:0;"><span style="font-size:13.5px; color:var(--tid-ink); line-height:1.55;">Tôi <b>không sử dụng ngoài phạm vi</b> đã cấu hình (loại hình, yếu tố, kênh, lãnh thổ, thời hạn).</span></label>
+                <label style="{{ compBox.dlcn }}"><input type="checkbox" checked="{{ comp.dlcn }}" onChange="{{ setCompDlcn }}" style="margin-top:2px; width:18px; height:18px; flex-shrink:0;"><span style="font-size:13.5px; color:var(--tid-ink); line-height:1.55;">Tôi tuân thủ pháp luật <b>Bảo vệ dữ liệu cá nhân</b> (Luật 91/2025/QH15) trong toàn bộ quá trình khai thác.</span></label>
+                <label style="{{ compBox.takedown }}"><input type="checkbox" checked="{{ comp.takedown }}" onChange="{{ setCompTakedown }}" style="margin-top:2px; width:18px; height:18px; flex-shrink:0;"><span style="font-size:13.5px; color:var(--tid-ink); line-height:1.55;">Tôi chấp nhận <b>gỡ nhanh</b> nội dung khi có tranh chấp hoặc chủ thể rút uỷ quyền.</span></label>
+
+                <div style="display:flex; gap:13px; align-items:flex-start; background:linear-gradient(180deg,var(--tid-navy),var(--tid-navy-2)); border-radius:13px; padding:17px 19px; color:#eaf0f8; margin-top:4px;">
+                  <span style="flex-shrink:0; width:40px; height:40px; border-radius:11px; background:rgba(199,154,43,.16); display:inline-flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="fingerprint-1" size="22" color="#e0b64a" secondary-color="#ecd9a3" hint-size="22px,22px"></x-import></span>
+                  <div><div style="font-weight:700; color:#fff; font-size:14px;">Provenance &amp; Watermark API</div><div style="font-size:13px; color:#c3cede; line-height:1.55; margin-top:3px;">Tích hợp API để tự động chèn watermark bất khả kiến &amp; ghi nguồn gốc vào từng nội dung — bằng chứng khai thác hợp pháp cho toàn bộ vòng đời giấy phép.</div><a href="#" style="display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:600; color:var(--tid-gold-2); margin-top:8px;">Xem tài liệu tích hợp <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 12L12 4M6 4h6v6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div>
+                </div>
+              </div>
+            </sc-if>
+
+            <!-- B5 — SIGN & PAY -->
+            <sc-if value="{{ isB5 }}" hint-placeholder-val="{{ false }}">
+              <div data-reveal="" style="display:flex; flex-direction:column; gap:16px;">
+                <div style="border:1px solid var(--tid-line); border-radius:13px; overflow:hidden;">
+                  <div style="background:var(--tid-ivory); padding:11px 16px; font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--tid-mute);">Hợp đồng cấp phép điện tử · 8 khối</div>
+                  <div style="display:grid; grid-template-columns:1fr 1fr;">
+                    <sc-for list="{{ contractBlocks }}" as="b" hint-placeholder-count="8">
+                      <div style="display:flex; gap:10px; align-items:flex-start; padding:12px 16px; border-top:1px solid var(--tid-line);"><span style="flex-shrink:0; width:22px; height:22px; border-radius:7px; background:#eef7ff; color:var(--tid-blue-2); font-size:11px; font-weight:700; display:inline-flex; align-items:center; justify-content:center;">{{ b.n }}</span><div><div style="font-size:13px; font-weight:600; color:var(--tid-navy);">{{ b.title }}</div><div style="font-size:12px; color:var(--tid-mute); margin-top:1px;">{{ b.value }}</div></div></div>
+                    </sc-for>
+                  </div>
+                </div>
+
+                <button onClick="{{ toggleSign }}" style="{{ signStyle }}">
+                  <span style="flex-shrink:0; width:42px; height:42px; border-radius:11px; background:rgba(12,140,233,.1); display:inline-flex; align-items:center; justify-content:center;">
+                    <sc-if value="{{ signed }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="var(--ok)" stroke-width="1.8"><path d="M4 10.5l3.5 3.5L16 5.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></sc-if>
+                    <sc-if value="{{ notSigned }}" hint-placeholder-val="{{ true }}"><svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="var(--tid-blue)" stroke-width="1.6"><path d="M3 15c3-1 4-9 6-9s1 6 3 6 2-4 4-4" stroke-linecap="round" stroke-linejoin="round"></path></svg></sc-if>
+                  </span>
+                  <span style="flex:1; text-align:left;"><span style="display:block; font-weight:600; color:var(--tid-navy); font-size:15px;">{{ signTitle }}</span><span style="display:block; color:var(--tid-mute); font-size:13px; margin-top:2px;">Ký số bằng chữ ký điện tử của pháp nhân.</span></span>
+                  <span style="flex-shrink:0; font-size:13px; font-weight:600; color:var(--tid-blue-2);">{{ signAction }}</span>
+                </button>
+
+                <div><div style="font-size:13px; font-weight:600; color:var(--tid-ink); margin-bottom:8px;">Phương thức thanh toán</div>
+                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                    <button onClick="{{ setPayBank }}" style="{{ pay.bank }}"><span style="display:block; font-weight:600; color:var(--tid-navy); font-size:14px;">Chuyển khoản đối soát</span><span style="display:block; font-size:12px; color:var(--tid-mute); margin-top:2px;">Qua tài khoản tách bạch</span></button>
+                    <button onClick="{{ setPayEscrow }}" style="{{ pay.escrow }}"><span style="display:block; font-weight:600; color:var(--tid-navy); font-size:14px;">Ký quỹ (escrow)</span><span style="display:block; font-size:12px; color:var(--tid-mute); margin-top:2px;">Giải ngân theo mốc</span></button>
+                  </div>
+                </div>
+
+                <div style="display:flex; gap:12px; align-items:flex-start; background:#fff8ec; border:1px solid #f5e2b8; border-left:4px solid var(--tid-gold); border-radius:12px; padding:14px 16px;"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="var(--tid-gold)" stroke-width="1.7" style="flex-shrink:0; margin-top:1px;"><path d="M8 1.5l6.5 3.2v3.8c0 3.5-2.6 6-6.5 8-3.9-2-6.5-4.5-6.5-8V4.7z"></path></svg><div style="font-size:13px; color:#7a5a10; line-height:1.55;">Hệ thống <b>chỉ khởi tạo yêu cầu thanh toán</b> — không tự động chuyển tiền. Dòng tiền được giải ngân qua tài khoản tách bạch sau khi giấy phép ghi nhận thành công.</div></div>
+
+                <div style="display:flex; align-items:center; gap:10px; font-size:12px; color:var(--tid-mute); background:var(--tid-ivory); border:1px solid var(--tid-line); border-radius:10px; padding:11px 14px;"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="var(--tid-blue)" stroke-width="1.6" style="flex-shrink:0;"><circle cx="8" cy="8" r="6.5"></circle><path d="M8 5v3.2l2 1.2" stroke-linecap="round"></path></svg>Khi hoàn tất, hệ thống ghi <b style="color:var(--tid-navy); font-weight:600;">tem thời gian</b> &amp; <b style="color:var(--tid-navy); font-weight:600;">mã băm SHA-256</b> của hợp đồng vào nhật ký bất biến.</div>
+              </div>
+            </sc-if>
+          </div>
+
+          <!-- Step nav -->
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:18px 28px 22px; border-top:1px solid var(--tid-line); margin-top:14px;">
+            <button onClick="{{ cback }}" style="{{ cbackStyle }}"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8H3M7 4L3 8l4 4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Quay lại</button>
+            <sc-if value="{{ showCContinue }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ cnext }}" style="display:inline-flex; align-items:center; gap:9px; background:var(--tid-blue); color:#fff; border:none; border-radius:11px; padding:12px 24px; font-family:var(--font-sans); font-size:14.5px; font-weight:700; cursor:pointer; box-shadow:0 3px 10px rgba(12,140,233,.28);">Tiếp tục <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8h11M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+            </sc-if>
+            <sc-if value="{{ showCComplete }}" hint-placeholder-val="{{ false }}">
+              <button onClick="{{ issue }}" style="{{ issueStyle }}"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M8 1.5l5 2v3.5c0 3-2 5.2-5 6.5-3-1.3-5-3.5-5-6.5V3.5z"></path><path d="M6 8l1.4 1.4L10.4 6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Ký &amp; khởi tạo cấp phép</button>
+            </sc-if>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: realtime license + cost summary -->
+      <aside style="position:sticky; top:96px; display:flex; flex-direction:column; gap:16px;">
+        <div style="background:linear-gradient(160deg,var(--tid-navy),var(--tid-navy-2)); border-radius:16px; padding:20px 22px; color:#eaf0f8; box-shadow:0 16px 38px rgba(15,23,43,.22); position:relative; overflow:hidden;">
+          <div aria-hidden="true" style="position:absolute; right:-30px; top:-30px; opacity:.1;"><svg width="160" height="160" viewBox="0 0 200 200"><circle cx="100" cy="100" r="95" fill="none" stroke="#fff" stroke-width="1"></circle><circle cx="100" cy="100" r="70" fill="none" stroke="#fff" stroke-width="1"></circle></svg></div>
+          <div style="display:flex; align-items:center; justify-content:space-between; position:relative;"><span style="display:inline-flex; align-items:center; gap:8px; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--tid-gold-2); font-weight:700;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="text-file" size="16" color="#e0b64a" secondary-color="#ecd9a3" hint-size="16px,16px"></x-import>Tóm tắt giấy phép</span><span style="font-size:11px; color:#8ea0ba;">Bước {{ cstepNum }}/5</span></div>
+          <div style="font-family:var(--font-serif); font-size:19px; font-weight:700; color:#fff; margin-top:14px;">{{ d.name }}</div>
+          <div style="font-size:12.5px; color:#9fb0c8; margin-top:2px;">{{ d.typeLabel }}</div>
+          <div style="display:flex; flex-direction:column; gap:9px; margin-top:16px; padding-top:14px; border-top:1px dashed rgba(255,255,255,.16);">
+            <div style="display:flex; justify-content:space-between; gap:12px; font-size:12.5px;"><span style="color:#8ea0ba;">Loại hình</span><span style="color:#fff; text-align:right; font-weight:500;">{{ usageSummary }}</span></div>
+            <div style="display:flex; justify-content:space-between; gap:12px; font-size:12.5px;"><span style="color:#8ea0ba;">Yếu tố</span><span style="color:#fff; text-align:right; font-weight:500;">{{ elementSummary }}</span></div>
+            <div style="display:flex; justify-content:space-between; gap:12px; font-size:12.5px;"><span style="color:#8ea0ba;">Lãnh thổ · thời hạn</span><span style="color:#fff; text-align:right; font-weight:500;">{{ scopeSummary }}</span></div>
+            <div style="display:flex; justify-content:space-between; gap:12px; font-size:12.5px;"><span style="color:#8ea0ba;">Cơ chế</span><span style="color:#fff; text-align:right; font-weight:500;">{{ priceModelLabel }}</span></div>
+          </div>
+        </div>
+
+        <div style="background:#fff; border:1px solid var(--tid-line); border-radius:16px; box-shadow:0 6px 18px rgba(15,23,43,.05); padding:18px 20px;">
+          <div style="display:flex; align-items:center; justify-content:space-between;"><span style="font-weight:700; color:var(--tid-navy); font-size:14.5px;">Chi phí tạm tính</span><span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; color:var(--tid-blue);"><span style="width:7px; height:7px; border-radius:999px; background:var(--tid-blue);"></span>Realtime</span></div>
+          <div style="font-family:var(--font-serif); font-size:30px; font-weight:700; color:var(--tid-navy); margin-top:8px;">{{ totalValue }}</div>
+          <div style="font-size:12.5px; color:var(--tid-mute); margin-top:2px;">{{ totalSubcaption }}</div>
+          <div style="height:6px; border-radius:999px; background:var(--tid-ivory); margin-top:14px; overflow:hidden;"><span style="{{ progressBar }}"></span></div>
+          <div style="font-size:11.5px; color:var(--tid-mute); margin-top:8px;">Đã hoàn thành {{ cstepNum }}/5 bước cấu hình</div>
+        </div>
+
+        <div style="background:#fff; border:1px solid var(--tid-line); border-radius:16px; box-shadow:0 6px 18px rgba(15,23,43,.05); padding:16px 18px; display:flex; gap:11px; align-items:center;">
+          <dc-import name="Seal" size="40" hint-size="40px,40px"></dc-import>
+          <div style="font-size:12.5px; color:var(--tid-mute); line-height:1.5;">Giao dịch được Hiệp hội bảo chứng. Chủ thể giữ quyền <b style="color:var(--tid-navy);">rút uỷ quyền tức thì</b>.</div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  </sc-if>
+
+  <!-- ============ VIEW: LICENSE ISSUED (Section E) ============ -->
+  <sc-if value="{{ isIssued }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="Giấy phép đã cấp" data-reveal="" style="position:relative; overflow:hidden; background:radial-gradient(1200px 600px at 50% -20%, #23385a 0%, var(--tid-navy) 52%, var(--tid-navy-2) 100%); color:#eaf0f8;">
+    <div aria-hidden="true" style="position:absolute; left:50%; top:-60px; transform:translateX(-50%); opacity:.06; pointer-events:none;"><svg width="620" height="620" viewBox="0 0 200 200"><circle cx="100" cy="100" r="95" fill="none" stroke="#fff" stroke-width="1"></circle><circle cx="100" cy="100" r="74" fill="none" stroke="#fff" stroke-width="1"></circle><circle cx="100" cy="100" r="53" fill="none" stroke="#fff" stroke-width="1"></circle></svg></div>
+    <div style="max-width:820px; margin:0 auto; padding:64px 32px 30px; text-align:center; position:relative;">
+      <span style="display:inline-flex; align-items:center; gap:8px; padding:7px 15px; border-radius:999px; background:rgba(0,188,125,.14); border:1px solid rgba(0,188,125,.4); color:#5ee6ac; font-size:13px; font-weight:600;"><span style="width:7px; height:7px; border-radius:999px; background:currentColor;"></span>Giấy phép đã được cấp &amp; ghi vào sổ đăng bạ</span>
+      <h1 style="font-family:var(--font-serif); font-size:36px; line-height:1.16; font-weight:700; color:#fff; margin:18px 0 0; text-wrap:balance;">Bạn đã được cấp phép khai thác hợp pháp</h1>
+      <p style="font-size:16px; line-height:1.65; color:#c3cede; margin:14px auto 0; max-width:560px;">Giấy phép có hiệu lực trong phạm vi đã cấu hình, kèm bằng chứng bất biến. Tra cứu công khai bất cứ lúc nào.</p>
+    </div>
+
+    <div style="max-width:820px; margin:0 auto; padding:0 32px 30px; position:relative;">
+      <!-- License Certificate Card -->
+      <div style="border-radius:16px; overflow:hidden; border:1px solid #e3ddca; box-shadow:0 30px 70px rgba(0,0,0,.4); background:linear-gradient(180deg,#fdfbf5,#f7f2e6);">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:24px 28px; border-bottom:1px dashed #d8cfb4;">
+          <div><div style="font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Giấy phép khai thác nhân dạng số</div><div style="font-family:var(--font-serif); font-size:24px; font-weight:700; color:var(--tid-navy); margin-top:5px; letter-spacing:.04em;">{{ licenseCode }}</div><div style="font-size:12.5px; color:#8a7a4e; margin-top:4px;">Cấp cho <b style="color:var(--tid-navy);">{{ operatorName }}</b> · khai thác nhân dạng của <b style="color:var(--tid-navy);">{{ d.name }}</b></div></div>
+          <div style="flex-shrink:0;"><dc-import name="Seal" size="76" hint-size="76px,76px"></dc-import></div>
+        </div>
+        <div style="padding:22px 28px; display:grid; grid-template-columns:1fr 1fr; gap:18px 28px;">
+          <div><div style="font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:#8a93a3; font-weight:600;">Phạm vi</div><div style="font-size:14.5px; color:var(--tid-navy); margin-top:3px; font-weight:500; line-height:1.5;">{{ usageSummary }} · {{ elementSummary }}</div></div>
+          <div><div style="font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:#8a93a3; font-weight:600;">Lãnh thổ · Thời hạn</div><div style="font-size:14.5px; color:var(--tid-navy); margin-top:3px; font-weight:500;">{{ scopeSummary }}</div></div>
+          <div><div style="font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:#8a93a3; font-weight:600;">Cơ chế tài chính</div><div style="font-size:14.5px; color:var(--tid-navy); margin-top:3px; font-weight:500;">{{ priceModelLabel }} · {{ totalValue }}</div></div>
+          <div><div style="font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:#8a93a3; font-weight:600;">Hiệu lực</div><div style="font-size:14.5px; color:var(--tid-navy); margin-top:3px; font-weight:500;">16/07/2026 → {{ expiryDate }}</div></div>
+          <div style="grid-column:1 / -1; display:flex; flex-wrap:wrap; gap:10px; align-items:center; padding-top:16px; border-top:1px dashed #d8cfb4;">
+            <span style="display:inline-flex; align-items:center; gap:8px; padding:7px 13px; border-radius:999px; background:rgba(12,140,233,.1); border:1px solid #bcdffb; color:#0b5c9c; font-size:12.5px; font-weight:600;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="fingerprint-1" size="15" color="#0c8ce9" secondary-color="#bcdffb" hint-size="15px,15px"></x-import>Provenance · <span style="font-family:monospace;">0x7f3a…c214</span></span>
+            <span style="display:inline-flex; align-items:center; gap:7px; padding:7px 13px; border-radius:999px; background:#fff; border:1px solid #e3ddca; color:#8a7a4e; font-size:12.5px;"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6.5"></circle><path d="M8 5v3.2l2 1.2" stroke-linecap="round"></path></svg>Tem thời gian 16/07/2026 · 09:42</span>
+          </div>
+        </div>
+        <div style="padding:16px 28px; background:rgba(25,40,61,.04); border-top:1px dashed #d8cfb4; display:flex; align-items:center; gap:9px; font-size:12.5px; color:#5b6b82;"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="var(--tid-gold)" stroke-width="1.5"><path d="M8 1.5l5 2v3.5c0 3-2 5.2-5 6.5-3-1.3-5-3.5-5-6.5V3.5z"></path><path d="M5.8 8l1.5 1.6L10.4 6.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>Ghi nhận trong sổ đăng bạ của Hiệp hội bảo chứng nhân dạng số · bằng chứng bất biến.</div>
+      </div>
+
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:24px;">
+        <button onClick="{{ downloadLicense }}" style="display:inline-flex; align-items:center; gap:9px; background:var(--tid-blue); color:#fff; border:none; border-radius:12px; padding:15px 28px; font-family:var(--font-sans); font-size:15.5px; font-weight:700; cursor:pointer; box-shadow:0 12px 30px rgba(12,140,233,.4);"><svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 2v8M5 7l3 3 3-3" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 12v1.5A1.5 1.5 0 004.5 15h7a1.5 1.5 0 001.5-1.5V12" stroke-linecap="round"></path></svg>Tải giấy phép (PDF)</button>
+        <a href="Lookup.dc.html" style="display:inline-flex; align-items:center; gap:9px; background:transparent; border:1px solid rgba(255,255,255,.24); color:#eaf0f8; border-radius:12px; padding:15px 24px; font-family:var(--font-sans); font-size:15px; font-weight:600;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="7" cy="7" r="5"></circle><path d="M11 11l3 3" stroke-linecap="round"></path></svg>Tra cứu công khai</a>
+      </div>
+    </div>
+
+    <div style="background:var(--tid-ivory); padding:48px 32px 60px;">
+      <div style="max-width:900px; margin:0 auto;">
+        <div style="text-align:center; margin-bottom:26px;"><div style="font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--tid-gold); font-weight:700;">Nghĩa vụ sau cấp phép</div><h2 style="font-family:var(--font-serif); font-size:24px; color:var(--tid-navy); font-weight:700; margin:8px 0 0;">Giữ giấy phép luôn hợp lệ</h2></div>
+        <div data-grid3="" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+          <div style="background:#fff; border:1px solid var(--tid-line); border-radius:14px; box-shadow:0 6px 18px rgba(15,23,43,.05); padding:22px; display:flex; flex-direction:column; gap:12px;">
+            <span style="width:44px; height:44px; border-radius:12px; background:rgba(12,140,233,.1); display:inline-flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="fingerprint-1" size="24" color="#0c8ce9" secondary-color="#bcdffb" hint-size="24px,24px"></x-import></span>
+            <div style="font-weight:600; color:var(--tid-navy); font-size:15.5px;">Gắn nhãn provenance</div><div style="color:var(--tid-mute); font-size:13.5px; line-height:1.55;">Tích hợp Watermark API để mọi nội dung khai thác đều truy vết được về giấy phép này.</div>
+          </div>
+          <div style="background:#fff; border:1px solid var(--tid-line); border-radius:14px; box-shadow:0 6px 18px rgba(15,23,43,.05); padding:22px; display:flex; flex-direction:column; gap:12px;">
+            <span style="width:44px; height:44px; border-radius:12px; background:rgba(0,188,125,.12); display:inline-flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="security-umbrella" size="24" color="#00bc7d" secondary-color="#a7e8cf" hint-size="24px,24px"></x-import></span>
+            <div style="font-weight:600; color:var(--tid-navy); font-size:15.5px;">Khai thác đúng phạm vi</div><div style="color:var(--tid-mute); font-size:13.5px; line-height:1.55;">Không dùng ngoài loại hình, yếu tố, kênh &amp; lãnh thổ đã cấp phép.</div>
+          </div>
+          <div style="background:#fff; border:1px solid var(--tid-line); border-radius:14px; box-shadow:0 6px 18px rgba(15,23,43,.05); padding:22px; display:flex; flex-direction:column; gap:12px;">
+            <span style="width:44px; height:44px; border-radius:12px; background:rgba(199,154,43,.14); display:inline-flex; align-items:center; justify-content:center;"><x-import component-from-global-scope="HeroUIDesignSystem_d608d4.DuotoneIcon" name="coin-share" size="24" color="#c79a2b" secondary-color="#ecd9a3" hint-size="24px,24px"></x-import></span>
+            <div style="font-weight:600; color:var(--tid-navy); font-size:15.5px;">Đối soát &amp; thanh toán</div><div style="color:var(--tid-mute); font-size:13.5px; line-height:1.55;">Dòng tiền qua tài khoản tách bạch, đối soát định kỳ minh bạch với chủ thể.</div>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:26px;"><button onClick="{{ backToMarket }}" style="background:#fff; color:var(--tid-navy); border:1.5px solid var(--tid-line); border-radius:11px; padding:13px 26px; font-family:var(--font-sans); font-size:14.5px; font-weight:600; cursor:pointer;">Xin thêm giấy phép khác</button></div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="border-top:1px solid var(--tid-line); background:#fff; padding:20px 32px;">
+    <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:12.5px; color:#9aa6b6;">
+      <span>© 2026 TrustID · Giấy phép hoạt động số 0123/GP-HHBCND</span>
+      <span style="display:inline-flex; align-items:center; gap:14px; flex-wrap:wrap;">
+        <span>Căn cứ: Luật 91/2025/QH15 · NĐ 356/2025/NĐ-CP · NĐ 69/2024/NĐ-CP</span>
+        <a href="#">Chính sách dữ liệu</a><a href="#">Điều khoản</a>
+      </span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:1640},&quot;startView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Sàn cấp phép&quot;,&quot;options&quot;:[&quot;Sàn cấp phép&quot;,&quot;Chi tiết chủ thể&quot;,&quot;Cấu hình &amp; xin phép&quot;,&quot;Giấy phép đã cấp&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Xem trước màn hình&quot;},&quot;configStep&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;B1 · Bên khai thác&quot;,&quot;options&quot;:[&quot;B1 · Bên khai thác&quot;,&quot;B2 · Phạm vi&quot;,&quot;B3 · Báo giá&quot;,&quot;B4 · Tuân thủ&quot;,&quot;B5 · Ký &amp; thanh toán&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Xem trước màn hình&quot;},&quot;scenario&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Bình thường&quot;,&quot;options&quot;:[&quot;Bình thường&quot;,&quot;Đang tải&quot;,&quot;Trống&quot;,&quot;Lỗi&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Trạng thái danh sách&quot;}}">
+class Component extends DCLogic {
+  state = {
+    view: null,          // market | detail | config | issued
+    scenarioOv: null,    // override for retry/clear
+    tab: 'market',       // market | direct
+    q: '',
+    f: { subject: 'all', usage: 'all', territory: 'all', budget: 'all', element: 'all' },
+    selected: 'ma',
+    cstep: null,         // 1..5
+    opType: 'dn',
+    usage: { ads: true, ai: false, dub: false, campaign: false },
+    elements: { portrait: true, voice: false, style: false, name: false },
+    cfg: { channel: 'social', territory: 'vn', term: 12, propose: 20 },
+    priceModel: 'fixed', // fixed | share | propose
+    comp: { provenance: false, scope: false, dlcn: false, takedown: false },
+    signed: false,
+    payMethod: 'bank',
+  };
+
+  SUBJECTS = [
+    { id:'ma', name:'Nguyễn M. A.', type:'kol', typeLabel:'Nghệ sĩ · KOL', initials:'MA', tint:'#0c8ce9',
+      code:'TID-2026-0087', elements:['portrait','voice'], accepting:true, rating:'4.9', reviewsCount:128,
+      priceKind:'fixed', priceText:'8 – 15 tr ₫/lượt', priceNote:'Theo từng lượt khai thác', priceCaption:'Giá mỗi lượt',
+      bio:'Ca sĩ – diễn viên hoạt động tại Việt Nam, mạnh về quảng cáo thương mại và campaign nhãn hàng tiêu dùng.',
+      usageText:'Quảng cáo, nội dung AI, chiến dịch dài hạn', territory:'Toàn quốc + Đông Nam Á', maxTerm:'24 tháng',
+      prohibited:['Khiêu dâm hoá','Bôi nhọ, phỉ báng','Vận động chính trị','Rượu bia & thuốc lá'],
+      reviews:[
+        { author:'Công ty CP Bình Minh', role:'Chiến dịch TVC 2025', rating:'5.0', text:'Quy trình cấp phép rõ ràng, phản hồi nhanh. Bằng chứng provenance giúp làm việc với đối tác truyền hình dễ hơn.' },
+        { author:'Agency Nhất Việt', role:'Campaign mạng xã hội', rating:'4.8', text:'Phạm vi minh bạch, chi phí hiển thị realtime nên duyệt ngân sách nhanh.' },
+      ] },
+    { id:'tb', name:'Trần B.', type:'voice', typeLabel:'Diễn viên lồng tiếng', initials:'TB', tint:'#00bc7d',
+      code:'TID-2026-0104', elements:['voice'], accepting:true, rating:'4.8', reviewsCount:64,
+      priceKind:'fixed', priceText:'5 – 10 tr ₫/lượt', priceNote:'Theo từng dự án', priceCaption:'Giá mỗi dự án',
+      bio:'Diễn viên lồng tiếng chuyên nội dung giáo dục, audiobook và quảng cáo. Có mẫu giọng đa phong cách.',
+      usageText:'Lồng tiếng, nội dung AI, quảng cáo', territory:'Toàn quốc', maxTerm:'24 tháng',
+      prohibited:['Khiêu dâm hoá','Bôi nhọ, phỉ báng','Nội dung chính trị nhạy cảm'],
+      reviews:[
+        { author:'Nền tảng EduVoice', role:'Nội dung giáo dục', rating:'4.9', text:'Bản sao giọng chất lượng cao, giấy phép ghi rõ phạm vi lồng tiếng nên yên tâm triển khai.' },
+      ] },
+    { id:'lc', name:'Lê C.', type:'kol', typeLabel:'Ca sĩ', initials:'LC', tint:'#c79a2b',
+      code:'TID-2026-0131', elements:['portrait','voice','name'], accepting:true, rating:'4.7', reviewsCount:91,
+      priceKind:'share', priceText:'% chia sẻ doanh thu', priceNote:'12 – 18% theo doanh thu', priceCaption:'Cơ chế',
+      bio:'Ca sĩ có thương hiệu cá nhân mạnh, ưu tiên hợp tác chia sẻ doanh thu cho campaign dài hạn.',
+      usageText:'Chiến dịch dài hạn, quảng cáo', territory:'Toàn quốc + Đông Nam Á', maxTerm:'36 tháng',
+      prohibited:['Khiêu dâm hoá','Bôi nhọ, phỉ báng','Vận động chính trị','Cờ bạc & cá cược'],
+      reviews:[
+        { author:'Thương hiệu thời trang LUXE', role:'Đại sứ 12 tháng', rating:'4.7', text:'Cơ chế chia sẻ doanh thu giúp hai bên gắn kết. Đối soát rõ ràng theo quý.' },
+      ] },
+    { id:'pd', name:'Phạm D.', type:'model', typeLabel:'Người mẫu', initials:'PD', tint:'#7c5cff',
+      code:'TID-2026-0158', elements:['portrait','style'], accepting:true, rating:'4.9', reviewsCount:47,
+      priceKind:'fixed', priceText:'12 – 20 tr ₫/lượt', priceNote:'Theo bộ ảnh / chiến dịch', priceCaption:'Giá mỗi lượt',
+      bio:'Người mẫu thời trang & thương mại, phù hợp campaign hình ảnh cao cấp và nội dung AI phong cách.',
+      usageText:'Quảng cáo, nội dung AI, chiến dịch dài hạn', territory:'Toàn cầu', maxTerm:'18 tháng',
+      prohibited:['Khiêu dâm hoá','Bôi nhọ, phỉ báng','Chỉnh sửa vóc dáng gây hiểu lầm'],
+      reviews:[
+        { author:'Nhãn mỹ phẩm SORA', role:'KV chiến dịch', rating:'5.0', text:'Hình ảnh chuyên nghiệp, giấy phép phủ toàn cầu giúp chạy campaign đa thị trường.' },
+      ] },
+    { id:'ve', name:'Vũ E.', type:'kol', typeLabel:'MC · Người dẫn chương trình', initials:'VE', tint:'#0c8ce9',
+      code:'TID-2026-0176', elements:['portrait','voice','name'], accepting:true, rating:'4.6', reviewsCount:38,
+      priceKind:'fixed', priceText:'10 tr ₫/lượt', priceNote:'Giá cố định', priceCaption:'Giá mỗi lượt',
+      bio:'MC truyền hình và sự kiện, hình ảnh đáng tin cậy, phù hợp nội dung thương hiệu và giáo dục.',
+      usageText:'Quảng cáo, lồng tiếng, nội dung AI', territory:'Toàn quốc', maxTerm:'12 tháng',
+      prohibited:['Khiêu dâm hoá','Bôi nhọ, phỉ báng','Sản phẩm tài chính rủi ro cao'],
+      reviews:[
+        { author:'Ngân hàng số Timo', role:'Video hướng dẫn', rating:'4.6', text:'Giọng & hình ảnh chuẩn mực, hợp với nội dung tài chính – giáo dục.' },
+      ] },
+    { id:'df', name:'Đỗ F.', type:'athlete', typeLabel:'Vận động viên', initials:'DF', tint:'#fe9a00',
+      code:'TID-2026-0192', elements:['portrait','name'], accepting:false, rating:'4.8', reviewsCount:29,
+      priceKind:'share', priceText:'% chia sẻ doanh thu', priceNote:'Tạm dừng nhận yêu cầu mới', priceCaption:'Cơ chế',
+      bio:'Vận động viên chuyên nghiệp, thương hiệu gắn với thể thao & lối sống lành mạnh.',
+      usageText:'Chiến dịch dài hạn, quảng cáo', territory:'Toàn quốc', maxTerm:'24 tháng',
+      prohibited:['Khiêu dâm hoá','Bôi nhọ, phỉ báng','Rượu bia & thuốc lá','Cờ bạc & cá cược'],
+      reviews:[
+        { author:'Nhãn thể thao STRIDE', role:'Đại sứ mùa giải', rating:'4.8', text:'Hình ảnh tích cực, phù hợp giá trị thương hiệu thể thao.' },
+      ] },
+  ];
+
+  ELEM_LABEL = { portrait:'Chân dung', voice:'Giọng nói', style:'Phong cách', name:'Tên & thương hiệu' };
+  USAGE_BASE = { ads:12, ai:8, dub:6, campaign:20 };
+  USAGE_LABEL = { ads:'Quảng cáo', ai:'Nội dung AI', dub:'Lồng tiếng', campaign:'Chiến dịch' };
+  TERR_MULT = { vn:1, sea:1.4, global:1.8 };
+  TERR_LABEL = { vn:'Việt Nam', sea:'Đông Nam Á', global:'Toàn cầu' };
+
+  _view() {
+    if (this.state.view) return this.state.view;
+    const m = { 'Sàn cấp phép':'market', 'Chi tiết chủ thể':'detail', 'Cấu hình & xin phép':'config', 'Giấy phép đã cấp':'issued' };
+    return m[this.props.startView] || 'market';
+  }
+  _cstep() {
+    if (this.state.cstep != null) return this.state.cstep;
+    const m = { 'B1 · Bên khai thác':1, 'B2 · Phạm vi':2, 'B3 · Báo giá':3, 'B4 · Tuân thủ':4, 'B5 · Ký & thanh toán':5 };
+    return m[this.props.configStep] || 1;
+  }
+  _scenario() {
+    if (this.state.scenarioOv) return this.state.scenarioOv;
+    const m = { 'Bình thường':'normal', 'Đang tải':'loading', 'Trống':'empty', 'Lỗi':'error' };
+    return m[this.props.scenario] || 'normal';
+  }
+  _subject() { return this.SUBJECTS.find(s => s.id === this.state.selected) || this.SUBJECTS[0]; }
+
+  _avatar(tint, size) {
+    return 'flex-shrink:0; width:' + size + 'px; height:' + size + 'px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-weight:700; font-size:' + (size*0.4) + 'px; color:' + tint + '; background:' + tint + '1f; border:1px solid ' + tint + '44;';
+  }
+  _statusBadge(accepting) {
+    return accepting
+      ? 'flex-shrink:0; display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:600; color:#007a55; background:#d6f7ea; padding:4px 9px; border-radius:999px;'
+      : 'flex-shrink:0; display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:600; color:#8a5000; background:#fff3dd; padding:4px 9px; border-radius:999px;';
+  }
+  _togCard(on) {
+    return 'display:flex; align-items:center; gap:14px; text-align:left; width:100%; box-sizing:border-box; background:' + (on ? '#f2f8ff' : '#fff') +
+      '; border:1.5px solid ' + (on ? 'var(--tid-blue)' : 'var(--tid-line)') + '; border-radius:13px; padding:14px 16px; cursor:pointer; transition:.15s; font-family:var(--font-sans);';
+  }
+  _optCard(active) {
+    return 'display:block; text-align:left; width:100%; box-sizing:border-box; background:' + (active ? '#f2f8ff' : '#fff') +
+      '; border:1.5px solid ' + (active ? 'var(--tid-blue)' : 'var(--tid-line)') + '; border-radius:13px; padding:13px 15px; cursor:pointer; transition:.15s; font-family:var(--font-sans);';
+  }
+  _radioCard(active) {
+    return 'display:flex; gap:12px; align-items:center; text-align:left; width:100%; box-sizing:border-box; background:' + (active ? '#f2f8ff' : '#fff') +
+      '; border:1.5px solid ' + (active ? 'var(--tid-blue)' : 'var(--tid-line)') + '; border-radius:13px; padding:14px 16px; cursor:pointer; transition:.15s; font-family:var(--font-sans);';
+  }
+  _dot(active) { return 'flex-shrink:0; width:20px; height:20px; border-radius:999px; box-sizing:border-box; border:' + (active ? '6px solid var(--tid-blue)' : '2px solid #cfd6e0') + '; background:#fff; transition:.15s;'; }
+  _sw(on) {
+    return {
+      track: 'flex-shrink:0; width:44px; height:25px; border-radius:999px; position:relative; transition:background .18s; background:' + (on ? 'var(--ok)' : '#cfd6e0') + ';',
+      thumb: 'position:absolute; top:2.5px; width:20px; height:20px; border-radius:999px; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.28); transition:left .18s; left:' + (on ? '21px' : '2.5px') + ';',
+    };
+  }
+  _elemChip(on) {
+    return 'display:inline-flex; align-items:center; gap:7px; padding:8px 14px; border-radius:999px; font-size:13px; font-weight:600; cursor:pointer; font-family:var(--font-sans); transition:.15s; border:1.5px solid ' +
+      (on ? 'var(--tid-blue)' : 'var(--tid-line)') + '; background:' + (on ? '#eef7ff' : '#fff') + '; color:' + (on ? '#0b5c9c' : 'var(--tid-mute)') + ';';
+  }
+  _compBox(on) {
+    return 'display:flex; gap:12px; align-items:flex-start; background:' + (on ? '#f2f8ff' : '#fff') + '; border:1.5px solid ' + (on ? 'var(--tid-blue)' : 'var(--tid-line)') + '; border-radius:12px; padding:14px 16px; cursor:pointer; transition:.15s;';
+  }
+  _stCircle(status) {
+    const base = 'width:34px; height:34px; border-radius:999px; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; box-sizing:border-box; transition:.2s;';
+    if (status === 'done') return base + ' background:var(--tid-blue); color:#fff; border:none; box-shadow:0 2px 8px rgba(12,140,233,.35);';
+    if (status === 'active') return base + ' background:#fff; color:var(--tid-blue); border:2px solid var(--tid-blue); box-shadow:0 0 0 4px rgba(12,140,233,.14);';
+    return base + ' background:var(--tid-ivory); color:#9aa6b6; border:1.5px solid var(--tid-line);';
+  }
+  _stLabel(status) {
+    const base = 'font-size:12px; white-space:nowrap;';
+    return status === 'todo' ? base + ' color:#9aa6b6; font-weight:500;' : base + ' color:var(--tid-navy); font-weight:600;';
+  }
+  _conn(done) { return 'flex:1; height:2px; border-radius:2px; min-width:12px; background:' + (done ? 'var(--tid-blue)' : 'var(--tid-line)') + '; transition:.2s;'; }
+  _tab(active) {
+    return 'display:inline-flex; align-items:center; gap:8px; border:none; border-radius:10px; padding:10px 18px; font-family:var(--font-sans); font-size:14px; font-weight:600; cursor:pointer; transition:.15s; ' +
+      (active ? 'background:#fff; color:var(--tid-navy); box-shadow:0 2px 8px rgba(0,0,0,.15);' : 'background:transparent; color:#c3cede;');
+  }
+  _toggle(group, key) { this.setState(s => ({ [group]: Object.assign({}, s[group], { [key]: !s[group][key] }) })); }
+
+  _cost() {
+    const A = this.state.usage;
+    const usageKeys = ['ads','ai','dub','campaign'].filter(k => A[k]);
+    const usageBase = usageKeys.reduce((sum, k) => sum + this.USAGE_BASE[k], 0);
+    const elemCount = ['portrait','voice','style','name'].filter(k => this.state.elements[k]).length;
+    const elemMult = elemCount <= 1 ? 1 : 1 + 0.25 * (elemCount - 1);
+    const terrMult = this.TERR_MULT[this.state.cfg.territory] || 1;
+    const termMult = this.state.cfg.term / 12;
+    const raw = usageBase * elemMult * terrMult * termMult;
+    const total = Math.round(raw);
+    return { usageKeys, usageBase, elemCount, elemMult, terrMult, termMult, total };
+  }
+
+  renderVals() {
+    const view = this._view();
+    const scenario = this._scenario();
+    const cstep = this._cstep();
+    const subj = this._subject();
+    const inputStyle = 'width:100%; box-sizing:border-box; border:1px solid var(--tid-line); border-radius:11px; padding:12px 14px; font-family:var(--font-sans); font-size:14.5px; color:var(--tid-ink); background:#fff; box-shadow:0 1px 2px rgba(15,23,43,.05);';
+
+    // ----- marketplace filtering -----
+    const f = this.state.f;
+    const qv = this.state.q.trim().toLowerCase();
+    let list = this.SUBJECTS.filter(s => {
+      if (f.subject !== 'all' && s.type !== f.subject) return false;
+      if (f.element !== 'all' && s.elements.indexOf(f.element) === -1) return false;
+      if (f.budget === 'share' && s.priceKind !== 'share') return false;
+      if (qv && (s.name + ' ' + s.typeLabel).toLowerCase().indexOf(qv) === -1) return false;
+      return true;
+    });
+    const subjects = list.map(s => ({
+      initials: s.initials, name: s.name, typeLabel: s.typeLabel, rating: s.rating,
+      avatar: this._avatar(s.tint, 52),
+      statusBadge: this._statusBadge(s.accepting),
+      statusText: s.accepting ? 'Đang nhận' : 'Tạm dừng',
+      elementsList: s.elements.map(k => this.ELEM_LABEL[k]),
+      priceText: s.priceText, priceCaption: s.priceCaption,
+      onOpen: () => this.setState({ view: 'detail', selected: s.id }),
+    }));
+    const scNormal = view === 'market' && scenario === 'normal' && subjects.length > 0;
+    const scEmpty = view === 'market' && (scenario === 'empty' || (scenario === 'normal' && subjects.length === 0));
+    const scLoading = view === 'market' && scenario === 'loading';
+    const scError = view === 'market' && scenario === 'error';
+
+    // ----- detail -----
+    const d = {
+      name: subj.name, typeLabel: subj.typeLabel, initials: subj.initials, code: subj.code,
+      rating: subj.rating, reviewsCount: subj.reviewsCount, bio: subj.bio,
+      priceText: subj.priceText, priceNote: subj.priceNote,
+      usageText: subj.usageText, territory: subj.territory, maxTerm: subj.maxTerm,
+      avatarLg: this._avatar(subj.tint, 84),
+      elementsList: subj.elements.map(k => this.ELEM_LABEL[k]),
+      prohibitedList: subj.prohibited,
+      reviews: subj.reviews,
+    };
+
+    // ----- config cost -----
+    const c = this._cost();
+    const usageKeys = c.usageKeys;
+    const usageSummary = usageKeys.length ? usageKeys.map(k => this.USAGE_LABEL[k]).join(', ') : 'Chưa chọn';
+    const enabledElems = ['portrait','voice','style','name'].filter(k => this.state.elements[k]);
+    const elementSummary = enabledElems.length ? enabledElems.map(k => this.ELEM_LABEL[k]).join(', ') : 'Chưa chọn';
+    const termLabel = this.state.cfg.term + ' tháng';
+    const scopeSummary = (this.TERR_LABEL[this.state.cfg.territory] || '') + ' · ' + termLabel;
+    const pm = this.state.priceModel;
+    const priceModelLabel = pm === 'fixed' ? 'Giá cố định' : (pm === 'share' ? 'Chia sẻ doanh thu 15%' : 'Đề xuất ' + this.state.cfg.propose + ' tr ₫');
+
+    let totalValue, totalSubcaption, totalLabel;
+    if (pm === 'share') {
+      totalValue = '15% doanh thu';
+      totalSubcaption = 'Đối soát theo quý qua tài khoản tách bạch';
+      totalLabel = 'Cơ chế chia sẻ';
+    } else if (pm === 'propose') {
+      totalValue = this.state.cfg.propose + ' tr ₫';
+      totalSubcaption = 'Mức đề xuất — chờ chủ thể duyệt';
+      totalLabel = 'Giá đề xuất';
+    } else {
+      totalValue = c.total > 0 ? c.total + ' tr ₫' : '—';
+      totalSubcaption = c.total > 0 ? 'Trọn gói ' + termLabel + ' · đã gồm phí bảo chứng' : 'Chọn loại hình để tính chi phí';
+      totalLabel = 'Tổng tạm tính';
+    }
+
+    const costLines = [
+      { label: 'Loại hình (' + (usageKeys.length || 0) + ')', value: c.usageBase > 0 ? c.usageBase + ' tr ₫' : '—' },
+      { label: 'Yếu tố nhân dạng (' + c.elemCount + ')', value: '×' + c.elemMult.toFixed(2) },
+      { label: 'Lãnh thổ ' + (this.TERR_LABEL[this.state.cfg.territory]||''), value: '×' + c.terrMult.toFixed(1) },
+      { label: 'Thời hạn ' + termLabel, value: '×' + c.termMult.toFixed(2) },
+    ];
+
+    const elementChips = ['portrait','voice','style','name'].map(k => {
+      const allowed = subj.elements.indexOf(k) !== -1;
+      const on = this.state.elements[k];
+      return {
+        key: k, label: this.ELEM_LABEL[k],
+        style: allowed ? this._elemChip(on) : 'display:none;',
+        checkStyle: on ? 'display:inline;' : 'display:none;',
+        onToggle: () => this._toggle('elements', k),
+      };
+    });
+
+    const cstatus = (n) => cstep > n ? 'done' : (cstep === n ? 'active' : 'todo');
+    const st = {
+      s1: { circle: this._stCircle(cstatus(1)), label: this._stLabel(cstatus(1)) },
+      s2: { circle: this._stCircle(cstatus(2)), label: this._stLabel(cstatus(2)) },
+      s3: { circle: this._stCircle(cstatus(3)), label: this._stLabel(cstatus(3)) },
+      s4: { circle: this._stCircle(cstatus(4)), label: this._stLabel(cstatus(4)) },
+      s5: { circle: this._stCircle(cstatus(5)), label: this._stLabel(cstatus(5)) },
+      c1: this._conn(cstep > 1), c2: this._conn(cstep > 2), c3: this._conn(cstep > 3), c4: this._conn(cstep > 4),
+    };
+
+    const cTitles = { 1:'Thông tin bên khai thác', 2:'Chọn phạm vi khai thác', 3:'Cơ chế tài chính & báo giá', 4:'Nghĩa vụ tuân thủ', 5:'Ký hợp đồng & thanh toán' };
+    const cDescs = {
+      1:'Cho biết bạn là ai và mục đích khai thác. Thông tin pháp nhân được đối chiếu trước khi cấp phép.',
+      2:'Cấu hình phạm vi trong đúng ranh giới chủ thể cho phép. Điều cấm bắt buộc không thể bỏ.',
+      3:'Chọn cơ chế chi trả. Chi phí cập nhật realtime ở cột bên phải.',
+      4:'Cam kết các nghĩa vụ để giữ giấy phép hợp lệ trong suốt vòng đời khai thác.',
+      5:'Rà soát hợp đồng, ký số và khởi tạo yêu cầu thanh toán. Hệ thống không tự chuyển tiền.',
+    };
+
+    const contractBlocks = [
+      { n:'1', title:'Các bên', value: (this.state.opType==='dn'?'Doanh nghiệp':(this.state.opType==='agency'?'Agency':'Nền tảng')) + ' ↔ ' + subj.name },
+      { n:'2', title:'Đối tượng', value: 'Nhân dạng ' + elementSummary },
+      { n:'3', title:'Phạm vi', value: usageSummary },
+      { n:'4', title:'Lãnh thổ & thời hạn', value: scopeSummary },
+      { n:'5', title:'Điều cấm', value: subj.prohibited.length + ' điều khoản khoá' },
+      { n:'6', title:'Tài chính', value: priceModelLabel },
+      { n:'7', title:'Provenance', value: 'Bắt buộc gắn nhãn' },
+      { n:'8', title:'Chấm dứt', value: 'Gỡ nhanh khi tranh chấp' },
+    ];
+
+    const skeletons = [1,2,3,4,5,6];
+    const opName = this.state.opType === 'dn' ? 'Công ty TNHH AEON Việt Nam' : (this.state.opType === 'agency' ? 'Agency Nhất Việt' : 'Nền tảng số VietStream');
+    const expiry = { 3:'16/10/2026', 6:'16/01/2027', 9:'16/04/2027', 12:'16/07/2027', 15:'16/10/2027', 18:'16/01/2028', 21:'16/04/2028', 24:'16/07/2028', 27:'16/10/2028', 30:'16/01/2029', 33:'16/04/2029', 36:'16/07/2029' };
+
+    return {
+      isMarket: view === 'market', isDetail: view === 'detail', isConfig: view === 'config', isIssued: view === 'issued',
+
+      // tabs
+      tab: { market: this._tab(this.state.tab === 'market'), direct: this._tab(this.state.tab === 'direct') },
+      tabIsMarket: this.state.tab === 'market', tabIsDirect: this.state.tab === 'direct',
+      tabMarket: () => this.setState({ tab: 'market' }),
+      tabDirect: () => this.setState({ tab: 'direct' }),
+
+      // search + filters
+      q: this.state.q,
+      onSearch: (e) => this.setState({ q: e.target.value }),
+      doSearch: () => this.forceUpdate(),
+      f, filtWrap: 'display:flex; flex-direction:column; gap:6px;',
+      filtLbl: 'font-size:11px; font-weight:600; color:#9fb0c8; letter-spacing:.02em;',
+      filtSel: 'width:100%; box-sizing:border-box; border:none; border-radius:11px; padding:11px 13px; font-size:13.5px; font-weight:500; color:var(--tid-navy); background:#fff; cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,.18);',
+      setFSubject: (e) => this.setState(s => ({ f: Object.assign({}, s.f, { subject: e.target.value }), scenarioOv: 'normal' })),
+      setFUsage: (e) => this.setState(s => ({ f: Object.assign({}, s.f, { usage: e.target.value }) })),
+      setFTerritory: (e) => this.setState(s => ({ f: Object.assign({}, s.f, { territory: e.target.value }) })),
+      setFBudget: (e) => this.setState(s => ({ f: Object.assign({}, s.f, { budget: e.target.value }), scenarioOv: 'normal' })),
+      setFElement: (e) => this.setState(s => ({ f: Object.assign({}, s.f, { element: e.target.value }), scenarioOv: 'normal' })),
+      clearFilters: () => this.setState({ f: { subject:'all', usage:'all', territory:'all', budget:'all', element:'all' }, q:'', scenarioOv: 'normal' }),
+      retry: () => this.setState({ scenarioOv: 'normal' }),
+
+      // grid states
+      subjects, skeletons,
+      scNormal, scEmpty, scLoading, scError,
+      resultCountLabel: scNormal ? subjects.length + ' chủ thể phù hợp' : (scLoading ? 'Đang tải…' : (scError ? 'Lỗi tải dữ liệu' : '0 chủ thể')),
+
+      // detail
+      d,
+      backToMarket: () => this.setState({ view: 'market', scenarioOv: 'normal', tab: 'market' }),
+      openConfig: () => this.setState({ view: 'config', cstep: 1 }),
+
+      // config
+      backToDetail: () => this.setState({ view: 'detail' }),
+      cstepNum: cstep,
+      cstepTitle: cTitles[cstep], cstepDesc: cDescs[cstep],
+      isB1: cstep === 1, isB2: cstep === 2, isB3: cstep === 3, isB4: cstep === 4, isB5: cstep === 5,
+      inputStyle,
+
+      op: { dn: this._optCard(this.state.opType==='dn'), agency: this._optCard(this.state.opType==='agency'), platform: this._optCard(this.state.opType==='platform') },
+      setOpDn: () => this.setState({ opType:'dn' }),
+      setOpAgency: () => this.setState({ opType:'agency' }),
+      setOpPlatform: () => this.setState({ opType:'platform' }),
+
+      uc: { ads:this._togCard(this.state.usage.ads), ai:this._togCard(this.state.usage.ai), dub:this._togCard(this.state.usage.dub), campaign:this._togCard(this.state.usage.campaign) },
+      usw: { ads:this._sw(this.state.usage.ads), ai:this._sw(this.state.usage.ai), dub:this._sw(this.state.usage.dub), campaign:this._sw(this.state.usage.campaign) },
+      togUAds: () => this._toggle('usage','ads'),
+      togUAi: () => this._toggle('usage','ai'),
+      togUDub: () => this._toggle('usage','dub'),
+      togUCampaign: () => this._toggle('usage','campaign'),
+
+      elementChips,
+      cfg: this.state.cfg, termLabel,
+      setChannel: (e) => this.setState(s => ({ cfg: Object.assign({}, s.cfg, { channel: e.target.value }) })),
+      setTerritory: (e) => this.setState(s => ({ cfg: Object.assign({}, s.cfg, { territory: e.target.value }) })),
+      setTerm: (e) => this.setState(s => ({ cfg: Object.assign({}, s.cfg, { term: parseInt(e.target.value,10) }) })),
+
+      pm: { fixed:this._radioCard(pm==='fixed'), share:this._radioCard(pm==='share'), propose:this._radioCard(pm==='propose') },
+      radioDot: { fixed:this._dot(pm==='fixed'), share:this._dot(pm==='share'), propose:this._dot(pm==='propose') },
+      setPmFixed: () => this.setState({ priceModel:'fixed' }),
+      setPmShare: () => this.setState({ priceModel:'share' }),
+      setPmPropose: () => this.setState({ priceModel:'propose' }),
+      isPropose: pm === 'propose',
+      proposeLabel: this.state.cfg.propose + ' tr ₫',
+      setPropose: (e) => this.setState(s => ({ cfg: Object.assign({}, s.cfg, { propose: parseInt(e.target.value,10) }) })),
+
+      costLines, totalLabel, totalValue, totalSubcaption,
+      usageSummary, elementSummary, scopeSummary, priceModelLabel,
+      progressBar: 'display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,var(--tid-blue),#0b6fbb); transition:width .25s; width:' + (cstep/5*100) + '%;',
+
+      comp: this.state.comp,
+      compBox: { provenance:this._compBox(this.state.comp.provenance), scope:this._compBox(this.state.comp.scope), dlcn:this._compBox(this.state.comp.dlcn), takedown:this._compBox(this.state.comp.takedown) },
+      setCompProvenance: (e) => this.setState(s => ({ comp: Object.assign({}, s.comp, { provenance: e.target.checked }) })),
+      setCompScope: (e) => this.setState(s => ({ comp: Object.assign({}, s.comp, { scope: e.target.checked }) })),
+      setCompDlcn: (e) => this.setState(s => ({ comp: Object.assign({}, s.comp, { dlcn: e.target.checked }) })),
+      setCompTakedown: (e) => this.setState(s => ({ comp: Object.assign({}, s.comp, { takedown: e.target.checked }) })),
+
+      contractBlocks,
+      signed: this.state.signed, notSigned: !this.state.signed,
+      signStyle: this._togCard(this.state.signed),
+      signTitle: this.state.signed ? 'Đã ký số hợp đồng' : 'Ký hợp đồng điện tử',
+      signAction: this.state.signed ? 'Ký lại' : 'Ký ngay',
+      toggleSign: () => this.setState(s => ({ signed: !s.signed })),
+      pay: { bank:this._optCard(this.state.payMethod==='bank'), escrow:this._optCard(this.state.payMethod==='escrow') },
+      setPayBank: () => this.setState({ payMethod:'bank' }),
+      setPayEscrow: () => this.setState({ payMethod:'escrow' }),
+
+      cback: () => { if (cstep > 1) this.setState({ cstep: cstep - 1 }); else this.setState({ view:'detail' }); },
+      cnext: () => this.setState({ cstep: Math.min(5, cstep + 1) }),
+      cbackStyle: 'display:inline-flex; align-items:center; gap:8px; background:#fff; color:var(--tid-navy); border:1.5px solid var(--tid-line); border-radius:11px; padding:12px 20px; font-family:var(--font-sans); font-size:14.5px; font-weight:600; cursor:pointer;',
+      showCContinue: cstep < 5,
+      showCComplete: cstep === 5,
+      issueStyle: 'display:inline-flex; align-items:center; gap:9px; border:none; border-radius:11px; padding:12px 22px; font-family:var(--font-sans); font-size:14.5px; font-weight:700; transition:.15s; ' +
+        (this.state.signed ? 'background:var(--tid-navy); color:#fff; cursor:pointer; box-shadow:0 6px 16px rgba(25,40,61,.3);' : 'background:#e7ebf1; color:#a2adbd; cursor:not-allowed;'),
+      issue: () => { if (this.state.signed) this.setState({ view:'issued' }); },
+
+      // issued
+      licenseCode: 'GP-' + subj.code.replace('TID-','') + '-K12',
+      operatorName: opName,
+      expiryDate: expiry[this.state.cfg.term] || '16/07/2027',
+      downloadLicense: () => {},
+    };
+  }
+}
+</script>
+</body>
+</html>

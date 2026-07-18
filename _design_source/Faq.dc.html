@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/fig-tokens.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/aliases.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/tokens/base.css">
+  <link rel="stylesheet" href="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/styles.css">
+  <script src="_ds/heroui-design-system-d608d476-7f0c-455a-a7ce-252f669013c5/_ds_bundle.js"></script>
+  <style>:root{--tid-navy:#19283d;--tid-blue:#0c8ce9;--tid-mute:#5b6b82;}</style>
+</helmet>
+<div style="width:100%; font-family:'Be Vietnam Pro','Inter',sans-serif; display:flex; flex-direction:column; gap:12px;">
+  <sc-for list="{{ items }}" as="it" hint-placeholder-count="6">
+    <div style="border:1px solid #e6e9ef; border-radius:12px; background:#fff; overflow:hidden; box-shadow:0 1px 2px rgba(15,23,43,.05);">
+      <button onClick="{{ it.toggle }}" style="width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 22px; background:transparent; border:none; cursor:pointer; text-align:left;">
+        <span style="display:flex; align-items:center; gap:14px;">
+          <span style="flex-shrink:0; font-family:'Noto Serif',Georgia,serif; font-size:26px; font-weight:700; color:var(--tid-blue); width:42px; line-height:1;">{{ it.num }}</span>
+          <span style="font-family:'Noto Serif',Georgia,serif; font-size:18px; font-weight:600; color:var(--tid-navy); line-height:1.35;">{{ it.q }}</span>
+        </span>
+        <span data-open="{{ it.open }}" style="flex-shrink:0; width:30px; height:30px; border-radius:999px; background:#f0f4f9; display:inline-flex; align-items:center; justify-content:center; transition:transform .2s, background .2s;">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="var(--tid-navy)" stroke-width="1.8"><path d="M4 6l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </span>
+      </button>
+      <sc-if value="{{ it.open }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:0 22px 22px 78px; color:var(--tid-mute); font-size:15.5px; line-height:1.72; max-width:760px;">{{ it.a }}</div>
+      </sc-if>
+    </div>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:880,&quot;height&quot;:520}}">
+class Component extends DCLogic {
+  state = { open: { 0: true } };
+  QA = [
+    { q: "Nếu tôi đổi ý, làm sao rút uỷ quyền?", a: "Chủ thể có quyền rút lại đồng ý (rút uỷ quyền minh thị) bất cứ lúc nào ngay trong tài khoản của mình. Khi rút, mã uỷ quyền liên quan chuyển sang trạng thái “đã thu hồi” trên sổ đăng bạ công khai, và bên khai thác buộc phải chấm dứt sử dụng theo thời hạn thông báo. Đây là một nghĩa vụ được bảo đảm, không phải một tính năng tuỳ nghi." },
+    { q: "Tiền thu hộ của tôi được giữ ở đâu?", a: "Toàn bộ tiền thu hộ được giữ trong tài khoản thu hộ tách bạch, độc lập với tài khoản vận hành của nền tảng. Chúng tôi thực hiện đối soát và thanh toán theo kỳ đã công bố, kèm báo cáo dòng tiền cho từng chủ thể. Nền tảng không được sử dụng khoản tiền này cho mục đích vận hành của mình." },
+    { q: "Giấy phép có giá trị pháp lý ra sao khi xảy ra tranh chấp?", a: "Mỗi uỷ quyền được thể hiện dưới dạng một chứng thư có mã tra cứu công khai, ghi rõ chủ thể, bên được cấp phép, phạm vi, thời hạn và căn cứ pháp lý dẫn chiếu (Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 và các nghị định liên quan). Khi tranh chấp, chứng thư này là bằng chứng về sự tồn tại, hiệu lực và phạm vi của uỷ quyền." },
+    { q: "Hiệp hội bảo chứng là ai và có thẩm quyền gì?", a: "Hiệp hội bảo chứng là một tổ chức nghề nghiệp được nhà nước công nhận, đảm nhận việc xác thực tư cách chủ thể, cấp phép và giám sát hoạt động cấp phép — tách biệt với đơn vị vận hành thu hộ. Mô hình tham chiếu là các tổ chức quản lý quyền tập thể đã được thừa nhận tại Việt Nam." },
+    { q: "Dữ liệu nhân dạng của tôi được lưu trú ở đâu?", a: "Dữ liệu nhân dạng được lưu trú tại Việt Nam theo quy định pháp luật, áp dụng nguyên tắc thu thập tối thiểu và đồng ý minh thị. Hệ thống chịu kiểm toán độc lập định kỳ về bảo mật và tuân thủ." },
+    { q: "Nền tảng có phục vụ người dưới 18 tuổi hay nội dung nhạy cảm không?", a: "Không. Chúng tôi áp dụng ranh giới đạo đức bắt buộc: không tiếp nhận chủ thể dưới 18 tuổi và không cấp phép cho các mục đích khiêu dâm hoá hoặc bôi nhọ nhân dạng. Đây là điều kiện tiên quyết, không thể thương lượng." },
+  ];
+  renderVals() {
+    return {
+      items: this.QA.map((x, i) => ({
+        num: String(i + 1).padStart(2, "0"), q: x.q, a: x.a, open: !!this.state.open[i],
+        toggle: () => this.setState((s) => ({ open: { ...s.open, [i]: !s.open[i] } })),
+      })),
+    };
+  }
+  componentDidMount(){ this.paint(); }
+  componentDidUpdate(){ this.paint(); }
+  paint(){
+    document.querySelectorAll("[data-open]").forEach((el) => {
+      const on = el.getAttribute("data-open") === "true";
+      el.style.transform = on ? "rotate(180deg)" : "rotate(0deg)";
+      el.style.background = on ? "rgba(12,140,233,.12)" : "#f0f4f9";
+    });
+  }
+}
+</script>
+</body>
+</html>
