@@ -9,7 +9,10 @@ const GOLD_LIGHT = "#ecd9a3";
 const trustPoints = [
   { icon: "justice-scale-1", label: "Căn cứ pháp lý viện dẫn cụ thể" },
   { icon: "safe-vault", label: "Tài khoản thu hộ tách bạch" },
-  { icon: "checkup-medical-report-clipboard", label: "Kiểm toán độc lập định kỳ" },
+  {
+    icon: "checkup-medical-report-clipboard",
+    label: "Kiểm toán độc lập định kỳ",
+  },
 ];
 
 /** Khối hero: tuyên ngôn giá trị + chứng nhận bảo hộ mẫu. */
@@ -18,24 +21,61 @@ export const Hero = () => {
     <section
       className="relative overflow-hidden text-[#eaf0f8]"
       style={{
+        // background:
+        //   "radial-gradient(1200px 600px at 78% -10%, #23385a 0%, var(--tid-navy) 46%, var(--tid-navy-2) 100%)",
         background:
-          "radial-gradient(1200px 600px at 78% -10%, #23385a 0%, var(--tid-navy) 46%, var(--tid-navy-2) 100%)",
+          "linear-gradient(105.99deg, #4d3a26 -8.18%, #10182a 26.54%, #143245 105.51%)",
       }}
     >
-      <div aria-hidden className="pointer-events-none absolute right-[-60px] top-10 opacity-[.06]">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-[-60px] top-10 opacity-[.06]"
+      >
         <svg width="520" height="520" viewBox="0 0 200 200">
-          <circle cx="100" cy="100" r="95" fill="none" stroke="#fff" strokeWidth="1" />
-          <circle cx="100" cy="100" r="78" fill="none" stroke="#fff" strokeWidth="1" />
-          <circle cx="100" cy="100" r="60" fill="none" stroke="#fff" strokeWidth="1" />
+          <circle
+            cx="100"
+            cy="100"
+            r="95"
+            fill="none"
+            stroke="#fff"
+            strokeWidth="1"
+          />
+          <circle
+            cx="100"
+            cy="100"
+            r="78"
+            fill="none"
+            stroke="#fff"
+            strokeWidth="1"
+          />
+          <circle
+            cx="100"
+            cy="100"
+            r="60"
+            fill="none"
+            stroke="#fff"
+            strokeWidth="1"
+          />
         </svg>
       </div>
 
       <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-14 px-8 pb-[78px] pt-[74px] md:grid-cols-[1.08fr_.92fr]">
         <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full border border-[rgba(224,182,74,.35)] bg-[rgba(199,154,43,.14)] px-[15px] py-2 text-[13px] font-semibold tracking-[0.01em] text-gold-2">
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            >
               <path d="M8 1.5l5 2v3.5c0 3-2 5.2-5 6.5-3-1.3-5-3.5-5-6.5V3.5z" />
-              <path d="M6 8l1.4 1.4L10.4 6" strokeLinecap="round" strokeLinejoin="round" />
+              <path
+                d="M6 8l1.4 1.4L10.4 6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
             Được bảo chứng bởi Hiệp hội bảo chứng nhân dạng số
           </span>
@@ -44,22 +84,37 @@ export const Hero = () => {
           </h1>
           <p className="mt-[22px] max-w-[560px] text-[18.5px] leading-[1.68] text-[#c3cede]">
             Trust ID là định chế đăng ký bảo hộ, cấp phép và{" "}
-            <b className="font-semibold text-[#eaf0f8]">thu hộ</b> nhân dạng số — vận hành dưới sự bảo
-            chứng của một hiệp hội ngành được nhà nước công nhận. Chúng tôi bảo chứng, thu hộ và phân
-            phối minh bạch.
+            <b className="font-semibold text-[#eaf0f8]">thu hộ</b> nhân dạng số
+            — vận hành dưới sự bảo chứng của một hiệp hội ngành được nhà nước
+            công nhận. Chúng tôi bảo chứng, thu hộ và phân phối minh bạch.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="/register" variant="primary" size="lg" className="hui-btn">
+            <Button
+              href="/register"
+              variant="primary"
+              size="lg"
+              className="hui-btn"
+            >
               Đăng ký bảo hộ nhân dạng
             </Button>
-            <Button href="/license" variant="secondary" size="lg" className="hui-btn">
+            <Button
+              href="/license"
+              variant="secondary"
+              size="lg"
+              className="hui-btn"
+            >
               Xin cấp phép sử dụng
             </Button>
           </div>
           <div className="mt-[34px] flex flex-wrap gap-[26px] border-t border-white/[.12] pt-[26px] text-[13px] text-[#9fb0c8]">
             {trustPoints.map((p) => (
               <span key={p.icon} className="inline-flex items-center gap-2">
-                <DuotoneIcon name={p.icon} size={18} color={GOLD} secondaryColor={GOLD_LIGHT} />
+                <DuotoneIcon
+                  name={p.icon}
+                  size={18}
+                  color={GOLD}
+                  secondaryColor={GOLD_LIGHT}
+                />
                 {p.label}
               </span>
             ))}
@@ -69,7 +124,10 @@ export const Hero = () => {
         <Reveal className="relative">
           <div
             className="rounded-xl border border-[#e6dcbf] p-[26px_26px_22px] shadow-[0_30px_70px_rgba(0,0,0,.4)]"
-            style={{ background: "linear-gradient(180deg,#fdfbf5,#f4eeddff)", transform: "rotate(-1.4deg)" }}
+            style={{
+              background: "linear-gradient(180deg,#fdfbf5,#f4eeddff)",
+              transform: "rotate(-1.4deg)",
+            }}
           >
             <div className="flex items-start justify-between gap-3.5 border-b border-dashed border-[#d8cfb4] pb-4">
               <div>
@@ -116,8 +174,18 @@ export const Hero = () => {
                 <div className="text-[11.5px] italic text-[#8a7a4e]">
                   Đối chiếu công khai với sổ đăng bạ
                 </div>
-                <svg width="86" height="30" viewBox="0 0 86 30" fill="none" stroke="var(--tid-navy)" strokeWidth="1.3">
-                  <path d="M2 22c6-14 9 6 14-2s7-12 12-4 8 10 13-2 8 4 13-3 8 6 13 0" strokeLinecap="round" />
+                <svg
+                  width="86"
+                  height="30"
+                  viewBox="0 0 86 30"
+                  fill="none"
+                  stroke="var(--tid-navy)"
+                  strokeWidth="1.3"
+                >
+                  <path
+                    d="M2 22c6-14 9 6 14-2s7-12 12-4 8 10 13-2 8 4 13-3 8 6 13 0"
+                    strokeLinecap="round"
+                  />
                 </svg>
               </div>
             </div>
